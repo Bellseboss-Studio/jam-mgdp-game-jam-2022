@@ -54,7 +54,7 @@ jobs:
         with:
           name: Test results (all modes)
           path: ${{ steps.testRunner.outputs.artifactsPath }}
-      - uses: game-ci/unity-builder@v2
+      - uses: game-ci/unity-builder@v2.0-alpha-6
         id: buildStep
         with:
           # customParameters: -developmentBuild
