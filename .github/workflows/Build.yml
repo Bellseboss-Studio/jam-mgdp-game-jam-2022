@@ -17,7 +17,7 @@ jobs:
         unityVersion:
           - 2021.3.6f1
         targetPlatform:
-          - StandaloneLinux64 # Build a Linux 64-bit standalone.
+          - StandaloneWindows64 # Build a Linux 64-bit standalone.
           - WebGL # WebGL.
     steps:
       - uses: actions/checkout@v2

@@ -10,6 +10,9 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /.idea/
+/Assets/PlayFabEditorExtensions/Editor/Resources/MostRecentPackage.unitypackage.meta
+/Assets/PlayFabEditorExtensions/Editor/Resources/PlayFabEditorPrefsSO.asset
+/artifacts/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -48,6 +51,7 @@ ExportedObj/
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta
+*.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
