@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogSystem : MonoBehaviour
@@ -9,6 +10,8 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private DialogsConfiguration config;
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private float secondsDelay;
+    [SerializeField] private StatesOfDialogs _statesOfDialogs;
     private DialogsFactory _factory;
     private Dialog _dialog;
 
@@ -36,13 +39,33 @@ public class DialogSystem : MonoBehaviour
 
     public void OpenDialog(string idDialog)
     {
+        //if(_statesOfDialogs)
+        _statesOfDialogs = StatesOfDialogs.START;
         _dialog = _factory.Create(idDialog);
-        text.text = _dialog.DialogText;
+        StartCoroutine(FullTextInTextBox(_dialog.DialogText));
         OpenDialog();
+    }
+
+    private IEnumerator FullTextInTextBox(string dialogDialogText)
+    {
+        _statesOfDialogs = StatesOfDialogs.UPDATE;
+        for (int i = 0; i < dialogDialogText.Length; i++)
+        {
+            yield return new WaitForSeconds(secondsDelay);
+            text.text = dialogDialogText.Substring(0, i + 1);
+        }
+        _statesOfDialogs = StatesOfDialogs.END;
     }
 
     public void SelectOption(int keyPress)
     {
         OpenDialog(_dialog.GetNextDialog(keyPress));
     }
+}
+
+public enum StatesOfDialogs
+{
+    START,
+    UPDATE,
+    END,
 }
