@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ServiceLocatorPath
+namespace SystemOfExtras
 {
     public class Installer : MonoBehaviour
     {
@@ -12,6 +12,7 @@ namespace ServiceLocatorPath
                 return;
             }
             new PlayFabCustom();
+            
             DontDestroyOnLoad(gameObject);
         }
     }

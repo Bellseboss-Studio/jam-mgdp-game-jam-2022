@@ -1,13 +1,16 @@
 ﻿using System;
 
-[Serializable]
-public class SystemInfoCustom
+namespace SystemOfExtras
 {
-  public string model;
-  public string name;
-  public string os;
-  public string processor;
-  public string graphicsDeviceName;
+  [Serializable]
+  public class SystemInfoCustom
+  {
+    public string model;
+    public string name;
+    public string os;
+    public string processor;
+    public string graphicsDeviceName;
+  }
 }
 /*
 Debug.Log($"S{SystemInfo.deviceModel}");
