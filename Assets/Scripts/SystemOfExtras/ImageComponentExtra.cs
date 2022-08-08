@@ -1,41 +1,42 @@
-﻿using MenuUI.SystemOfExtras;
-
-public class ImageComponentExtra : IExtra
+﻿namespace SystemOfExtras
 {
-    private string name;
-    private string source;
-    private string type;
-    private string icon;
-    public ImageComponentExtra(Extra extra)
+    public class ImageComponentExtra : IExtra
     {
-        name = extra.name;
-        source = extra.source;
-        type = extra.type;
-        icon = extra.icon;
-    }
+        private string name;
+        private string source;
+        private string type;
+        private string icon;
+        public ImageComponentExtra(Extra extra)
+        {
+            name = extra.name;
+            source = extra.source;
+            type = extra.type;
+            icon = extra.icon;
+        }
 
-    public void ShowContent()
-    {
-        throw new System.NotImplementedException();
-    }
+        public void ShowContent()
+        {
+            throw new System.NotImplementedException();
+        }
 
-    public string GetName()
-    {
-        return name;
-    }
+        public string GetName()
+        {
+            return name;
+        }
 
-    public string GetSource()
-    {
-        return source;
-    }
+        public string GetSource()
+        {
+            return source;
+        }
 
-    public string GetTypeExtra()
-    {
-        return type;
-    }
+        public string GetTypeExtra()
+        {
+            return type;
+        }
 
-    public string GetIcon()
-    {
-        return icon;
+        public string GetIcon()
+        {
+            return icon;
+        }
     }
 }
