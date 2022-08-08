@@ -2,6 +2,6 @@
 {
     public interface IIngredientsInventory
     {
-        void AddIngredient(Ingredient ingredient);
+        void CrossOutIngredient(string id);
     }
 }

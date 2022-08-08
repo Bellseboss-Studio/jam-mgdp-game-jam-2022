@@ -1,18 +1,31 @@
-﻿using TMPro;
+﻿using DG.Tweening;
+using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace SystemOfExtras
 {
     public class IngredientImage : MonoBehaviour
     {
-        [SerializeField] private Image image;
-        [SerializeField] private TMP_Text description;
-        
-        public void Configure(Sprite sprite, string ingredientDescription)
+        [SerializeField] private string id;
+        [SerializeField] private RectTransform tacha;
+        [SerializeField] private TMP_Text text;
+        public string ID => id;
+
+        public void CrossOut()
         {
-            image.sprite = sprite;
-            description.text = ingredientDescription;
+            tacha.DOSizeDelta(new Vector2(.22f, .03f), 1.5f);
+        }
+        private void Update()
+        {
+            if (Keyboard.current.f2Key.wasPressedThisFrame) CrossOut();
+        }
+
+        public void Configure(string ingredient)
+        {
+            id = ingredient;
+            text.text = ingredient;
         }
     }
 }

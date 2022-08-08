@@ -1,23 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace SystemOfExtras
 {
     public class Ingredient : MonoBehaviour
     {
-        [SerializeField] private Sprite sprite;
-        [SerializeField] private string description;
+        [SerializeField] private string id;
+        [SerializeField] private GameObject model;
 
-        public Sprite Sprite => sprite;
-        public string Description => description;
-    }
-    
-    
-    public class Item : MonoBehaviour
-    {
-        [SerializeField] private Sprite sprite;
-        [SerializeField] private string description;
-
-        public Sprite Sprite => sprite;
-        public string Description => description;
+        public string Id => id;
+        
     }
 }

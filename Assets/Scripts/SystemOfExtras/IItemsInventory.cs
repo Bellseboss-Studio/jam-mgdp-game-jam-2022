@@ -2,6 +2,6 @@
 {
     public interface IItemsInventory
     {
-        void AddItem(Item item);
+        void SaveItem(Item item);
     }
 }
