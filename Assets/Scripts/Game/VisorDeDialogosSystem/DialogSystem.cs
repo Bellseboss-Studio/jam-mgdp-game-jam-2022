@@ -14,6 +14,7 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] private StatesOfDialogs _statesOfDialogs;
     private DialogsFactory _factory;
     private Dialog _dialog;
+    private IEnumerator fullTextInTextBox;
 
     private void Start()
     {
@@ -27,22 +28,30 @@ public class DialogSystem : MonoBehaviour
 
     public void NextDialog()
     {
-        if (_dialog.HasNextDialog)
+        /*if (_dialog.HasNextDialog)
         {
             
         }
         else
         {
             anim.SetBool("open", false);   
-        }
+        }*/
     }
 
     public void OpenDialog(string idDialog)
     {
-        //if(_statesOfDialogs)
+        if (_statesOfDialogs == StatesOfDialogs.HAS_NEXT) return;
+        if (_statesOfDialogs != StatesOfDialogs.SELECTED_OPTION) _dialog = _factory.Create(idDialog);
+        if (_statesOfDialogs == StatesOfDialogs.UPDATE)
+        {
+            StopCoroutine(fullTextInTextBox);
+            text.text = _dialog.DialogText;
+            _statesOfDialogs = _dialog.HasNextDialog ? StatesOfDialogs.HAS_NEXT : StatesOfDialogs.END;
+            return;
+        }
         _statesOfDialogs = StatesOfDialogs.START;
-        _dialog = _factory.Create(idDialog);
-        StartCoroutine(FullTextInTextBox(_dialog.DialogText));
+        fullTextInTextBox = FullTextInTextBox(_dialog.DialogText);
+        StartCoroutine(fullTextInTextBox);
         OpenDialog();
     }
 
@@ -54,11 +63,12 @@ public class DialogSystem : MonoBehaviour
             yield return new WaitForSeconds(secondsDelay);
             text.text = dialogDialogText.Substring(0, i + 1);
         }
-        _statesOfDialogs = StatesOfDialogs.END;
+        _statesOfDialogs = _dialog.HasNextDialog ? StatesOfDialogs.HAS_NEXT : StatesOfDialogs.END;
     }
 
     public void SelectOption(int keyPress)
     {
+        _statesOfDialogs = StatesOfDialogs.SELECTED_OPTION;
         OpenDialog(_dialog.GetNextDialog(keyPress));
     }
 }
@@ -68,4 +78,6 @@ public enum StatesOfDialogs
     START,
     UPDATE,
     END,
+    HAS_NEXT,
+    SELECTED_OPTION
 }
