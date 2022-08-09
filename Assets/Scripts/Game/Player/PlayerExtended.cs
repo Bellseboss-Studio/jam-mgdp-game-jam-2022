@@ -6,6 +6,7 @@ namespace Game.Player
 {
     public class PlayerExtended : MonoBehaviour
     {
+        
         public Action OnClickFromPlayer;
         public Action OnItemPressed;
         public Action OnNextDialog;
