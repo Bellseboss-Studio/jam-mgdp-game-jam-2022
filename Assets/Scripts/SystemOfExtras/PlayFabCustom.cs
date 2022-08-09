@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using MenuUI.SystemOfExtras;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
-namespace ServiceLocatorPath
+namespace SystemOfExtras
 {
     public class PlayFabCustom : ISaveData, IPlayFabCustom
     {

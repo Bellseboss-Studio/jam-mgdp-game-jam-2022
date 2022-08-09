@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MenuUI.SystemOfExtras
+namespace SystemOfExtras
 {
     public interface ISaveData
     {

@@ -2,30 +2,37 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerExtended : MonoBehaviour
+namespace Game.Player
 {
-    public Action OnClickFromPlayer;
-    public Action OnNextDialog;
-    public Action<int> OnKeyOptionPress;
-    public void OnClick(InputAction.CallbackContext value)
+    public class PlayerExtended : MonoBehaviour
     {
-        if (value.canceled)
+        public Action OnClickFromPlayer;
+        public Action OnItemPressed;
+        public Action OnNextDialog;
+        public Action<int> OnKeyOptionPress;
+        public void OnClick(InputAction.CallbackContext value)
         {
-            OnClickFromPlayer?.Invoke();
+            if (value.canceled)
+            {
+                /*OnClickFromPlayer?.Invoke();*/
+                Debug.Log("click");
+                
+                OnItemPressed?.Invoke();
+            }
         }
-    }
     
-    public void OnSkipDialog(InputAction.CallbackContext value)
-    {
-        OnNextDialog?.Invoke();
-    }
-    
-    public void OnNumberKeys(InputAction.CallbackContext value)
-    {
-        if (value.canceled)
+        public void OnSkipDialog(InputAction.CallbackContext value)
         {
-            Debug.Log($"{value.control.name}");
-            OnKeyOptionPress?.Invoke(int.Parse(value.control.name));
+            OnNextDialog?.Invoke();
+        }
+    
+        public void OnNumberKeys(InputAction.CallbackContext value)
+        {
+            if (value.canceled)
+            {
+                Debug.Log($"{value.control.name}");
+                OnKeyOptionPress?.Invoke(int.Parse(value.control.name));
+            }
         }
     }
 }
