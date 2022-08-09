@@ -4,10 +4,11 @@ namespace SystemOfExtras
 {
     public class Item : MonoBehaviour
     {
-        [SerializeField] private Sprite sprite;
         [SerializeField] private string description;
-
-        public Sprite Sprite => sprite;
         public string Description => description;
+        [SerializeField] private string name1;
+        public string Name1 => name1;
+        [SerializeField] private float cost;
+        public float Cost => cost;
     }
 }

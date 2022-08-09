@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using Game.Player;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Object = UnityEngine.Object;
@@ -13,20 +14,27 @@ namespace SystemOfExtras
         [SerializeField] private PlayerExtended player;
         [SerializeField] private GameObject mainCamera;
         [SerializeField] private List<SpaceToItem> spacesToItems;
-        [SerializeField] private GameObject backpack;
+        [SerializeField] private GameObject backpack, itemsContainer, itemUI;
+        [SerializeField] private TMP_Text nameText, costText, descriptionText;
         private bool _backpackShowed = true;
         private bool _movingBackpack;
         [SerializeField] private float moveInY, animationDuration;
 
         private void Awake()
         {
-            player.OnClickFromPlayer += OnClickFromPlayer;    
+            player.OnItemPressed += OnClickFromPlayer;    
         }
 
         private void OnClickFromPlayer()
         {
             var item = RayCastHelper.CompareItem(mainCamera);
-            if (item) ServiceLocator.Instance.GetService<IItemsInventory>().SaveItem(item);
+            Debug.Log(item);
+            if (item) ShowItemUI(item);
+        }
+
+        private void ShowItemUI(Item item)
+        {
+            itemUI.SetActive(true);
         }
 
 
@@ -34,9 +42,11 @@ namespace SystemOfExtras
         {
             foreach (var spaceToItem in spacesToItems)
             {
-                if (!spaceToItem.CurrentItem) continue;
+                if (spaceToItem.CurrentItem) continue;
                 spaceToItem.CurrentItem = item;
                 item.transform.position = spaceToItem.transform.position;
+                item.transform.SetParent(itemsContainer.transform);
+                item.transform.rotation = backpack.transform.rotation;
                 return;
             }
             //Si no hay espacio para el item
