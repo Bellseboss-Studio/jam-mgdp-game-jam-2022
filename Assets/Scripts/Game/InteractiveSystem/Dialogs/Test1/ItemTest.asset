@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
-  m_Name: 04
+  m_Name: ItemTest
   m_EditorClassIdentifier: 
-  id: 4
-  option: Cerrar
-  dialogText: 
-  listOfConcat: []
+  id: ItemTest
+  option: 
+  dialogText: Aqui hay un item de ejemplo, deberia de tomarlo
+  listOfConcat:
+  - {fileID: 11400000, guid: 1e69121d570fa38468fd0b650663c89e, type: 2}
+  - {fileID: 11400000, guid: 174a5b16784fa64429cf56dd97d6c4a6, type: 2}

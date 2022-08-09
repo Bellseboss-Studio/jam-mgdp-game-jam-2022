@@ -11,32 +11,48 @@ namespace SystemOfExtras
 {
     public class ItemsInventory : MonoBehaviour , IItemsInventory
     {
-        [SerializeField] private PlayerExtended player;
-        [SerializeField] private GameObject mainCamera;
+        private PlayerExtended _player;
+        private PlayerReferences _playerReferences;
+        private GameObject _mainCamera;
         [SerializeField] private List<SpaceToItem> spacesToItems;
-        [SerializeField] private GameObject backpack, itemsContainer, itemUI;
-        [SerializeField] private TMP_Text nameText, costText, descriptionText;
+        [SerializeField] private GameObject backpack, itemUI;
+        [SerializeField] private TMP_Text nameText, descriptionText;
         private bool _backpackShowed = true;
         private bool _movingBackpack;
         [SerializeField] private float moveInY, animationDuration;
+        private Item itemToTake;
 
         private void Awake()
         {
-            player.OnItemPressed += OnClickFromPlayer;    
+            _player.OnItemPressed += OnClickFromPlayer;
+        }
+
+        private void ConfigurePlayer(Transform playerCapsule)
+        {
+            var rotation = playerCapsule.rotation;
+            playerCapsule.rotation = new Quaternion(0,0,0,0);
+            backpack.transform.SetParent(_playerReferences.PlayerCameraRoot);
+            backpack.transform.position = _playerReferences.ItemsContainerPosition.position;
+            Destroy(_playerReferences.ItemsContainerPosition.gameObject);
+            playerCapsule.rotation = rotation;
         }
 
         private void OnClickFromPlayer()
         {
-            var item = RayCastHelper.CompareItem(mainCamera);
-            Debug.Log(item);
-            if (item) ShowItemUI(item);
+            var item = RayCastHelper.CompareItem(_mainCamera);
+            if (item) ShowItemUI(item);/*
+            if (item) SaveItem(item);*/
         }
 
         private void ShowItemUI(Item item)
         {
-            itemUI.SetActive(true);
+            ServiceLocator.Instance.GetService<IDecisionService>().StartDecision(item);
+            /*ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog();
+            ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog("ItemTest");
+            */
+            itemToTake = item;
+            Debug.Log($"item name: {item.ItemName}, item description: {item.Description}");
         }
-
 
         public void SaveItem(Item item)
         {
@@ -45,7 +61,7 @@ namespace SystemOfExtras
                 if (spaceToItem.CurrentItem) continue;
                 spaceToItem.CurrentItem = item;
                 item.transform.position = spaceToItem.transform.position;
-                item.transform.SetParent(itemsContainer.transform);
+                item.transform.SetParent(backpack.transform);
                 item.transform.rotation = backpack.transform.rotation;
                 return;
             }
@@ -96,6 +112,14 @@ namespace SystemOfExtras
                 };
             }
             _backpackShowed = !_backpackShowed;
+        }
+
+        public void Configure(PlayerExtended playerExtended, PlayerReferences playerReferences, GameObject mainCamera, Transform playerCapsule)
+        {
+            _player = playerExtended;
+            _playerReferences = playerReferences;
+            _mainCamera = mainCamera;
+            ConfigurePlayer(playerCapsule);
         }
     }
 }
