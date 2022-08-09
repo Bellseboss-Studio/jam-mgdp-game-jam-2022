@@ -19,7 +19,6 @@ namespace SystemOfExtras
         }
         private void Update()
         {
-            if (Keyboard.current.f2Key.wasPressedThisFrame) CrossOut();
         }
 
         public void Configure(string ingredient)

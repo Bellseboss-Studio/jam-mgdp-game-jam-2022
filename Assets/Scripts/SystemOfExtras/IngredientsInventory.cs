@@ -9,8 +9,9 @@ namespace SystemOfExtras
 {
     public class IngredientsInventory : MonoBehaviour , IIngredientsInventory
     {
-        [SerializeField] private PlayerExtended player;
-        [SerializeField] private GameObject mainCamera;
+        private PlayerExtended _player;
+        private PlayerReferences _playerReferences;
+        private GameObject _mainCamera;
         [SerializeField] private GameObject ingredientsHoja, panelIngredients;
         [SerializeField] private List<string> ingredients;
         [SerializeField] private IngredientImage ingredientImageTemplate;
@@ -20,8 +21,18 @@ namespace SystemOfExtras
 
         private void Awake()
         {
-            player.OnItemPressed += OnClickFromPlayer;
+            _player.OnItemPressed += OnClickFromPlayer;
             _ingredients = new List<IngredientImage>();
+        }
+
+        private void ConfigurePlayer(Transform playerCapsule)
+        {
+            var rotation = playerCapsule.rotation;
+            playerCapsule.rotation = new Quaternion(0,0,0,0);
+            ingredientsHoja.transform.SetParent(_playerReferences.PlayerCameraRoot);
+            ingredientsHoja.transform.position = _playerReferences.HojaPosition.position;
+            Destroy(_playerReferences.HojaPosition.gameObject);
+            playerCapsule.rotation = rotation;
         }
 
         private void Start()
@@ -37,7 +48,7 @@ namespace SystemOfExtras
         private void OnClickFromPlayer()
         {
             Debug.Log("simn, hizo click");
-            var ingredient = RayCastHelper.CompareIngredient(mainCamera);
+            var ingredient = RayCastHelper.CompareIngredient(_mainCamera);
             if (ingredient) ServiceLocator.Instance.GetService<IIngredientsInventory>().CrossOutIngredient(ingredient.Id);
         }
 
@@ -90,6 +101,14 @@ namespace SystemOfExtras
                     };
                 }
             }
+        }
+
+        public void Configure(PlayerExtended playerExtended, PlayerReferences playerReferences, GameObject mainCamera, Transform playerCapsule)
+        {
+            _player = playerExtended;
+            _playerReferences = playerReferences;
+            _mainCamera = mainCamera;
+            ConfigurePlayer(playerCapsule);
         }
     }
 }

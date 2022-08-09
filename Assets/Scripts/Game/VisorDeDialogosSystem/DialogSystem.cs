@@ -1,26 +1,28 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SystemOfExtras;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game.VisorDeDialogosSystem
 {
-    public class DialogSystem : MonoBehaviour
+    public class DialogSystem : MonoBehaviour, IDialogSystem
     {
         [SerializeField] private Animator anim;
         [SerializeField] private DialogsConfiguration config;
         [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private float secondsDelay;
         [SerializeField] private StatesOfDialogs _statesOfDialogs;
+        public StatesOfDialogs StatesOfDialogs => _statesOfDialogs;
         private DialogsFactory _factory;
         private Dialog _dialog;
         private IEnumerator fullTextInTextBox;
 
         private void Start()
         {
-            _factory = new DialogsFactory(Instantiate(config));
+            _factory = new DialogsFactory(Instantiate(config, gameObject.transform));
         }
 
         public void OpenDialog()
@@ -73,14 +75,10 @@ namespace Game.VisorDeDialogosSystem
             _statesOfDialogs = StatesOfDialogs.SELECTED_OPTION;
             OpenDialog(_dialog.GetNextDialog(keyPress));
         }
-    }
 
-    public enum StatesOfDialogs
-    {
-        START,
-        UPDATE,
-        END,
-        HAS_NEXT,
-        SELECTED_OPTION
+        public bool GetState()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
-  m_Name: 04
+  m_Name: DejarItem
   m_EditorClassIdentifier: 
-  id: 4
-  option: Cerrar
-  dialogText: 
-  listOfConcat: []
+  id: DejarItem
+  option: Dejar item
+  dialogText: Has dejado el item de ejemplo
+  listOfConcat:
+  - {fileID: 11400000, guid: 11362da34ed5a8f43a7106d261ca442a, type: 2}
