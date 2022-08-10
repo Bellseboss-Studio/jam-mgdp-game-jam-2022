@@ -23,7 +23,7 @@ namespace SystemOfExtras
 
         private void Awake()
         {
-            _player.OnItemPressed += OnClickFromPlayer;
+            
         }
 
         private void ConfigurePlayer(Transform playerCapsule)
@@ -34,6 +34,7 @@ namespace SystemOfExtras
             backpack.transform.position = _playerReferences.ItemsContainerPosition.position;
             Destroy(_playerReferences.ItemsContainerPosition.gameObject);
             playerCapsule.rotation = rotation;
+            _player.OnItemPressed += OnClickFromPlayer;
         }
 
         private void OnClickFromPlayer()
