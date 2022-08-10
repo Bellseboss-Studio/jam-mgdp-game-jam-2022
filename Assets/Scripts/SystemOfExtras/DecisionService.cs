@@ -26,10 +26,8 @@ namespace SystemOfExtras
         {
             _takingDecision = true;
             ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog("ItemTest");
-            if (ServiceLocator.Instance.GetService<IDialogSystem>().GetState())
-            {
-                
-            }
+            if (ServiceLocator.Instance.GetService<IDialogSystem>().GetState() == StatesOfDialogs.END)
+                ServiceLocator.Instance.GetService<IDialogSystem>().CloseDialog();
         }
     }
 }
