@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 using Game.VisorDeDialogosSystem;
+using SystemOfExtras;
 using UnityEngine;
 
 public class interactiveObject : MonoBehaviour
 {
-    [SerializeField] private DialogSystem dialog;
     private bool hasEnableShader;
     private Renderer _renderer;
 
@@ -16,24 +16,25 @@ public class interactiveObject : MonoBehaviour
 
     public void OnMouseDown()
     {
-        dialog.OpenDialog("01");
+        Debug.Log("Click en el objeto");
+        ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog("01");
     }
 
     public void OnNextDialog()
     {
-        dialog.NextDialog();
+        ServiceLocator.Instance.GetService<IDialogSystem>().NextDialog();
     }
 
     public void SelectedOption(int keyPress)
     {
-        dialog.SelectOption(keyPress);
+        ServiceLocator.Instance.GetService<IDialogSystem>().SelectOption(keyPress);
     }
 
     //Logic of Shaders
     public void EnableShader()
     {
         hasEnableShader = true;
-        _renderer.material.SetFloat("_Fresnel",1);
+        //_renderer.material.SetFloat("_Fresnel",1);
         StartCoroutine(DisableShader());
 
     }
