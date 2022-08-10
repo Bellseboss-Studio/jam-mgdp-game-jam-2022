@@ -21,7 +21,6 @@ namespace SystemOfExtras
 
         private void Awake()
         {
-            _player.OnItemPressed += OnClickFromPlayer;
             _ingredients = new List<IngredientImage>();
         }
 
@@ -33,6 +32,7 @@ namespace SystemOfExtras
             ingredientsHoja.transform.position = _playerReferences.HojaPosition.position;
             Destroy(_playerReferences.HojaPosition.gameObject);
             playerCapsule.rotation = rotation;
+            _player.OnItemPressed += OnClickFromPlayer;
         }
 
         private void Start()

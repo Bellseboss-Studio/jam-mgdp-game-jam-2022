@@ -76,7 +76,12 @@ namespace Game.VisorDeDialogosSystem
             OpenDialog(_dialog.GetNextDialog(keyPress));
         }
 
-        public bool GetState()
+        public StatesOfDialogs GetState()
+        {
+            return _statesOfDialogs;
+        }
+
+        public void CloseDialog()
         {
             throw new NotImplementedException();
         }
