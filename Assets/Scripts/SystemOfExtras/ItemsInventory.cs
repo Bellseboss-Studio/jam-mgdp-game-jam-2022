@@ -15,8 +15,7 @@ namespace SystemOfExtras
         private PlayerReferences _playerReferences;
         private GameObject _mainCamera;
         [SerializeField] private List<SpaceToItem> spacesToItems;
-        [SerializeField] private GameObject backpack, itemUI;
-        [SerializeField] private TMP_Text nameText, descriptionText;
+        [SerializeField] private GameObject backpack;
         private bool _backpackShowed = true;
         private bool _movingBackpack;
         [SerializeField] private float moveInY, animationDuration;
