@@ -1,22 +1,25 @@
 ﻿using System.Collections;
 using System.Threading.Tasks;
 
-public static class TaskExtension
+namespace SystemOfExtras
 {
-    public static async void WrapErrors(this Task task)
+    public static class TaskExtension
     {
-        await task;
-    }
-    public static IEnumerator AsCoroutine(this Task task)
-    {
-        while (!task.IsCompleted)
+        public static async void WrapErrors(this Task task)
         {
-            yield return null;
+            await task;
         }
- 
-        if (task.IsFaulted)
+        public static IEnumerator AsCoroutine(this Task task)
         {
-            throw task.Exception;
+            while (!task.IsCompleted)
+            {
+                yield return null;
+            }
+ 
+            if (task.IsFaulted)
+            {
+                throw task.Exception;
+            }
         }
     }
 }

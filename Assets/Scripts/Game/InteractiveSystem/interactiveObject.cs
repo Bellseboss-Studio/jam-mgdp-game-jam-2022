@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Game.VisorDeDialogosSystem;
 using UnityEngine;
 
 public class interactiveObject : MonoBehaviour

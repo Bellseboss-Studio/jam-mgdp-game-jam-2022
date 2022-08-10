@@ -1,4 +1,4 @@
-﻿namespace ServiceLocatorPath
+﻿namespace SystemOfExtras
 {
     public interface IPlayFabCustom
     {

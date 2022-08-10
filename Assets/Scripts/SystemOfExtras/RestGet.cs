@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Rest
+namespace SystemOfExtras
 {
     public class RestGet
     {

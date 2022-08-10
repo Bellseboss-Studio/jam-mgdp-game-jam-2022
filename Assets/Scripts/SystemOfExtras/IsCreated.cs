@@ -1,7 +1,10 @@
 ﻿using System;
 
-[Serializable]
-public class IsCreated
+namespace SystemOfExtras
 {
-    public bool isCreated;
+    [Serializable]
+    public class IsCreated
+    {
+        public bool isCreated;
+    }
 }
