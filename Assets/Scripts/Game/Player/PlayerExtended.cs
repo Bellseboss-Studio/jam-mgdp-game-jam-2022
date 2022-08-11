@@ -9,7 +9,6 @@ namespace Game.Player
         
         public Action OnClickFromPlayer;
         public Action OnItemPressed;
-        public Action OnNextDialog;
         public Action<int> OnKeyOptionPress;
         public void OnClick(InputAction.CallbackContext value)
         {
@@ -22,16 +21,12 @@ namespace Game.Player
             }
         }
     
-        public void OnSkipDialog(InputAction.CallbackContext value)
-        {
-            OnNextDialog?.Invoke();
-        }
     
         public void OnNumberKeys(InputAction.CallbackContext value)
         {
             if (value.canceled)
             {
-                Debug.Log($"{value.control.name}");
+                /*Debug.Log($"{value.control.name}");*/
                 OnKeyOptionPress?.Invoke(int.Parse(value.control.name));
             }
         }

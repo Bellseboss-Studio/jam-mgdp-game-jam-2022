@@ -21,6 +21,7 @@ namespace Game.VisorDeDialogosSystem
         private IEnumerator fullTextInTextBox;
         private bool _isInUpdateFulledText;
         private bool _textIsFinishedOfShow;
+        private Action _ineractiveObjectAction;
 
         private void Start()
         {
@@ -71,11 +72,17 @@ namespace Game.VisorDeDialogosSystem
                 text.text = _dialog.DialogText;
                 _isInUpdateFulledText = false;
                 _textIsFinishedOfShow = true;
+                if (_dialog.HasActionEvent) ApplyItemAction();
                 return;
             }
             fullTextInTextBox = FullTextInTextBox(_dialog.DialogText);
             StartCoroutine(fullTextInTextBox);
             OpenDialog();
+        }
+
+        private void ApplyItemAction()
+        {
+            _ineractiveObjectAction?.Invoke();
         }
 
         private IEnumerator FullTextInTextBox(string dialogDialogText)
@@ -89,6 +96,7 @@ namespace Game.VisorDeDialogosSystem
             }
             _isInUpdateFulledText = false;
             _textIsFinishedOfShow = true;
+            if (_dialog.HasActionEvent) ApplyItemAction();
             _statesOfDialogs = _dialog.HasNextDialog ? StatesOfDialogs.HAS_NEXT : StatesOfDialogs.END;
         }
 
@@ -113,6 +121,11 @@ namespace Game.VisorDeDialogosSystem
             _textIsFinishedOfShow = false;
             _isInUpdateFulledText = false;
             anim.SetBool("open", false);
+        }
+
+        public void OnDialogAction(Action action)
+        {
+            _ineractiveObjectAction = action;
         }
     }
 }
