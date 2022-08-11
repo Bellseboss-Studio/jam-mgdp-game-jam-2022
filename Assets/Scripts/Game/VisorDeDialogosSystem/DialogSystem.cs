@@ -19,6 +19,9 @@ namespace Game.VisorDeDialogosSystem
         private DialogsFactory _factory;
         private Dialog _dialog;
         private IEnumerator fullTextInTextBox;
+        private bool _isInUpdateFulledText;
+        private bool _textIsFinishedOfShow;
+        private Action _ineractiveObjectAction;
 
         private void Start()
         {
@@ -44,41 +47,85 @@ namespace Game.VisorDeDialogosSystem
 
         public void OpenDialog(string idDialog)
         {
-            if (_statesOfDialogs == StatesOfDialogs.HAS_NEXT) return;
-            if (_statesOfDialogs != StatesOfDialogs.SELECTED_OPTION) _dialog = _factory.Create(idDialog);
-            if (_statesOfDialogs == StatesOfDialogs.UPDATE)
+            //Debug.Log($"is null {_dialog == null}");
+            if (_textIsFinishedOfShow)
+            {
+                if (!_dialog.HasNextDialog)
+                {
+                    CloseDialog();
+                    return;
+                }
+
+                if (_dialog.HasNextDialogOption)
+                {
+                    SelectOption(1);
+                } 
+                return;
+            }
+            if (_dialog == null)
+            {
+                _dialog = _factory.Create(idDialog);   
+            }
+            if (_isInUpdateFulledText)
             {
                 StopCoroutine(fullTextInTextBox);
                 text.text = _dialog.DialogText;
-                _statesOfDialogs = _dialog.HasNextDialog ? StatesOfDialogs.HAS_NEXT : StatesOfDialogs.END;
+                _isInUpdateFulledText = false;
+                _textIsFinishedOfShow = true;
+                if (_dialog.HasActionEvent) ApplyItemAction();
                 return;
             }
-            _statesOfDialogs = StatesOfDialogs.START;
             fullTextInTextBox = FullTextInTextBox(_dialog.DialogText);
             StartCoroutine(fullTextInTextBox);
             OpenDialog();
         }
 
+        private void ApplyItemAction()
+        {
+            _ineractiveObjectAction?.Invoke();
+        }
+
         private IEnumerator FullTextInTextBox(string dialogDialogText)
         {
-            _statesOfDialogs = StatesOfDialogs.UPDATE;
+            _textIsFinishedOfShow = false;
+            _isInUpdateFulledText = true;
             for (int i = 0; i < dialogDialogText.Length; i++)
             {
                 yield return new WaitForSeconds(secondsDelay);
                 text.text = dialogDialogText.Substring(0, i + 1);
             }
+            _isInUpdateFulledText = false;
+            _textIsFinishedOfShow = true;
+            if (_dialog.HasActionEvent) ApplyItemAction();
             _statesOfDialogs = _dialog.HasNextDialog ? StatesOfDialogs.HAS_NEXT : StatesOfDialogs.END;
         }
 
         public void SelectOption(int keyPress)
         {
-            _statesOfDialogs = StatesOfDialogs.SELECTED_OPTION;
-            OpenDialog(_dialog.GetNextDialog(keyPress));
+            if (!_dialog.HasNextDialog) return;
+            _textIsFinishedOfShow = false;
+            _isInUpdateFulledText = false;
+            var nextDialog = _dialog.GetNextDialog(keyPress);
+            _dialog = null;
+            OpenDialog(nextDialog);
         }
 
-        public bool GetState()
+        public StatesOfDialogs GetState()
         {
-            throw new NotImplementedException();
+            return _statesOfDialogs;
+        }
+
+        public void CloseDialog()
+        {
+            _dialog = null;
+            _textIsFinishedOfShow = false;
+            _isInUpdateFulledText = false;
+            anim.SetBool("open", false);
+        }
+
+        public void OnDialogAction(Action action)
+        {
+            _ineractiveObjectAction = action;
         }
     }
 }

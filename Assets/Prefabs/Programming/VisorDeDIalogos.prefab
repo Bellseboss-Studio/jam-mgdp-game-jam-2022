@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9036844345541458660}
-  - component: {fileID: 9036844345541458663}
   m_Layer: 0
   m_Name: VisorDeDIalogos
   m_TagString: Untagged
@@ -33,23 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9036844345541458663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9036844345541458661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1a9e19787467a478e8160410a4c215, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 9036844346079846136}
-  config: {fileID: 11400000, guid: 6e17397582a290c4f8d9bb705d57b4cb, type: 2}
-  text: {fileID: 9036844347185396071}
-  secondsDelay: 0.1
-  _statesOfDialogs: 0
 --- !u!1 &9036844346079846134
 GameObject:
   m_ObjectHideFlags: 0

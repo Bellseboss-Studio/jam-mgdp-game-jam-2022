@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_FocusObject
-  m_Shader: {fileID: -6465566751694194690, guid: c3ecdea00364bc44c922c22c45f1117e,
+  m_Shader: {fileID: -6465566751694194690, guid: 0b0e243cca7287f4cbe871213ffc524b,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,6 +21,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTexture:
         m_Texture: {fileID: 2800000, guid: fc0d3ca89214a3b4a9ce2cb3c079031c, type: 3}
         m_Scale: {x: 1, y: 1}

@@ -15,8 +15,7 @@ namespace SystemOfExtras
         private PlayerReferences _playerReferences;
         private GameObject _mainCamera;
         [SerializeField] private List<SpaceToItem> spacesToItems;
-        [SerializeField] private GameObject backpack, itemUI;
-        [SerializeField] private TMP_Text nameText, descriptionText;
+        [SerializeField] private GameObject backpack;
         private bool _backpackShowed = true;
         private bool _movingBackpack;
         [SerializeField] private float moveInY, animationDuration;
@@ -24,7 +23,7 @@ namespace SystemOfExtras
 
         private void Awake()
         {
-            _player.OnItemPressed += OnClickFromPlayer;
+            
         }
 
         private void ConfigurePlayer(Transform playerCapsule)
@@ -35,12 +34,13 @@ namespace SystemOfExtras
             backpack.transform.position = _playerReferences.ItemsContainerPosition.position;
             Destroy(_playerReferences.ItemsContainerPosition.gameObject);
             playerCapsule.rotation = rotation;
+            _player.OnItemPressed += OnClickFromPlayer;
         }
 
         private void OnClickFromPlayer()
         {
             var item = RayCastHelper.CompareItem(_mainCamera);
-            if (item) ShowItemUI(item);/*
+            /*if (item) ShowItemUI(item);
             if (item) SaveItem(item);*/
         }
 
@@ -51,7 +51,6 @@ namespace SystemOfExtras
             ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog("ItemTest");
             */
             itemToTake = item;
-            Debug.Log($"item name: {item.ItemName}, item description: {item.Description}");
         }
 
         public void SaveItem(Item item)
