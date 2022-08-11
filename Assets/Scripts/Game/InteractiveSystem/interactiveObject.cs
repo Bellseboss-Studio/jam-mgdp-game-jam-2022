@@ -8,6 +8,7 @@ public class interactiveObject : MonoBehaviour
 {
     private bool hasEnableShader;
     private Renderer _renderer;
+    [SerializeField] private Dialog idDialog;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class interactiveObject : MonoBehaviour
     public void OnMouseDown()
     {
         Debug.Log("Click en el objeto");
-        ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog("01");
+        ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog(idDialog.Id);
     }
 
     public void OnNextDialog()
@@ -34,7 +35,7 @@ public class interactiveObject : MonoBehaviour
     public void EnableShader()
     {
         hasEnableShader = true;
-        //_renderer.material.SetFloat("_Fresnel",1);
+        _renderer.material.SetFloat("_Fresnel",1);
         StartCoroutine(DisableShader());
 
     }

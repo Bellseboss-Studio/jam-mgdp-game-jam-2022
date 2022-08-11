@@ -37,7 +37,7 @@ namespace Game.Player
             else
             {
                 Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                Debug.Log("Did not Hit");
+                //Debug.Log("Did not Hit");
             }
         }
 
@@ -58,7 +58,7 @@ namespace Game.Player
             else
             {
                 Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                Debug.Log("Did not Hit");
+                //Debug.Log("Did not Hit");
             }
         }
 
@@ -78,7 +78,7 @@ namespace Game.Player
             else
             {
                 Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                Debug.Log("Did not Hit");
+                //Debug.Log("Did not Hit");
             }
         }
     }
