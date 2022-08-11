@@ -15,8 +15,8 @@ namespace Game.Player
         {
             if (value.canceled)
             {
-                /*OnClickFromPlayer?.Invoke();*/
-                Debug.Log("click");
+                OnClickFromPlayer?.Invoke();
+                //Debug.Log("click");
                 
                 OnItemPressed?.Invoke();
             }

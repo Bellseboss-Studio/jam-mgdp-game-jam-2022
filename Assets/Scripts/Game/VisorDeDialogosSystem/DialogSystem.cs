@@ -19,6 +19,7 @@ namespace Game.VisorDeDialogosSystem
         private DialogsFactory _factory;
         private Dialog _dialog;
         private IEnumerator fullTextInTextBox;
+        private bool _isInUpdateFulledText;
 
         private void Start()
         {
@@ -44,16 +45,13 @@ namespace Game.VisorDeDialogosSystem
 
         public void OpenDialog(string idDialog)
         {
-            if (_statesOfDialogs == StatesOfDialogs.HAS_NEXT) return;
-            if (_statesOfDialogs != StatesOfDialogs.SELECTED_OPTION) _dialog = _factory.Create(idDialog);
-            if (_statesOfDialogs == StatesOfDialogs.UPDATE)
+            _dialog = _factory.Create(idDialog);
+            if (_isInUpdateFulledText)
             {
                 StopCoroutine(fullTextInTextBox);
                 text.text = _dialog.DialogText;
-                _statesOfDialogs = _dialog.HasNextDialog ? StatesOfDialogs.HAS_NEXT : StatesOfDialogs.END;
                 return;
             }
-            _statesOfDialogs = StatesOfDialogs.START;
             fullTextInTextBox = FullTextInTextBox(_dialog.DialogText);
             StartCoroutine(fullTextInTextBox);
             OpenDialog();
@@ -61,12 +59,13 @@ namespace Game.VisorDeDialogosSystem
 
         private IEnumerator FullTextInTextBox(string dialogDialogText)
         {
-            _statesOfDialogs = StatesOfDialogs.UPDATE;
+            _isInUpdateFulledText = true;
             for (int i = 0; i < dialogDialogText.Length; i++)
             {
                 yield return new WaitForSeconds(secondsDelay);
                 text.text = dialogDialogText.Substring(0, i + 1);
             }
+            _isInUpdateFulledText = false;
             _statesOfDialogs = _dialog.HasNextDialog ? StatesOfDialogs.HAS_NEXT : StatesOfDialogs.END;
         }
 
