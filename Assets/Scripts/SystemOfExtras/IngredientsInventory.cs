@@ -49,7 +49,6 @@ namespace SystemOfExtras
         {
             //Debug.Log("simn, hizo click");
             var ingredient = RayCastHelper.CompareIngredient(_mainCamera);
-            if (ingredient) ServiceLocator.Instance.GetService<IIngredientsInventory>().CrossOutIngredient(ingredient.Id);
         }
 
         public void CrossOutIngredient(string id)
