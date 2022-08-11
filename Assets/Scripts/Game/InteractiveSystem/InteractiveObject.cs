@@ -4,11 +4,12 @@ using Game.VisorDeDialogosSystem;
 using SystemOfExtras;
 using UnityEngine;
 
-public class interactiveObject : MonoBehaviour
+public class InteractiveObject : MonoBehaviour
 {
     private bool hasEnableShader;
     private Renderer _renderer;
     [SerializeField] private Dialog idDialog;
+    public Action OnInteractionFinished;
 
     private void Start()
     {
@@ -17,10 +18,24 @@ public class interactiveObject : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Debug.Log("Click en el objeto");
+        /*Debug.Log("Click en el objeto");*/
         ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog(idDialog.Id);
+        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogAction(() =>
+        {
+            if (gameObject.TryGetComponent<IInteractiveObject>(out var interactiveObject))
+            {
+                InteractionFinished();
+                interactiveObject.OnAction();
+                ServiceLocator.Instance.GetService<IDialogSystem>().CloseDialog();
+            }
+        });
     }
 
+    private void InteractionFinished()
+    {
+        OnInteractionFinished?.Invoke();
+    }
+    
     public void OnNextDialog()
     {
         ServiceLocator.Instance.GetService<IDialogSystem>().NextDialog();

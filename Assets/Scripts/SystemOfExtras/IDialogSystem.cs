@@ -1,4 +1,5 @@
-﻿using Game.VisorDeDialogosSystem;
+﻿using System;
+using Game.VisorDeDialogosSystem;
 
 namespace SystemOfExtras
 {
@@ -10,5 +11,6 @@ namespace SystemOfExtras
         public void SelectOption(int keyPress);
         StatesOfDialogs GetState();
         void CloseDialog();
+        void OnDialogAction(Action action);
     }
 }

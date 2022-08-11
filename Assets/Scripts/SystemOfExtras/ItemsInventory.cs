@@ -40,7 +40,7 @@ namespace SystemOfExtras
         private void OnClickFromPlayer()
         {
             var item = RayCastHelper.CompareItem(_mainCamera);
-            if (item) ShowItemUI(item);/*
+            /*if (item) ShowItemUI(item);
             if (item) SaveItem(item);*/
         }
 
@@ -51,7 +51,6 @@ namespace SystemOfExtras
             ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog("ItemTest");
             */
             itemToTake = item;
-            Debug.Log($"item name: {item.ItemName}, item description: {item.Description}");
         }
 
         public void SaveItem(Item item)

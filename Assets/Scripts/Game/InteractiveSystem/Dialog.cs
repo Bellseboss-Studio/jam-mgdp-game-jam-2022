@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "Bellseboss/Dialog")]
@@ -9,6 +11,9 @@ public class Dialog : ScriptableObject
     [SerializeField] private string option;
     [TextArea(2,5)][SerializeField] private string dialogText;
     [SerializeField] private List<Dialog> listOfConcat;
+    [SerializeField] private bool hasActionEvent;
+
+    public bool HasActionEvent => hasActionEvent;
 
     public string Id => id;
 
