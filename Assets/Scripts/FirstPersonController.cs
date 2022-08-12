@@ -68,11 +68,13 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		
 #endif
+		[SerializeField] Animator _animator;
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
+		private bool _isMoving = false;
 
 		private bool IsCurrentDeviceMouse
 		{
@@ -100,6 +102,7 @@ namespace StarterAssets
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 			_playerInput = GetComponent<PlayerInput>();
+			_animator = GetComponent<Animator>();
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 			
 #else
@@ -161,7 +164,15 @@ namespace StarterAssets
 
 			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is no input, set the target speed to 0
-			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+			if (_input.move == Vector2.zero)
+			{
+				targetSpeed = 0.0f;
+				if (_isMoving == true)
+				{
+					_isMoving = false;
+					_animator.SetBool("IsWalking", false);
+				}
+			}
 
 			// a reference to the players current horizontal velocity
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
@@ -189,14 +200,21 @@ namespace StarterAssets
 
 			// note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is a move input rotate player when the player is moving
-			if (_input.move != Vector2.zero)
+			if (_input.move != Vector2.zero )
 			{
 				// move
 				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
+				if (_isMoving == false)
+				{
+					_isMoving = true;
+					_animator.SetBool("IsWalking", true);
+				}
 			}
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+			
 		}
 
 		private void JumpAndGravity()
@@ -265,5 +283,7 @@ namespace StarterAssets
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
+
+	
 	}
 }
