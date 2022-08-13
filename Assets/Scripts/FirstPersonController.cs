@@ -204,10 +204,14 @@ namespace StarterAssets
 			{
 				// move
 				inputDirection = transform.right * _input.move.x + transform.forward * _input.move.y;
-				if (_isMoving == false)
+				if (_isMoving == false )
 				{
 					_isMoving = true;
-					_animator.SetBool("IsWalking", true);
+					if (Grounded)
+					{
+						_animator.SetBool("IsWalking", true);
+					}
+					
 				}
 			}
 
