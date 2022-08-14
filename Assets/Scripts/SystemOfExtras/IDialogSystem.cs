@@ -5,12 +5,9 @@ namespace SystemOfExtras
 {
     public interface IDialogSystem
     {
-        public void OpenDialog();
-        public void NextDialog();
         public void OpenDialog(string idDialog);
         public void SelectOption(int keyPress);
-        StatesOfDialogs GetState();
-        void CloseDialog();
-        void OnDialogAction(Action action);
+        void OnDialogAction(Action<string> action);
+        void OnDialogFinish(Action action);
     }
 }

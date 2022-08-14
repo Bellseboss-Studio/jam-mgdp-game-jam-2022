@@ -20,25 +20,23 @@ public class InteractiveObject : MonoBehaviour
     {
         /*Debug.Log("Click en el objeto");*/
         ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog(idDialog.Id);
-        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogAction(() =>
+        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogAction( isDialog =>
         {
-            if (gameObject.TryGetComponent<IInteractiveObject>(out var interactiveObject))
+            foreach (var component in gameObject.GetComponents<IInteractiveObject>())
             {
-                InteractionFinished();
-                interactiveObject.OnAction();
-                ServiceLocator.Instance.GetService<IDialogSystem>().CloseDialog();
+                if (component.OnAction(isDialog)) break;
             }
+        });
+        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(() =>
+        {
+            InteractionFinished();
         });
     }
 
     private void InteractionFinished()
     {
+        Debug.Log($"Finish interaction");
         OnInteractionFinished?.Invoke();
-    }
-    
-    public void OnNextDialog()
-    {
-        ServiceLocator.Instance.GetService<IDialogSystem>().NextDialog();
     }
 
     public void SelectedOption(int keyPress)
@@ -67,5 +65,10 @@ public class InteractiveObject : MonoBehaviour
         {
             _renderer.material.SetFloat("_Fresnel",0);
         }
+    }
+
+    public void SetDialogo(Dialog cambioDeDialogoDeLlave)
+    {
+        idDialog = cambioDeDialogoDeLlave;
     }
 }

@@ -1,4 +1,4 @@
 ﻿public interface IInteractiveObject
 {
-    void OnAction();
+    bool OnAction(string idDialog);
 }

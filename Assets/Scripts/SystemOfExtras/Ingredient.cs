@@ -3,14 +3,13 @@ using UnityEngine;
 
 namespace SystemOfExtras
 {
-    public class Ingredient : MonoBehaviour, IInteractiveObject
+    public class Ingredient : InteractiveObjectFather
     {
         [SerializeField] private string id;
-        [SerializeField] private GameObject model;
 
         public string Id => id;
 
-        public void OnAction()
+        protected override void ActionEventCustom()
         {
             ServiceLocator.Instance.GetService<IIngredientsInventory>().CrossOutIngredient(id);
         }
