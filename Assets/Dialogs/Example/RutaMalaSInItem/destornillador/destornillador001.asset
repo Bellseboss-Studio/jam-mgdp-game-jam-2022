@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92e52a610b464de6b92f018ffa98fd46, type: 3}
-  m_Name: Base
+  m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
+  m_Name: destornillador001
   m_EditorClassIdentifier: 
-  id: 01
-  option: Comerla
-  dialog: Muy bien Nirmax te la comiste completa
-  listOfConcaten: []
+  id: destornillador001
+  option: 
+  dialogText: Toma el destornillador
+  listOfConcat:
+  - {fileID: 11400000, guid: e12f23db662ead642ad582609b367b7b, type: 2}

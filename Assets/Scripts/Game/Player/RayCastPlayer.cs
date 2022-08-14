@@ -18,41 +18,27 @@ namespace Game.Player
 
         private void OnKeyOptionPress(int keyPress)
         {
+            //Debug.Log($"Key press {keyPress} and {objetoInteractuable == null}");
             objetoInteractuable?.SelectedOption(keyPress);
         }
 
         private void OnClickFromPlayer()
         {
-        
             RaycastHit hit;
-            // Does the ray intersect any objects excluding the player layer
             if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit))
             {
-                Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                //Debug.Log($"Did Hit is, {hit.collider.gameObject.name}");
-                if (objetoInteractuable)
+                //Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                if (hit.collider.gameObject.TryGetComponent<InteractiveObject>(out var interactiveObject))
                 {
-                    objetoInteractuable.OnMouseDown();
-                }
-                else
-                {
-                    var interactiveObject = (hit.collider.gameObject.GetComponent<InteractiveObject>());
-                    if (interactiveObject)
+                    objetoInteractuable = interactiveObject;
+                    objetoInteractuable.OnInteractionFinished += () =>
                     {
-                        objetoInteractuable = interactiveObject;
-                        objetoInteractuable.OnMouseDown();
-                        objetoInteractuable.OnInteractionFinished += () =>
-                        {
-                            objetoInteractuable = null;
-                        };
-                    }
+                        objetoInteractuable = null; 
+                    };
                 }
+                
             }
-            else
-            {
-                Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                //Debug.Log("Did not Hit");
-            }
+            objetoInteractuable?.OnMouseDown();
         }
 
         private void Update()

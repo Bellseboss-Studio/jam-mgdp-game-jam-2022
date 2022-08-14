@@ -11,12 +11,7 @@ public class Dialog : ScriptableObject
     [SerializeField] private string option;
     [TextArea(2,5)][SerializeField] private string dialogText;
     [SerializeField] private List<Dialog> listOfConcat;
-    [SerializeField] private bool hasActionEvent;
-
-    public bool HasActionEvent => hasActionEvent;
-
     public string Id => id;
-
     public string DialogText
     {
         get

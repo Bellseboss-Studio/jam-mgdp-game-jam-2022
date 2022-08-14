@@ -21,7 +21,8 @@ namespace Game.VisorDeDialogosSystem
         private IEnumerator fullTextInTextBox;
         private bool _isInUpdateFulledText;
         private bool _textIsFinishedOfShow;
-        private Action _ineractiveObjectAction;
+        private Action<string> _ineractiveObjectAction;
+        private Action dialogFinish;
 
         private void Start()
         {
@@ -33,18 +34,6 @@ namespace Game.VisorDeDialogosSystem
             anim.SetBool("open", true);
         }
 
-        public void NextDialog()
-        {
-            /*if (_dialog.HasNextDialog)
-        {
-            
-        }
-        else
-        {
-            anim.SetBool("open", false);   
-        }*/
-        }
-
         public void OpenDialog(string idDialog)
         {
             //Debug.Log($"is null {_dialog == null}");
@@ -53,6 +42,7 @@ namespace Game.VisorDeDialogosSystem
                 if (!_dialog.HasNextDialog)
                 {
                     CloseDialog();
+                    dialogFinish?.Invoke();
                     return;
                 }
 
@@ -72,7 +62,7 @@ namespace Game.VisorDeDialogosSystem
                 text.text = _dialog.DialogText;
                 _isInUpdateFulledText = false;
                 _textIsFinishedOfShow = true;
-                if (_dialog.HasActionEvent) ApplyItemAction();
+                ApplyItemAction(_dialog.Id);
                 return;
             }
             fullTextInTextBox = FullTextInTextBox(_dialog.DialogText);
@@ -80,9 +70,9 @@ namespace Game.VisorDeDialogosSystem
             OpenDialog();
         }
 
-        private void ApplyItemAction()
+        private void ApplyItemAction(string dialogId)
         {
-            _ineractiveObjectAction?.Invoke();
+            _ineractiveObjectAction?.Invoke(dialogId);
         }
 
         private IEnumerator FullTextInTextBox(string dialogDialogText)
@@ -96,12 +86,12 @@ namespace Game.VisorDeDialogosSystem
             }
             _isInUpdateFulledText = false;
             _textIsFinishedOfShow = true;
-            if (_dialog.HasActionEvent) ApplyItemAction();
-            _statesOfDialogs = _dialog.HasNextDialog ? StatesOfDialogs.HAS_NEXT : StatesOfDialogs.END;
+            ApplyItemAction(_dialog.Id);
         }
 
         public void SelectOption(int keyPress)
         {
+            Debug.Log($"keypress {keyPress}");
             if (!_dialog.HasNextDialog) return;
             _textIsFinishedOfShow = false;
             _isInUpdateFulledText = false;
@@ -123,9 +113,14 @@ namespace Game.VisorDeDialogosSystem
             anim.SetBool("open", false);
         }
 
-        public void OnDialogAction(Action action)
+        public void OnDialogAction(Action<string> action)
         {
             _ineractiveObjectAction = action;
+        }
+
+        public void OnDialogFinish(Action action)
+        {
+            dialogFinish += action;
         }
     }
 }

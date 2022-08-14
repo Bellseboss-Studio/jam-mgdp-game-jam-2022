@@ -12,13 +12,12 @@ namespace SystemOfExtras
         public DecisionService(PlayerExtended playerExtended)
         {
             _playerExtended = playerExtended;
-            _playerExtended.OnKeyOptionPress += OnKeyOptionPress;
+            //_playerExtended.OnKeyOptionPress += OnKeyOptionPress;
         }
 
         private void OnKeyOptionPress(int value)
         {
             if (!_takingDecision) return;
-            ServiceLocator.Instance.GetService<IDialogSystem>().SelectOption(value);
         }
 
 
@@ -26,8 +25,6 @@ namespace SystemOfExtras
         {
             _takingDecision = true;
             ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog("ItemTest");
-            if (ServiceLocator.Instance.GetService<IDialogSystem>().GetState() == StatesOfDialogs.END)
-                ServiceLocator.Instance.GetService<IDialogSystem>().CloseDialog();
         }
     }
 }

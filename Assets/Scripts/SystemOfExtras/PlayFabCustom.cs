@@ -31,7 +31,7 @@ namespace SystemOfExtras
                 */
                 PlayFabSettings.staticSettings.TitleId = "42";
             }
-            Debug.Log($"SystemInfo.deviceUniqueIdentifier {SystemInfo.deviceUniqueIdentifier}");
+            //Debug.Log($"SystemInfo.deviceUniqueIdentifier {SystemInfo.deviceUniqueIdentifier}");
             var request = new LoginWithCustomIDRequest { CustomId = SystemInfo.deviceUniqueIdentifier, CreateAccount = true};
             PlayFabClientAPI.LoginWithCustomID(request, resultCallback, errorCallback);
         }
@@ -74,9 +74,9 @@ namespace SystemOfExtras
 
         private void OnLoginFailure(PlayFabError error)
         {
-            Debug.LogWarning("Something went wrong with your first API call.  :(");
-            Debug.LogError("Here's some debug information:");
-            Debug.LogError(error.GenerateErrorReport());
+            //Debug.LogWarning("Something went wrong with your first API call.  :(");
+            //Debug.LogError("Here's some debug information:");
+            //Debug.LogError(error.GenerateErrorReport());
         }
 
         private void OnLoginSuccess(LoginResult result)

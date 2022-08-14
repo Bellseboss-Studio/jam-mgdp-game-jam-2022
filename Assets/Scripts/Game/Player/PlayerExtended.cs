@@ -26,7 +26,6 @@ namespace Game.Player
         {
             if (value.canceled)
             {
-                /*Debug.Log($"{value.control.name}");*/
                 OnKeyOptionPress?.Invoke(int.Parse(value.control.name));
             }
         }
