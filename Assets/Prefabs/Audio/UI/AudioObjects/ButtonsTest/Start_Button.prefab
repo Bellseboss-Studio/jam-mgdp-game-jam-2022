@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7969611839810906984}
   - component: {fileID: 4768598564426371689}
   - component: {fileID: 1757684688839032778}
+  - component: {fileID: 7923550146295337623}
   m_Layer: 5
   m_Name: Start_Button
   m_TagString: Untagged
@@ -289,3 +290,15 @@ MonoBehaviour:
   m_ButtonSoundVolume: 0.6
   m_WhooshSound: 5
   m_WhooshVolume: 0.3
+--- !u!114 &7923550146295337623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6120193210521189977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee7a35c5e6cae457c8bf2661a3143968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
