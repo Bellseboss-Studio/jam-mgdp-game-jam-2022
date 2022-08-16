@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,8 +14,7 @@ namespace GameAudio
         void Start()
         {
             CheckDependencies();
-            int randomTrack = Random.Range(0, m_MusicTracks.Count);
-            m_AudioSource.clip = m_MusicTracks[randomTrack];
+            StartCoroutine(nameof(SelectRandomAudioClip));
         }
         
         private void CheckDependencies()
@@ -23,6 +23,15 @@ namespace GameAudio
             {
                 m_AudioSource = GetComponent<AudioSource>();
             }
+        }
+
+        IEnumerator SelectRandomAudioClip()
+        {
+            int randomTrack = Random.Range(0, m_MusicTracks.Count);
+            m_AudioSource.clip = m_MusicTracks[randomTrack];
+            m_AudioSource.Play();
+            yield return new WaitForSeconds(m_MusicTracks[randomTrack].length);
+            StartCoroutine(SelectRandomAudioClip());
         }
     }
 }
