@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
-  m_Name: 002_NotaInteractuable
+  m_Name: 000_NotaDanger
   m_EditorClassIdentifier: 
-  id: 002_NotaInteractuable
+  id: 000_NotaDanger
   option: 
-  dialogText: 'TU: Claro, pero yo no quiero bajar las escaleras...'
-  listOfConcat: []
+  dialogText: Seguro que quiero romper la cinta?
+  listOfConcat:
+  - {fileID: 11400000, guid: 1d76fb737dcbc0740a591021ae44c0bc, type: 2}
+  - {fileID: 11400000, guid: 6bc6f8999207e2647a898794a1238bb5, type: 2}
