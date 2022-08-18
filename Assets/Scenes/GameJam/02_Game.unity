@@ -20634,8 +20634,9 @@ GameObject:
   - component: {fileID: 677033244}
   - component: {fileID: 677033243}
   - component: {fileID: 677033242}
+  - component: {fileID: 677033245}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: triggerParaElDialogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20719,6 +20720,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677033240}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &677033245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677033240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0a66f8ca97837458a9905ff72f64a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactive: {fileID: 922154544}
+  queSi: {fileID: 11400000, guid: 4c5a8adcbf19f0c4d9b5d6bb6fb574f7, type: 2}
+  queNo: {fileID: 11400000, guid: a7f89c8a5f1311b4b9f5830dd3929625, type: 2}
+  idForItem: llave
 --- !u!1001 &677061798
 PrefabInstance:
   m_ObjectHideFlags: 0
