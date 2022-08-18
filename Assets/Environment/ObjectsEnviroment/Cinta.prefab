@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 7644782834042041580}
   - component: {fileID: 6753256418236398409}
   - component: {fileID: 8817086716923580291}
+  - component: {fileID: 8975514322485579497}
+  - component: {fileID: 8975514322485579498}
+  - component: {fileID: 8975514322485579499}
+  - component: {fileID: 8975514322485579500}
   m_Layer: 0
   m_Name: Cinta
   m_TagString: Untagged
@@ -25,14 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7015598692793331286}
-  m_LocalRotation: {x: 0.17183578, y: -0.6828737, z: -0.15968196, w: 0.69185096}
+  m_LocalRotation: {x: 0.17183936, y: -0.6828749, z: -0.15968342, w: 0.69184846}
   m_LocalPosition: {x: -443.94733, y: 262.64, z: -259.06}
   m_LocalScale: {x: 10.566395, y: 10.566395, z: 10.566395}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.128, y: -89.524, z: -27.112}
 --- !u!33 &6753256418236398409
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -61,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 447805478009838013, guid: 5952af2c7bab09a49ad34873baf70c1c, type: 3}
+  - {fileID: 2100000, guid: 13b6e07f0afa3fd4bb3679fa19290b69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +87,58 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8975514322485579497
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015598692793331286}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2995102, y: 0.22256249, z: 0.00879465}
+  m_Center: {x: 0.13975652, y: -0.10128194, z: 0.0029244306}
+--- !u!114 &8975514322485579498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015598692793331286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141d0001084b10a41aee7be311c3b9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idDialog: {fileID: 11400000, guid: 4cb0ff7ec62084048b39288826b8738f, type: 2}
+--- !u!114 &8975514322485579499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015598692793331286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97853fbfaa9aad4d9b83358af8022ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 11400000, guid: 1d76fb737dcbc0740a591021ae44c0bc, type: 2}
+  cintaNoRota: {fileID: 7015598692793331286}
+  cintaRota: {fileID: 0}
+--- !u!114 &8975514322485579500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015598692793331286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d0d18e051c8204d98ebf8c8660ae13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 11400000, guid: 1d76fb737dcbc0740a591021ae44c0bc, type: 2}
+  cajas: {fileID: 0}

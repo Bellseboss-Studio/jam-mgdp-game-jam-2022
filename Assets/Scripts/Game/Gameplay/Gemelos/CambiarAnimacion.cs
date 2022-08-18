@@ -8,7 +8,7 @@ public class CambiarAnimacion : InteractiveObjectFather
     {
         foreach (var anim in anims)
         {
-            anim.SetTrigger("idle_alter");
+            //anim.SetTrigger("idle_alter");
         }
     }
 }

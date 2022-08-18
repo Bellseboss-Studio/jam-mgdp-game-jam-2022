@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TirarCajas : InteractiveObjectFather
 {
-    [SerializeField] private Animator anim;
+    [SerializeField] private CajasDelAscensor cajas;
     protected override void ActionEventCustom()
     {
-        anim.SetTrigger("caer");
+        cajas.ApllyAction();
     }
 }

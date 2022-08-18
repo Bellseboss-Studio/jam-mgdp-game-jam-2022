@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
-  m_Name: 001_Gemelo
+  m_Name: 000_Taxista_Con_Billete
   m_EditorClassIdentifier: 
-  id: 001_Gemelo
+  id: 000_Taxista_Con_Billete
   option: 
-  dialogText: Ya sabes, los caramelos...
-  listOfConcat: []
+  dialogText: Quieres que te lleve en taxi?
+  listOfConcat:
+  - {fileID: 11400000, guid: 96be74f58cd21684e88341cc48fc8c7e, type: 2}
+  - {fileID: 11400000, guid: 9033992b490c37d439f33c2048c246bb, type: 2}

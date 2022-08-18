@@ -9,8 +9,13 @@ public class CajasDelAscensor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            animator.SetTrigger("caer");
-            collider.isTrigger = false;
+            ApllyAction();
         }
+    }
+
+    public void ApllyAction()
+    {
+        animator.SetTrigger("caer");
+        collider.isTrigger = false;
     }
 }
