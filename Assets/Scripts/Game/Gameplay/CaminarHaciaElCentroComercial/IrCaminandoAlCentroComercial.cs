@@ -1,17 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using SystemOfExtras;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnviarElPlayerDeEscena1Escena2 : InteractiveObjectFather
+public class IrCaminandoAlCentroComercial : MonoBehaviour
 {
-    [SerializeField] private int sceneToLoad;
-    protected override void ActionEventCustom()
+    [SerializeField] private Dialog dialogo;
+    private void OnTriggerEnter(Collider other)
     {
         ServiceLocator.Instance.GetService<ILoadScream>().Open(() =>
         {
-            SceneManager.LoadScene(sceneToLoad);
+            SceneManager.LoadScene(2);
         });
     }
 }
