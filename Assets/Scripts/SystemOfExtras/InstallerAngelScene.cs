@@ -14,6 +14,7 @@ namespace SystemOfExtras
         [SerializeField] private Transform playerCapsule;
         [SerializeField] private PlayerReferences playerReferences;
         [SerializeField] private GameObject mainCamera;
+        [SerializeField] private LoadScreamService loadScream;
         private void Awake()
         {
             if (itemsInventory) itemsInventory.Configure(player, playerReferences, mainCamera, playerCapsule);
@@ -28,6 +29,7 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<IDialogSystem>(dialogSystem);
             var decisionService = new DecisionService(player);
             ServiceLocator.Instance.RegisterService<IDecisionService>(decisionService);
+            ServiceLocator.Instance.RegisterService<ILoadScream>(loadScream);
             DontDestroyOnLoad(gameObject);
         }
     }
