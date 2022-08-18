@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Player
@@ -25,7 +26,7 @@ namespace Game.Player
         private void OnClickFromPlayer()
         {
             RaycastHit hit;
-            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit))
+            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit, Single.PositiveInfinity, LayerMask.GetMask("InteractuableObject")))
             {
                 //Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 if (hit.collider.gameObject.TryGetComponent<InteractiveObject>(out var interactiveObject))

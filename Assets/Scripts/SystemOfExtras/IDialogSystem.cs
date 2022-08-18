@@ -9,5 +9,6 @@ namespace SystemOfExtras
         public void SelectOption(int keyPress);
         void OnDialogAction(Action<string> action);
         void OnDialogFinish(Action action);
+        void SetDialogToNotSpaceToItems();
     }
 }
