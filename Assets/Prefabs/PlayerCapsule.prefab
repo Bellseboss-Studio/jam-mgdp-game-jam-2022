@@ -1135,6 +1135,126 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82a409602773a43898e4c364eec55424, type: 3}
+--- !u!1001 &1804641362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9138105860585564358}
+    m_Modifications:
+    - target: {fileID: 1423439132833772603, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_AudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: fc17ba48b96f74ce888fc96b664a254c, type: 3}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -104.319244
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -42.92669
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.885074
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409155402622394374, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638902418225062054, guid: 4a6f68009b1e940408cd6ff1358c8861,
+        type: 3}
+      propertyPath: m_Name
+      value: Piso Liquidos
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a6f68009b1e940408cd6ff1358c8861, type: 3}
+--- !u!1 &5638902419727697140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5638902418225062054, guid: 4a6f68009b1e940408cd6ff1358c8861,
+    type: 3}
+  m_PrefabInstance: {fileID: 1804641362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!169 &763492853
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638902419727697140}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.20959528
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1210124762274571937
 PrefabInstance:
   m_ObjectHideFlags: 0
