@@ -91,11 +91,11 @@ namespace SystemOfExtras
             //Si no hay espacio para el item
         }
 
-        bool SearchItemForId(string id)
+        public bool SearchItemForId(string id)
         {
             foreach (var spaceToItem in spacesToItems)
             {
-                if (spaceToItem.CurrentItem!= null & spaceToItem.CurrentItem.Id == id)
+                if (spaceToItem.CurrentItem!= null && spaceToItem.CurrentItem.Id == id)
                 {
                     return true;
                 }
