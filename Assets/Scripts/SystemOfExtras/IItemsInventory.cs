@@ -3,6 +3,7 @@
     public interface IItemsInventory
     {
         void SaveItem(Item item);
-        public void ThrowItem(int itemPosition);
+        void ThrowItem(int itemPosition);
+        bool SearchItemForId(string id);
     }
 }

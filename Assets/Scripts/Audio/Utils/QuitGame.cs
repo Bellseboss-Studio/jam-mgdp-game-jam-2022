@@ -13,6 +13,8 @@ public class QuitGame : MonoBehaviour
     {
         yield return new WaitForSeconds(m_delayTime);
         Application.Quit();
+        #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
