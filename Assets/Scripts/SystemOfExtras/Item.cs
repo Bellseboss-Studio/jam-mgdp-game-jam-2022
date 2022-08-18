@@ -4,15 +4,31 @@ namespace SystemOfExtras
 {
     public class Item : InteractiveObjectFather
     {
-        [SerializeField] private string itemName;
-        public string ItemName => itemName;
-        [SerializeField] private string description;
-        public string Description => description;
+        [SerializeField] private string itemId;
+        [SerializeField] private GameObject normalModel, backpackModel;
+        public string Id => itemId;
+        [SerializeField] private InteractiveObject interactiveObject;
+
+        public InteractiveObject InteractiveObject => interactiveObject;
+
+        private Dialog _dialog;
         protected override void ActionEventCustom()
         {
             ServiceLocator.Instance.GetService<IItemsInventory>().SaveItem(this);
         }
 
+        public void PutInTheBackpack()
+        {
+            normalModel.SetActive(false);
+            backpackModel.SetActive(true);
+        }
+        
+        public void TakeOutTheBackpack()
+        {
+            normalModel.SetActive(true);
+            backpackModel.SetActive(false);
+        }
+        
         public void SetDialogo(Dialog cambioDeDialogoDeLlave)
         {
             dialogToAction = cambioDeDialogoDeLlave;

@@ -10,9 +10,11 @@ public class InteractiveObject : MonoBehaviour
     private Renderer _renderer;
     [SerializeField] private Dialog idDialog;
     public Action OnInteractionFinished;
+    private Dialog _originalDialog;
 
     private void Start()
     {
+        _originalDialog = idDialog;
         _renderer = GetComponent<Renderer>();
     }
 
@@ -70,5 +72,10 @@ public class InteractiveObject : MonoBehaviour
     public void SetDialogo(Dialog cambioDeDialogoDeLlave)
     {
         idDialog = cambioDeDialogoDeLlave;
+    }
+
+    public void RestoreDialog()
+    {
+        idDialog = _originalDialog;
     }
 }
