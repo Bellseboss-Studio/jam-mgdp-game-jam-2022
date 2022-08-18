@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3061964327225442238}
   - component: {fileID: 1033892316940513945}
   - component: {fileID: 1365468502803346958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ingrediente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd5e5dd5c514566acd13375568162e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 0}
   id: 
-  model: {fileID: 0}
 --- !u!114 &1365468502803346958
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ namespace Game.VisorDeDialogosSystem
         private bool _textIsFinishedOfShow;
         private Action<string> _ineractiveObjectAction;
         private Action dialogFinish;
+        
 
         private void Start()
         {
@@ -91,6 +92,15 @@ namespace Game.VisorDeDialogosSystem
 
         public void SelectOption(int keyPress)
         {
+            if (_isInUpdateFulledText)
+            {
+                StopCoroutine(fullTextInTextBox);
+                text.text = _dialog.DialogText;
+                _isInUpdateFulledText = false;
+                _textIsFinishedOfShow = true;
+                ApplyItemAction(_dialog.Id);
+                return;
+            }
             Debug.Log($"keypress {keyPress}");
             if (!_dialog.HasNextDialog) return;
             _textIsFinishedOfShow = false;
@@ -121,6 +131,11 @@ namespace Game.VisorDeDialogosSystem
         public void OnDialogFinish(Action action)
         {
             dialogFinish += action;
+        }
+
+        public void SetDialogToNotSpaceToItems()
+        {
+            throw new NotImplementedException();
         }
     }
 }

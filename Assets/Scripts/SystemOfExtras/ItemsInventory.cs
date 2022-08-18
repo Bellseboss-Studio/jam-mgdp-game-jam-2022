@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using Game.Player;
 using TMPro;
@@ -14,16 +15,23 @@ namespace SystemOfExtras
         private PlayerExtended _player;
         private PlayerReferences _playerReferences;
         private GameObject _mainCamera;
+        private List<InteractiveObject> _items;
         [SerializeField] private List<SpaceToItem> spacesToItems;
+        [SerializeField] private Dialog dialogForNotItemSpace;
         [SerializeField] private GameObject backpack;
         private bool _backpackShowed = true;
         private bool _movingBackpack;
         [SerializeField] private float moveInY, animationDuration;
-        private Item itemToTake;
+        private int _itemsSaved;
 
         private void Awake()
         {
-            
+            _items = new List<InteractiveObject>();
+            var items1 = FindObjectsOfType<Item>();
+            foreach (var item in items1)
+            {
+                _items.Add(item.InteractiveObject);
+            }
         }
 
         private void ConfigurePlayer(Transform playerCapsule)
@@ -50,27 +58,72 @@ namespace SystemOfExtras
             /*ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog();
             ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog("ItemTest");
             */
-            itemToTake = item;
         }
 
         public void SaveItem(Item item)
         {
+            _itemsSaved = 0;
+            var savedItem = false;
             foreach (var spaceToItem in spacesToItems)
             {
-                if (spaceToItem.CurrentItem) continue;
+                if (spaceToItem.CurrentItem)
+                {
+                    _itemsSaved++;
+                    continue;
+                }
+
+                if (savedItem) continue;
+                savedItem = true;
                 spaceToItem.CurrentItem = item;
                 item.transform.position = spaceToItem.transform.position;
                 item.transform.SetParent(backpack.transform);
                 item.transform.rotation = backpack.transform.rotation;
-                return;
+                item.PutInTheBackpack();
+            }
+
+            if (_itemsSaved>=2)
+            {
+                foreach (var item1 in _items)
+                {
+                    item1.SetDialogo(dialogForNotItemSpace);
+                }
             }
             //Si no hay espacio para el item
-            NotSpaceToItem();
         }
 
-        private void NotSpaceToItem()
+        public bool SearchItemForId(string id)
         {
-            Debug.Log("No hay espacio para el item");
+            foreach (var spaceToItem in spacesToItems)
+            {
+                if (spaceToItem.CurrentItem!= null && spaceToItem.CurrentItem.Id == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        public void ThrowItem(int itemPosition)
+        {
+            if (spacesToItems[itemPosition].CurrentItem == null)
+            {
+                /*ServiceLocator.Instance.GetService<IDialogSystem>(). OpenDialog(dialogToNotItemToThrow.Id);*/
+            }
+            else
+            {
+                Debug.Log($"tirando item{itemPosition}");
+                _items.Remove(spacesToItems[itemPosition].CurrentItem.InteractiveObject);
+                Destroy(spacesToItems[itemPosition].CurrentItem.gameObject);
+                RestoreItemsDialog();
+            }
+        }
+
+        private void RestoreItemsDialog()
+        {
+            foreach (var item in _items)
+            {
+                item.RestoreDialog();
+            }
         }
 
         private void Update()
