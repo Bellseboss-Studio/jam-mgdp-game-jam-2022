@@ -6,12 +6,17 @@ ModelImporter:
   - first:
       74: 3374748389425109202
     second: rig|rigAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: capa
+    second: {fileID: 2100000, guid: b2e9bf33e4f33714d8ee6e0b4d836a6b, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
+    materialName: 1
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -585,9 +585,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spacesToItems:
-  - {fileID: 6366610095701396122}
   - {fileID: 4282174154825186068}
+  - {fileID: 6366610095701396122}
   - {fileID: 3642413878990958877}
+  dialogForNotItemSpace: {fileID: 0}
   backpack: {fileID: 4167022181967114349}
   moveInY: 0.4
   animationDuration: 0.8
@@ -893,17 +894,17 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -55.057
+      value: -3.73
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.772133
+      value: 1.5721319
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.608
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -1355,7 +1356,7 @@ PrefabInstance:
     - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.092437
+      value: 1.7777778
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}

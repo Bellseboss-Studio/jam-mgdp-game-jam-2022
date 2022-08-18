@@ -10,6 +10,7 @@ public class InteractiveObject : MonoBehaviour
     private Renderer _renderer = null;
     [SerializeField] private Dialog idDialog;
     public Action OnInteractionFinished;
+    private Dialog _originalDialog;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class InteractiveObject : MonoBehaviour
         {
             _renderer = render;
         }
+        _originalDialog = idDialog;
     }
 
     public void OnMouseDown()
@@ -73,5 +75,10 @@ public class InteractiveObject : MonoBehaviour
     public void SetDialogo(Dialog cambioDeDialogoDeLlave)
     {
         idDialog = cambioDeDialogoDeLlave;
+    }
+
+    public void RestoreDialog()
+    {
+        idDialog = _originalDialog;
     }
 }
