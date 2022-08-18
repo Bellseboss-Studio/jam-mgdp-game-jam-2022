@@ -7,15 +7,18 @@ using UnityEngine;
 public class InteractiveObject : MonoBehaviour
 {
     private bool hasEnableShader;
-    private Renderer _renderer;
+    private Renderer _renderer = null;
     [SerializeField] private Dialog idDialog;
     public Action OnInteractionFinished;
     private Dialog _originalDialog;
 
     private void Start()
     {
+        if (TryGetComponent<Renderer>(out var render))
+        {
+            _renderer = render;
+        }
         _originalDialog = idDialog;
-        _renderer = GetComponent<Renderer>();
     }
 
     public void OnMouseDown()
@@ -26,7 +29,7 @@ public class InteractiveObject : MonoBehaviour
         {
             foreach (var component in gameObject.GetComponents<IInteractiveObject>())
             {
-                if (component.OnAction(isDialog)) break;
+                component.OnAction(isDialog);
             }
         });
         ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(() =>
@@ -50,7 +53,7 @@ public class InteractiveObject : MonoBehaviour
     public void EnableShader()
     {
         hasEnableShader = true;
-        _renderer.material.SetFloat("_Fresnel",1);
+        _renderer?.material.SetFloat("_Fresnel",1);
         StartCoroutine(DisableShader());
 
     }
@@ -65,7 +68,7 @@ public class InteractiveObject : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         if (!hasEnableShader)
         {
-            _renderer.material.SetFloat("_Fresnel",0);
+            _renderer?.material.SetFloat("_Fresnel",0);
         }
     }
 
