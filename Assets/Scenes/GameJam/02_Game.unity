@@ -31360,8 +31360,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogToAction: {fileID: 11400000, guid: d82fc3c1a6b2083488d4b3824e07816a, type: 2}
-  itemName: jojo
-  description: qwewew
+  itemId: 
+  normalModel: {fileID: 0}
+  backpackModel: {fileID: 0}
+  interactiveObject: {fileID: 0}
 --- !u!1001 &998275551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35664,6 +35666,7 @@ GameObject:
   - component: {fileID: 1161337174}
   - component: {fileID: 1161337173}
   - component: {fileID: 1161337172}
+  - component: {fileID: 1161337175}
   m_Layer: 0
   m_Name: triggerDeDialogo
   m_TagString: Untagged
@@ -35749,6 +35752,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161337170}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1161337175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161337170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0a66f8ca97837458a9905ff72f64a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactive: {fileID: 198508008}
+  queSi: {fileID: 11400000, guid: db48718d75053b047bdb3731068dd2d7, type: 2}
+  qieNo: {fileID: 11400000, guid: 714255618f1dece4ea205b1e503e4dc7, type: 2}
 --- !u!1001 &1164341384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47101,11 +47119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2632303884939726975, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.782131
-      objectReference: {fileID: 0}
     - target: {fileID: 4167022183043786018, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: m_Name
@@ -47165,16 +47178,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4975195644133572101, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984575365680881424, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.782131
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
