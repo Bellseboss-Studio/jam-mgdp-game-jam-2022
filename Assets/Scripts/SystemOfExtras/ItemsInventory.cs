@@ -19,7 +19,7 @@ namespace SystemOfExtras
         [SerializeField] private List<SpaceToItem> spacesToItems;
         [SerializeField] private Dialog dialogForNotItemSpace;
         [SerializeField] private GameObject backpack;
-        private bool _backpackShowed = true;
+        private bool _backpackShowed;
         private bool _movingBackpack;
         [SerializeField] private float moveInY, animationDuration;
         private int _itemsSaved;
