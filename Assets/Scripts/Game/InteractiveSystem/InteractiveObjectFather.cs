@@ -16,4 +16,17 @@ public abstract class InteractiveObjectFather : MonoBehaviour, IInteractiveObjec
     }
 
     protected abstract void ActionEventCustom();
+    
+    
+    
+}
+
+public class Reloj : InteractiveObjectFather
+{
+    
+    
+    protected override void ActionEventCustom()
+    {
+        throw new System.NotImplementedException();
+    }
 }
