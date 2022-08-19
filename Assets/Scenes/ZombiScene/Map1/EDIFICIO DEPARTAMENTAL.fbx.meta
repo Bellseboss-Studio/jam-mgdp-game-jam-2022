@@ -3,7 +3,22 @@ guid: 09835abb2b12abc44b3f09009ed29026
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ED DEP A
+    second: {fileID: 2100000, guid: 5e9684f68e97ccd4da5a5d8692332203, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ED DEP B
+    second: {fileID: 2100000, guid: 3cf374d7ae8c8ff44be236d238c3ee55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TECHO
+    second: {fileID: 2100000, guid: c4c53a56fd6d37549b786f14563604f7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
