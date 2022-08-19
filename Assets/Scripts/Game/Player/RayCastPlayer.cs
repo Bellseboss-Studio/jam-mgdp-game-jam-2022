@@ -28,6 +28,7 @@ namespace Game.Player
             RaycastHit hit;
             if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit))
             {
+                Debug.Log(hit.collider.gameObject);
                 //Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 if (hit.collider.gameObject.TryGetComponent<InteractiveObject>(out var interactiveObject))
                 {

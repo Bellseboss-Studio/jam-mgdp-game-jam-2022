@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
+  m_Name: Llaves
+  m_EditorClassIdentifier: 
+  id: Llaves
+  option: 
+  dialogText: Estas llaves son de mi casa y de la bicicleta, aunque ya tengo una
+    llave debajo de mi tapete, asi que no son necesarias
+  listOfConcat:
+  - {fileID: 11400000, guid: 49fc3e5415dd71c47894fed98a6cfc5f, type: 2}
+  - {fileID: 11400000, guid: db04255400e75604d87348f8d9103378, type: 2}

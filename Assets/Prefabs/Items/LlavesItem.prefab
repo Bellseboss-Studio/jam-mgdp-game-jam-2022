@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 607043090217635053}
   - component: {fileID: 841411832663136983}
   - component: {fileID: 866119144}
-  m_Layer: 6
-  m_Name: Item Template
+  m_Layer: 0
+  m_Name: LlavesItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed11a7b8ba414f4bacff60b2b6eb626a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogToAction: {fileID: 11400000, guid: 1e69121d570fa38468fd0b650663c89e, type: 2}
-  itemId: 
+  dialogToAction: {fileID: 11400000, guid: 49fc3e5415dd71c47894fed98a6cfc5f, type: 2}
+  itemId: Llaves
   normalModel: {fileID: 919132149103703987}
-  backpackModel: {fileID: 0}
+  backpackModel: {fileID: 90881709837351007}
   interactiveObject: {fileID: 841411832663136983}
 --- !u!114 &841411832663136983
 MonoBehaviour:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141d0001084b10a41aee7be311c3b9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idDialog: {fileID: 11400000, guid: fa6d76601c8178c4c906863e76a0a282, type: 2}
+  idDialog: {fileID: 11400000, guid: 5d3ac1f90ddd02e4ca0043830f2e7061, type: 2}
 --- !u!65 &866119144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -175,22 +175,22 @@ PrefabInstance:
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0088
       objectReference: {fileID: 0}
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
@@ -200,12 +200,12 @@ PrefabInstance:
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0132
       objectReference: {fileID: 0}
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.97236997
       objectReference: {fileID: 0}
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.23344536
       objectReference: {fileID: 0}
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
@@ -230,7 +230,7 @@ PrefabInstance:
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -27
       objectReference: {fileID: 0}
     - target: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
         type: 3}
@@ -254,6 +254,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb31d336b461ebe4eb8f8afc8d147b8b, type: 3}
+--- !u!1 &90881709837351007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6698441964427998654, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6752942122512649697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &723162826660586213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6322620491357794052, guid: eb31d336b461ebe4eb8f8afc8d147b8b,
