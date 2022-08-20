@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using SystemOfExtras;
 using UnityEngine;
 
 public class LoadScreamService : MonoBehaviour, ILoadScream
@@ -8,6 +9,7 @@ public class LoadScreamService : MonoBehaviour, ILoadScream
     [SerializeField] private AnimatorControllerAnimations animationController;
     public void Open(Action action)
     {
+        ServiceLocator.Instance.GetService<ITimeService>().StartToCountTime();
         StartCoroutine(LoadScene(true, action));
     }
     
