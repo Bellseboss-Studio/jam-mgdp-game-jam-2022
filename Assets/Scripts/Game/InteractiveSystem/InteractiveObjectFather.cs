@@ -5,8 +5,8 @@ public abstract class InteractiveObjectFather : MonoBehaviour, IInteractiveObjec
     [SerializeField] protected Dialog dialogToAction;
     public bool OnAction(string idDialog)
     {
-        Debug.Log($"Saw {dialogToAction.Id} == {idDialog} : {dialogToAction.Id == idDialog}");
-        if (dialogToAction.Id == idDialog)
+        //Debug.Log($"Saw {dialogToAction.Id} == {idDialog} : {dialogToAction.Id == idDialog}");
+        if (dialogToAction != null && dialogToAction.Id == idDialog)
         {
             ActionEventCustom();
             return true;
