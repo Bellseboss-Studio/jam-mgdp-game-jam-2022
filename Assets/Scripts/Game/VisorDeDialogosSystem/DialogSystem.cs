@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using SystemOfExtras;
 using TMPro;
 using Unity.VisualScripting;
@@ -15,6 +16,7 @@ namespace Game.VisorDeDialogosSystem
         [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private float secondsDelay;
         [SerializeField] private StatesOfDialogs _statesOfDialogs;
+        [SerializeField] private FirstPersonController firstPersonController;
         public StatesOfDialogs StatesOfDialogs => _statesOfDialogs;
         private DialogsFactory _factory;
         private Dialog _dialog;
@@ -23,6 +25,7 @@ namespace Game.VisorDeDialogosSystem
         private bool _textIsFinishedOfShow;
         private Action<string> _ineractiveObjectAction;
         private Action dialogFinish;
+
 
         private void Start()
         {
@@ -36,6 +39,7 @@ namespace Game.VisorDeDialogosSystem
 
         public void OpenDialog(string idDialog)
         {
+            firstPersonController.enabled = false;
             //Debug.Log($"is null {_dialog == null}");
             if (_textIsFinishedOfShow)
             {
@@ -91,6 +95,15 @@ namespace Game.VisorDeDialogosSystem
 
         public void SelectOption(int keyPress)
         {
+            if (_isInUpdateFulledText)
+            {
+                StopCoroutine(fullTextInTextBox);
+                text.text = _dialog.DialogText;
+                _isInUpdateFulledText = false;
+                _textIsFinishedOfShow = true;
+                ApplyItemAction(_dialog.Id);
+                return;
+            }
             Debug.Log($"keypress {keyPress}");
             if (!_dialog.HasNextDialog) return;
             _textIsFinishedOfShow = false;
@@ -107,6 +120,7 @@ namespace Game.VisorDeDialogosSystem
 
         public void CloseDialog()
         {
+            firstPersonController.enabled = true;
             _dialog = null;
             _textIsFinishedOfShow = false;
             _isInUpdateFulledText = false;
@@ -121,6 +135,11 @@ namespace Game.VisorDeDialogosSystem
         public void OnDialogFinish(Action action)
         {
             dialogFinish += action;
+        }
+
+        public void SetDialogToNotSpaceToItems()
+        {
+            throw new NotImplementedException();
         }
     }
 }

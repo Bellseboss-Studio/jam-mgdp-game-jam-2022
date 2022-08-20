@@ -17,7 +17,7 @@ namespace SystemOfExtras
         [SerializeField] private IngredientImage ingredientImageTemplate;
         private List<IngredientImage> _ingredients;
         [SerializeField] private float moveInY, animationDuration;
-        private bool _ingredientsShowed = true, _movingHojaIngredients;
+        private bool _ingredientsShowed, _movingHojaIngredients;
 
         private void Awake()
         {

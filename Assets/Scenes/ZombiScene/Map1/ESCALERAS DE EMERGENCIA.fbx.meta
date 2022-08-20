@@ -3,7 +3,17 @@ guid: ff14c19e444254849b060836507ddd03
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CONCRETO
+    second: {fileID: 2100000, guid: da9f81add054e064da6e2263056c3089, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rejilla escalera
+    second: {fileID: 2100000, guid: 5d08ff3203ee649449a4016fe692cbf9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

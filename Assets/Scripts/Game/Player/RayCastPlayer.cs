@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Player
@@ -9,6 +10,7 @@ namespace Game.Player
         [SerializeField] private GameObject camera;
         private InteractiveObject objetoInteractuable;
         private InteractiveObject objetoInteractuableACambiarShader;
+        private Reloj _reloj;
 
         private void Start()
         {
@@ -27,6 +29,7 @@ namespace Game.Player
             RaycastHit hit;
             if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit))
             {
+                Debug.Log(hit.collider.gameObject);
                 //Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 if (hit.collider.gameObject.TryGetComponent<InteractiveObject>(out var interactiveObject))
                 {
@@ -36,9 +39,17 @@ namespace Game.Player
                         objetoInteractuable = null; 
                     };
                 }
-                
+                if (hit.collider.gameObject.TryGetComponent<Reloj>(out var reloj))
+                {
+                    _reloj = reloj;
+                    _reloj.OnInteractionFinished += () =>
+                    {
+                        reloj = null; 
+                    };
+                }
             }
             objetoInteractuable?.OnMouseDown();
+            _reloj?.OnMouseDown();
         }
 
         private void Update()

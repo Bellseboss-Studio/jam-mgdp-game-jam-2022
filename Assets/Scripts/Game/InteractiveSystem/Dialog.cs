@@ -9,7 +9,7 @@ public class Dialog : ScriptableObject
 {
     [SerializeField] private string id;
     [SerializeField] private string option;
-    [TextArea(2,5)][SerializeField] private string dialogText;
+    [TextArea(2,5)][SerializeField] protected string dialogText;
     [SerializeField] private List<Dialog> listOfConcat;
     public string Id => id;
     public string DialogText
@@ -52,4 +52,5 @@ public class Dialog : ScriptableObject
     {
         return listOfConcat[keyPress - 1].id;
     }
+    
 }

@@ -3,7 +3,17 @@ guid: d6a9174b0c5e73c478780de2d4a0c6e9
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PARED
+    second: {fileID: 2100000, guid: e521f3bf6ca6ddf4a91281957bcd7a65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PISO DEPART
+    second: {fileID: 2100000, guid: 761daad3e8efbe14b920f675948b222d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,32 @@ guid: 0e5b46812d278f74b9f644db30346398
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Escalera Electrica
+    second: {fileID: 2100000, guid: 16a7de3eda618194abc834ecda1da7c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: 67bb459a61b125e469f411bf50a963fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 4a82d68e79a62954986ce18f69b973df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: side
+    second: {fileID: 2100000, guid: 1188d52ed72558141a867aff2a766ef0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: step
+    second: {fileID: 2100000, guid: a5b29b786cd6e6c4680ded34db6d3d9d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

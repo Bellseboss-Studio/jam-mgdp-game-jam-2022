@@ -1,19 +1,23 @@
 ﻿using Game.Player;
 using Game.VisorDeDialogosSystem;
+using GameAudio;
 using UnityEngine;
 
 namespace SystemOfExtras
 {
     [RequireComponent(typeof(ItemsInventory),typeof(IngredientsInventory), typeof(DialogSystem))]
+    [RequireComponent(typeof(TimeService))]
     public class InstallerAngelScene : MonoBehaviour
     {
         [SerializeField] private ItemsInventory itemsInventory;
+        [SerializeField] private TimeService timeService;
         [SerializeField] private IngredientsInventory ingredientsInventory;
         [SerializeField] private DialogSystem dialogSystem;
         [SerializeField] private PlayerExtended player;
         [SerializeField] private Transform playerCapsule;
         [SerializeField] private PlayerReferences playerReferences;
         [SerializeField] private GameObject mainCamera;
+        [SerializeField] private LoadScreamService loadScream;
         private void Awake()
         {
             if (itemsInventory) itemsInventory.Configure(player, playerReferences, mainCamera, playerCapsule);
@@ -28,6 +32,8 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<IDialogSystem>(dialogSystem);
             var decisionService = new DecisionService(player);
             ServiceLocator.Instance.RegisterService<IDecisionService>(decisionService);
+            ServiceLocator.Instance.RegisterService<ILoadScream>(loadScream);
+            ServiceLocator.Instance.RegisterService<ITimeService>(timeService);
             DontDestroyOnLoad(gameObject);
         }
     }
