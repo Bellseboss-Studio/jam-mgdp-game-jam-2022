@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
-  m_Name: TraficanteQueOfrecesInventarioLleno
+  m_Name: HueveraPedirHuevosDeDinosaurio
   m_EditorClassIdentifier: 
-  id: TraficantePrimeroInventarioLleno
-  option: Que tienes para ofrecerme
-  dialogText: "Te puedo ofrecer un veneno de unicordio si envenenas a la se\xF1ora,
-    pero antes debes hacer espacio en tu inventario"
-  listOfConcat: []
+  id: HueveraPedirHuevosDeDinosaurio
+  option: Huevos de dinosaurio
+  dialogText: Traeme los materiales joto
+  listOfConcat:
+  - {fileID: 11400000, guid: 857b0d8e69f0dce4a96adddb2ba3b678, type: 2}
+  - {fileID: 11400000, guid: e9a0d26b222295a4e8b724b0dbe761e3, type: 2}

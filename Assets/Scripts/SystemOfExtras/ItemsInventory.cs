@@ -5,6 +5,7 @@ using DG.Tweening;
 using Game.Player;
 using GameAudio;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Object = UnityEngine.Object;
@@ -103,7 +104,25 @@ namespace SystemOfExtras
             }
             return false;
         }
-        
+
+        public bool HasSpace()
+        {
+            return _itemsSaved < 2;
+        }
+
+        public void RemoveItemById(string itemId)
+        {
+            foreach (var spaceToItem in spacesToItems)
+            {
+                if (spaceToItem.CurrentItem!= null && spaceToItem.CurrentItem.Id == itemId)
+                {
+                    _items.Remove(spaceToItem.CurrentItem.InteractiveObject);
+                    Destroy(spaceToItem.CurrentItem.gameObject);
+                    RestoreItemsDialog();
+                }
+            }
+        }
+
         public void ThrowItem(int itemPosition)
         {
             if (spacesToItems[itemPosition].CurrentItem == null)
@@ -117,6 +136,7 @@ namespace SystemOfExtras
                 _items.Remove(spacesToItems[itemPosition].CurrentItem.InteractiveObject);
                 Destroy(spacesToItems[itemPosition].CurrentItem.gameObject);
                 RestoreItemsDialog();
+                _itemsSaved--;
             }
         }
 
