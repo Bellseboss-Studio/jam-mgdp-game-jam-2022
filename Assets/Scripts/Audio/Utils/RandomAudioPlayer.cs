@@ -8,6 +8,7 @@ using UnityEngine.Audio;
 
 namespace GameAudio
 {
+    [RequireComponent(typeof(AudioSource))]
     public class RandomAudioPlayer : MonoBehaviour
     {
         #region variables
