@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7324246241640279993
+--- !u!1001 &6398266436567706198
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -15,17 +15,17 @@ PrefabInstance:
     - target: {fileID: 1657714374154677119, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -48.435
       objectReference: {fileID: 0}
     - target: {fileID: 1657714374154677119, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 9.77
       objectReference: {fileID: 0}
     - target: {fileID: 1657714374154677119, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -32.747
       objectReference: {fileID: 0}
     - target: {fileID: 1657714374154677119, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
         type: 3}
@@ -35,17 +35,17 @@ PrefabInstance:
     - target: {fileID: 1657714374154677119, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1657714374154677119, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1657714374154677119, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1657714374154677119, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
         type: 3}
@@ -65,80 +65,89 @@ PrefabInstance:
     - target: {fileID: 2038638439841935813, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
         type: 3}
       propertyPath: m_Name
-      value: Anciana
+      value: Huevera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d8d659aa4e9d84b8c95c6e688b8819, type: 3}
---- !u!95 &6453309409078577714 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4335332093654853003, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
-    type: 3}
-  m_PrefabInstance: {fileID: 7324246241640279993}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8786032467598990972 stripped
+--- !u!1 &4936375859005102995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2038638439841935813, guid: 20d8d659aa4e9d84b8c95c6e688b8819,
     type: 3}
-  m_PrefabInstance: {fileID: 7324246241640279993}
+  m_PrefabInstance: {fileID: 6398266436567706198}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2083127132
+--- !u!65 &1219165715
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786032467598990972}
+  m_GameObject: {fileID: 4936375859005102995}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.77, y: 1.6, z: 0.73}
-  m_Center: {x: 0, y: 0.84, z: 0.06}
---- !u!114 &2083127133
+  m_Size: {x: 0.75, y: 1.52, z: 0.76}
+  m_Center: {x: 0, y: 0.82, z: 0.06}
+--- !u!114 &1219165717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786032467598990972}
+  m_GameObject: {fileID: 4936375859005102995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20a9c592c12b4795822a4fa733c5fdaa, type: 3}
+  m_Script: {fileID: 11500000, guid: b0238a1045ae4729a559ff65f0ff78f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idDialog: {fileID: 11400000, guid: 05135b4404dc3c842b30facc973ab098, type: 2}
-  inventoryFull: {fileID: 11400000, guid: b25e77fe76b5e734d8bca0ffd7bbbb84, type: 2}
-  dialogConCaramelo: {fileID: 11400000, guid: 8eb21dcdd05fe1d40904185042885e85, type: 2}
-  dialogoDrogada: {fileID: 11400000, guid: 39db50ebecf34fe42a0dcba41c1e2a84, type: 2}
-  caramelo: {fileID: 1245209166788969093, guid: e6983052b26ed524792791cc75d5ec87,
+  dialogToAction: {fileID: 11400000, guid: af10d5d6fb8ac334bbe53e070c77211c, type: 2}
+  interactiveTarger: {fileID: 1219165719}
+  dialogToChange: {fileID: 11400000, guid: 083676d1a99eeac41a94193b981b6aa4, type: 2}
+--- !u!114 &1219165718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936375859005102995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0238a1045ae4729a559ff65f0ff78f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 11400000, guid: e9a0d26b222295a4e8b724b0dbe761e3, type: 2}
+  interactiveTarger: {fileID: 1219165719}
+  dialogToChange: {fileID: 11400000, guid: 17ebe3c48db23d4429822ce606046165, type: 2}
+--- !u!114 &1219165719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936375859005102995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd795a23e7b4c498560a24db92585a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idDialog: {fileID: 11400000, guid: e2d54dfdf5674c74d921a485e90449f7, type: 2}
+  inventoryFull: {fileID: 11400000, guid: d5730918e4ee228419587bcfd3e15c5d, type: 2}
+  misionCompletada: {fileID: 11400000, guid: af10d5d6fb8ac334bbe53e070c77211c, type: 2}
+  billete: {fileID: 2745990476210067949, guid: aafa1253e90521f43a14a1934f1365b6, type: 3}
+  mercancia: {fileID: 2745990476210067949, guid: 72bf1159c220b064eafd1705e5bfe6b2,
     type: 3}
-  animator: {fileID: 6453309409078577714}
---- !u!114 &2083127134
+--- !u!114 &1219165720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786032467598990972}
+  m_GameObject: {fileID: 4936375859005102995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e595a37306854dca9cca65fadf13eb2a, type: 3}
+  m_Script: {fileID: 11500000, guid: aa240e7aa2a14e4ba2d815aca572513b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogToAction: {fileID: 11400000, guid: 815eba3c5b8e52c46a70ca1a83948089, type: 2}
-  caramelo: {fileID: 1245209166788969093, guid: e6983052b26ed524792791cc75d5ec87,
+  dialogToAction: {fileID: 11400000, guid: e9a0d26b222295a4e8b724b0dbe761e3, type: 2}
+  llavesBodega: {fileID: 607043090217635053, guid: 3961a1b9b81d61749a1b7ba055d000fb,
     type: 3}
---- !u!114 &2083127135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8786032467598990972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57c99c03790244d49af6bce1f14ec765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogToAction: {fileID: 11400000, guid: 25a4d06db8a28934690761f9858227ab, type: 2}
-  collar: {fileID: 1245209166788969093, guid: 3ee1a7ae968e7864aa5828c973547175, type: 3}

@@ -9,3 +9,4 @@ public class TraficanteGetCaramelo : InteractiveObjectFather
         ServiceLocator.Instance.GetService<IItemsInventory>().SaveItem(Instantiate(caramelo));
     }
 }
+
