@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2727591660550492119}
   - component: {fileID: 3348164309867018472}
   m_Layer: 6
-  m_Name: Mercancia
+  m_Name: MercanciaItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,6 +256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MercanciaMochila
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649730425332928215, guid: 1841e224e05d04445a05e380f1cc1a17,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8649730425332928215, guid: 1841e224e05d04445a05e380f1cc1a17,
         type: 3}

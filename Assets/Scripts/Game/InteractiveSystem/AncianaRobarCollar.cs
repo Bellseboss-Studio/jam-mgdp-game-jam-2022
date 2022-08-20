@@ -7,5 +7,6 @@ public class AncianaRobarCollar : InteractiveObjectFather
     protected override void ActionEventCustom()
     {
         ServiceLocator.Instance.GetService<IItemsInventory>().SaveItem(Instantiate(collar));
+        ServiceLocator.Instance.GetService<IMoralService>().SetIsBad(true);
     }
 }

@@ -5,5 +5,6 @@
         void Anochecio();
         string GetTime();
         void SitUntilNight();
+        bool IsNigth();
     }
 }

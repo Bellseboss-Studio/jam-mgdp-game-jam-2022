@@ -45,6 +45,11 @@ namespace SystemOfExtras
             sequence.onComplete = ONComplete;
         }
 
+        public bool IsNigth()
+        {
+            return _currentTime.IsNight;
+        }
+
         private void ONComplete()
         {
             firstPersonController.gameObject.transform.position = mallGatewayTransform.position;

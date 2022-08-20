@@ -19,6 +19,7 @@ namespace SystemOfExtras
 
         public void PutInTheBackpack()
         {
+            gameObject.GetComponent<BoxCollider>().enabled = false;
             normalModel.SetActive(false);
             backpackModel.SetActive(true);
             Debug.Log("Goes in Backpack");
