@@ -1,4 +1,5 @@
 ﻿using SystemOfExtras;
+using UnityEngine;
 
 public class Banco : InteractiveObjectFather
 {
