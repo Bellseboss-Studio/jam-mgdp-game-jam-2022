@@ -3,5 +3,6 @@
     public interface ITimeService
     {
         void Anochecio();
+        string GetTime();
     }
 }

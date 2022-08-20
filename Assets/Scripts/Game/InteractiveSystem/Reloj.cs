@@ -1,14 +1,13 @@
-using System;
+﻿using System;
 using System.Collections;
-using Game.VisorDeDialogosSystem;
 using SystemOfExtras;
 using UnityEngine;
 
-public class InteractiveObject : MonoBehaviour
+public class Reloj : MonoBehaviour
 {
     private bool hasEnableShader;
     private Renderer _renderer = null;
-    [SerializeField] protected Dialog idDialog;
+    [SerializeField] protected TimeDialog idDialog;
     public Action OnInteractionFinished;
     private Dialog _originalDialog;
 
@@ -21,9 +20,10 @@ public class InteractiveObject : MonoBehaviour
         _originalDialog = idDialog;
     }
 
-    public virtual void OnMouseDown()
+    public void OnMouseDown()
     {
         /*Debug.Log("Click en el objeto");*/
+        idDialog.ActualizeTimeDialog(ServiceLocator.Instance.GetService<ITimeService>().GetTime());
         ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog(idDialog.Id);
         ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogAction( isDialog =>
         {
@@ -40,7 +40,7 @@ public class InteractiveObject : MonoBehaviour
 
     private void InteractionFinished()
     {
-        Debug.Log($"Finish interaction");
+        /*Debug.Log($"Finish interaction");*/
         OnInteractionFinished?.Invoke();
     }
 
@@ -70,15 +70,5 @@ public class InteractiveObject : MonoBehaviour
         {
             _renderer?.material.SetFloat("_Fresnel",0);
         }
-    }
-
-    public void SetDialogo(Dialog cambioDeDialogoDeLlave)
-    {
-        idDialog = cambioDeDialogoDeLlave;
-    }
-
-    public void RestoreDialog()
-    {
-        idDialog = _originalDialog;
     }
 }

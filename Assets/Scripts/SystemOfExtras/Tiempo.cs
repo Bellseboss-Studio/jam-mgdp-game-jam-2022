@@ -10,10 +10,12 @@ namespace SystemOfExtras
         private int _minutes, _horas;
         private bool _isNight;
 
-        public Tiempo(int horaAnochecer, int minutoAnochecer)
+        public Tiempo(int horaAnochecer, int minutoAnochecer, int hora, int minuto)
         {
             _horaAnochecer = horaAnochecer;
             _minutoAnochecer = minutoAnochecer;
+            _horas = hora;
+            _minutes = minuto;
         }
         
         public void AddTime(float time)
@@ -45,7 +47,7 @@ namespace SystemOfExtras
 
         public string GetTime()
         {
-            return $"{_horas}:{_minutes}:{_seconds}";
+            return $"{_horas}:{_minutes}";
         }
     }
 }
