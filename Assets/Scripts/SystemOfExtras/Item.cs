@@ -21,6 +21,7 @@ namespace SystemOfExtras
         {
             normalModel.SetActive(false);
             backpackModel.SetActive(true);
+            Debug.Log("Goes in Backpack");
         }
         
         public void TakeOutTheBackpack()

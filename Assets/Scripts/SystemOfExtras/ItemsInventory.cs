@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using Game.Player;
+using GameAudio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -112,6 +113,7 @@ namespace SystemOfExtras
             else
             {
                 Debug.Log($"tirando item{itemPosition}");
+                ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound("DiscardItem");
                 _items.Remove(spacesToItems[itemPosition].CurrentItem.InteractiveObject);
                 Destroy(spacesToItems[itemPosition].CurrentItem.gameObject);
                 RestoreItemsDialog();
