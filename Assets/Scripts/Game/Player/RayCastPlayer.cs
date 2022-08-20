@@ -44,7 +44,7 @@ namespace Game.Player
                     _reloj = reloj;
                     _reloj.OnInteractionFinished += () =>
                     {
-                        reloj = null; 
+                        _reloj = null; 
                     };
                 }
             }
