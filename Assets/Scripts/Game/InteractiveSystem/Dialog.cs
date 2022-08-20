@@ -52,9 +52,5 @@ public class Dialog : ScriptableObject
     {
         return listOfConcat[keyPress - 1].id;
     }
-}
-[CreateAssetMenu(menuName = "Bellseboss/TimeDialog")]
-public class TimeDialog : Dialog
-{
-        
+    
 }

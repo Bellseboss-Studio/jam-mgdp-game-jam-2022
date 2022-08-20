@@ -832,6 +832,7 @@ GameObject:
   - component: {fileID: 4167022183043786044}
   - component: {fileID: 4167022183043786045}
   - component: {fileID: 8478531857907230917}
+  - component: {fileID: 4475030024824931410}
   m_Layer: 0
   m_Name: InstallerExplicit
   m_TagString: Untagged
@@ -920,6 +921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsInventory: {fileID: 4167022183043786047}
+  timeService: {fileID: 4475030024824931410}
   ingredientsInventory: {fileID: 4167022183043786044}
   dialogSystem: {fileID: 8478531857907230917}
   player: {fileID: 4167022181210852184}
@@ -945,6 +947,21 @@ MonoBehaviour:
   secondsDelay: 0.01
   _statesOfDialogs: 0
   firstPersonController: {fileID: 5638685647747589304}
+--- !u!114 &4475030024824931410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167022183043786018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499ad7c4218048ea88fa766d7cb4bb9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeVelocity: 1000
+  horaAnochecer: 0
+  minutoAnochecer: 0
 --- !u!1 &4167022183051081198
 GameObject:
   m_ObjectHideFlags: 0
