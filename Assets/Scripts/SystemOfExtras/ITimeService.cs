@@ -4,5 +4,6 @@
     {
         void Anochecio();
         string GetTime();
+        void SitUntilNight();
     }
 }

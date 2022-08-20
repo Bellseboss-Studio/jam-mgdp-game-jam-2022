@@ -49,5 +49,11 @@ namespace SystemOfExtras
         {
             return $"{_horas}:{_minutes}";
         }
+
+        public void GoNight()
+        {
+            _horas = _horaAnochecer;
+            _minutes = _minutoAnochecer;
+        }
     }
 }
