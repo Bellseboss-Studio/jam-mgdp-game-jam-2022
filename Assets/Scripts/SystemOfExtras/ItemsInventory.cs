@@ -110,6 +110,19 @@ namespace SystemOfExtras
             return _itemsSaved < 2;
         }
 
+        public void RemoveItemById(string itemId)
+        {
+            foreach (var spaceToItem in spacesToItems)
+            {
+                if (spaceToItem.CurrentItem!= null && spaceToItem.CurrentItem.Id == itemId)
+                {
+                    _items.Remove(spaceToItem.CurrentItem.InteractiveObject);
+                    Destroy(spaceToItem.CurrentItem.gameObject);
+                    RestoreItemsDialog();
+                }
+            }
+        }
+
         public void ThrowItem(int itemPosition)
         {
             if (spacesToItems[itemPosition].CurrentItem == null)
