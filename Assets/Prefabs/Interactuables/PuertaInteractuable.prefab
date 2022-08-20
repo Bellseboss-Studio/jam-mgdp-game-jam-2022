@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4673147979373791755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4673147979373791754}
+  m_Layer: 0
+  m_Name: PuertaInteractuable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4673147979373791754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673147979373791755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7963918534863007358}
+  - {fileID: 4673147979387605532}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4673147979387605533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4673147979387605532}
+  - component: {fileID: 4673147979387605522}
+  - component: {fileID: 4673147979387605523}
+  m_Layer: 0
+  m_Name: PuertaInteractuableTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4673147979387605532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673147979387605533}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -55.105, y: 10.762, z: -27.506}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4673147979373791754}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4673147979387605522
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673147979387605533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 2.4, z: 0.65}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4673147979387605523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4673147979387605533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642708fcab5a9d248842f15234a84649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puerta: {fileID: 5155522842761834028}
+--- !u!1001 &4673147978678244562
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4673147979373791754}
+    m_Modifications:
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -54.53642
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.604393
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -27.121796
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141496937309864018, guid: 084ffbbeb96c4cb4993c4e106192e693,
+        type: 3}
+      propertyPath: m_Name
+      value: Puerta Interactuable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 084ffbbeb96c4cb4993c4e106192e693, type: 3}
+--- !u!114 &5155522842761834028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 528684661816736510, guid: 084ffbbeb96c4cb4993c4e106192e693,
+    type: 3}
+  m_PrefabInstance: {fileID: 4673147978678244562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abb4ebc51c27094ca34fe9b1b91db27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &7963918534863007358 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3341634526770838188, guid: 084ffbbeb96c4cb4993c4e106192e693,
+    type: 3}
+  m_PrefabInstance: {fileID: 4673147978678244562}
+  m_PrefabAsset: {fileID: 0}
