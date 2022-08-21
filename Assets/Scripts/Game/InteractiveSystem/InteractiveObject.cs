@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Game.VisorDeDialogosSystem;
+using GameAudio;
 using SystemOfExtras;
 using UnityEngine;
 
@@ -41,8 +42,9 @@ public class InteractiveObject : MonoBehaviour
 
     private void InteractionFinished()
     {
-        Debug.Log($"Finish interaction");
+        Debug.Log($"Finish interaction: " + idDialog.Id);
         OnInteractionFinished?.Invoke();
+        ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(idDialog.Id);
     }
 
     public void SelectedOption(int keyPress)
