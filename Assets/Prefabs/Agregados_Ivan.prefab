@@ -40,6 +40,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2156715697712633939}
     m_Modifications:
+    - target: {fileID: 844822092312849893, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_ColliderTag
+      value: MallStores
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193840642090183423, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2193840642102642949, guid: 2d81f7184939f43499e2076d640fe4ec,
         type: 3}
       propertyPath: m_RootOrder
@@ -99,6 +109,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AmbienceSounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792929312096557979, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -155.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781298272064193130, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_ColliderTag
+      value: Mall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974919867383784657, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -211.164
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264243794860892118, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -206.947
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941611804870124874, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_ColliderTag
+      value: Mall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941611805502637455, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_ColliderTag
+      value: Mall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949044024721290052, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949044024721290052, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.065
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464830708704620075, guid: 2d81f7184939f43499e2076d640fe4ec,
+        type: 3}
+      propertyPath: m_TagString
+      value: MallStores
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d81f7184939f43499e2076d640fe4ec, type: 3}
