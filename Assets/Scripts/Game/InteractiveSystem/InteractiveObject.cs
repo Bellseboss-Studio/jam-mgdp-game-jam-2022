@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Game.VisorDeDialogosSystem;
+using GameAudio;
 using SystemOfExtras;
 using UnityEngine;
 
@@ -10,7 +11,8 @@ public class InteractiveObject : MonoBehaviour
     private Renderer _renderer = null;
     [SerializeField] protected Dialog idDialog;
     public Action OnInteractionFinished;
-    private Dialog _originalDialog;
+    protected Dialog OriginalDialog;
+    protected bool CambioDialogo;
 
     private void Start()
     {
@@ -18,7 +20,7 @@ public class InteractiveObject : MonoBehaviour
         {
             _renderer = render;
         }
-        _originalDialog = idDialog;
+        OriginalDialog = idDialog;
     }
 
     public virtual void OnMouseDown()
@@ -40,8 +42,9 @@ public class InteractiveObject : MonoBehaviour
 
     private void InteractionFinished()
     {
-        Debug.Log($"Finish interaction");
+        Debug.Log($"Finish interaction: " + idDialog.Id);
         OnInteractionFinished?.Invoke();
+        ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(idDialog.Id);
     }
 
     public void SelectedOption(int keyPress)
@@ -75,10 +78,11 @@ public class InteractiveObject : MonoBehaviour
     public void SetDialogo(Dialog cambioDeDialogoDeLlave)
     {
         idDialog = cambioDeDialogoDeLlave;
+        CambioDialogo = true;
     }
 
     public void RestoreDialog()
     {
-        idDialog = _originalDialog;
+        idDialog = OriginalDialog;
     }
 }

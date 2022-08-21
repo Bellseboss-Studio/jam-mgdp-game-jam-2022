@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
+  m_Name: TraficanteQueOfreces
+  m_EditorClassIdentifier: 
+  id: TraficanteQueOfreces
+  option: Que tienes para ofrecerme
+  dialogText: "Te puedo ofrecer un veneno de unicordio si envenenas a la se\xF1ora,
+    te interesa?"
+  listOfConcat:
+  - {fileID: 11400000, guid: 66a3e693e75ad654c9dce053ab245b0a, type: 2}
+  - {fileID: 11400000, guid: 84c496e3e1fb219468e85406001fc0cf, type: 2}
