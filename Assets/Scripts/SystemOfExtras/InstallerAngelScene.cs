@@ -32,6 +32,8 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<IDialogSystem>(dialogSystem);
             var decisionService = new DecisionService(player);
             ServiceLocator.Instance.RegisterService<IDecisionService>(decisionService);
+            var moralService = new MoralService();
+            ServiceLocator.Instance.RegisterService<IMoralService>(moralService);
             ServiceLocator.Instance.RegisterService<ILoadScream>(loadScream);
             ServiceLocator.Instance.RegisterService<ITimeService>(timeService);
             DontDestroyOnLoad(gameObject);

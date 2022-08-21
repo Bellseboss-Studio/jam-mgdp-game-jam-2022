@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class IrCaminandoAlCentroComercial : MonoBehaviour
 {
-    [SerializeField] private Dialog dialogo;
+    [SerializeField] private int minutos;
     private void OnTriggerEnter(Collider other)
     {
+        ServiceLocator.Instance.GetService<ITimeService>().AddMinutes(minutos);
         ServiceLocator.Instance.GetService<ILoadScream>().Open(() =>
         {
             SceneManager.LoadScene(2);

@@ -10,6 +10,8 @@ namespace SystemOfExtras
         private int _minutes, _horas;
         private bool _isNight;
 
+        public bool IsNight => _isNight;
+
         public Tiempo(int horaAnochecer, int minutoAnochecer, int hora, int minuto)
         {
             _horaAnochecer = horaAnochecer;
@@ -48,6 +50,13 @@ namespace SystemOfExtras
         public string GetTime()
         {
             return $"{_horas}:{_minutes}";
+        }
+
+        public void GoNight()
+        {
+            _horas = _horaAnochecer;
+            _minutes = _minutoAnochecer;
+            _isNight = true;
         }
     }
 }
