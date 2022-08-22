@@ -3058,6 +3058,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Sound: {fileID: 8300000, guid: 70e65bc57795d4b849576d51f98fdf26, type: 3}
   m_As: {fileID: 3034896214825752398}
+  m_CheckForDistance: 1
+  m_Magnitude: 0
+  m_MinDistance: 10
+  m_Target: {fileID: 0}
+  m_Emitter: {fileID: 0}
 --- !u!1 &7192510487404731620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3934,7 +3939,7 @@ PrefabInstance:
     - target: {fileID: 4691496657913743237, guid: 74b851bb81746474981be2be73ecf846,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4691496657913743259, guid: 74b851bb81746474981be2be73ecf846,
         type: 3}
