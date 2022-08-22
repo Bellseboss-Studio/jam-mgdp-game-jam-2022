@@ -10,10 +10,8 @@ public abstract class InteractiveObjectFather : MonoBehaviour, IInteractiveObjec
     
         if (dialogToAction != null && dialogToAction.Id == idDialog)
         {
-            
             Debug.Log(idDialog);
             ActionEventCustom();
-            ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(idDialog);
             return true;
         }
 

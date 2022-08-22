@@ -33,18 +33,19 @@ public class InteractiveObject : MonoBehaviour
             {
                 component.OnAction(isDialog);
             }
+            ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(isDialog);
         });
-        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(() =>
+        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(idDialog =>
         {
-            InteractionFinished();
+            InteractionFinished(idDialog);
         });
     }
 
-    private void InteractionFinished()
+    private void InteractionFinished(string idDialog)
     {
-        Debug.Log($"Finish interaction: " + idDialog.Id);
+        Debug.Log($"Finish interaction: " + idDialog);
         OnInteractionFinished?.Invoke();
-        ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(idDialog.Id);
+        ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(idDialog);
     }
 
     public void SelectedOption(int keyPress)
