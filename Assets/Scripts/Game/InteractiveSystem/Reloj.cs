@@ -8,7 +8,7 @@ public class Reloj : MonoBehaviour
     private bool hasEnableShader;
     private Renderer _renderer = null;
     [SerializeField] protected TimeDialog idDialog;
-    public Action OnInteractionFinished;
+    public Action<string> OnInteractionFinished;
     private Dialog _originalDialog;
 
     private void Start()
@@ -32,16 +32,16 @@ public class Reloj : MonoBehaviour
                 component.OnAction(isDialog);
             }
         });
-        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(() =>
+        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(idDialog =>
         {
-            InteractionFinished();
+            InteractionFinished(idDialog);
         });
     }
 
-    private void InteractionFinished()
+    private void InteractionFinished(string idDialog)
     {
         /*Debug.Log($"Finish interaction");*/
-        OnInteractionFinished?.Invoke();
+        OnInteractionFinished?.Invoke(idDialog);
     }
 
     public void SelectedOption(int keyPress)
