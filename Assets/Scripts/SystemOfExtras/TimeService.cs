@@ -16,6 +16,7 @@ namespace SystemOfExtras
         [SerializeField] private Image fadeImage;
         [SerializeField] private Transform mallGatewayTransform;
         private Tiempo _currentTime;
+        private bool _contarElTiempo;
 
         private void Awake()
         {
@@ -24,6 +25,7 @@ namespace SystemOfExtras
 
         private void Update()
         {
+            if (!_contarElTiempo) return;
             _currentTime.AddTime(Time.deltaTime * timeVelocity);
         }
 
@@ -43,6 +45,23 @@ namespace SystemOfExtras
             var sequence = DOTween.Sequence();
             sequence.Insert(0, fadeImage.DOFade(1, fadeDuration));
             sequence.onComplete = ONComplete;
+        }
+
+        public bool IsNigth()
+        {
+            return _currentTime.IsNight;
+        }
+
+        public void AddMinutes(int minutos)
+        {
+            Debug.Log($"antes eran las {_currentTime.GetTime()}");
+            _currentTime.AddTime(minutos*60);
+            Debug.Log($"ahora son las {_currentTime.GetTime()}");
+        }
+
+        public void StartToCountTime()
+        {
+            _contarElTiempo = true;
         }
 
         private void ONComplete()
