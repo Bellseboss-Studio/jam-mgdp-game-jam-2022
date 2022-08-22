@@ -45,7 +45,6 @@ public class InteractiveObject : MonoBehaviour
     {
         Debug.Log($"Finish interaction: " + idDialog);
         OnInteractionFinished?.Invoke();
-        ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(idDialog);
     }
 
     public void SelectedOption(int keyPress)

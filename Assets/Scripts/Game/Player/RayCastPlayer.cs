@@ -42,7 +42,7 @@ namespace Game.Player
                 if (hit.collider.gameObject.TryGetComponent<Reloj>(out var reloj))
                 {
                     _reloj = reloj;
-                    _reloj.OnInteractionFinished += () =>
+                    _reloj.OnInteractionFinished += idDialog =>
                     {
                         _reloj = null; 
                     };
