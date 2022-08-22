@@ -24,7 +24,7 @@ namespace Game.VisorDeDialogosSystem
         private bool _isInUpdateFulledText;
         private bool _textIsFinishedOfShow;
         private Action<string> _ineractiveObjectAction;
-        private Action dialogFinish;
+        private Action<string> dialogFinish;
 
 
         private void Start()
@@ -46,7 +46,7 @@ namespace Game.VisorDeDialogosSystem
                 if (!_dialog.HasNextDialog)
                 {
                     CloseDialog();
-                    dialogFinish?.Invoke();
+                    dialogFinish?.Invoke(idDialog);
                     return;
                 }
 
@@ -132,7 +132,7 @@ namespace Game.VisorDeDialogosSystem
             _ineractiveObjectAction = action;
         }
 
-        public void OnDialogFinish(Action action)
+        public void OnDialogFinish(Action<string> action)
         {
             dialogFinish += action;
         }

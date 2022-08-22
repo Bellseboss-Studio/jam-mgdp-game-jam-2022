@@ -12,7 +12,6 @@ public abstract class InteractiveObjectFather : MonoBehaviour, IInteractiveObjec
         {
             Debug.Log(idDialog);
             ActionEventCustom();
-            ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(idDialog);
             return true;
         }
 
