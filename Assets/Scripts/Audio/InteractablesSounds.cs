@@ -25,10 +25,12 @@ namespace GameAudio
         
         IEnumerator PlaySoundCorroutine(string name)
         {
-            GameObject go = m_AudioObjectsDictionary[name];
-            go.SetActive(true);
-            yield return new WaitForSeconds(go.GetComponent<AudioSource>().clip.length);
-            go.SetActive(false);
+            if(m_AudioObjectsDictionary.TryGetValue(name, out var go))
+            {
+                go.SetActive(true);
+                yield return new WaitForSeconds(go.GetComponent<AudioSource>().clip.length);
+                go.SetActive(false);   
+            }
         }
         
         private void AddItemsToDictionary()
