@@ -5495,6 +5495,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7285423733258013300, guid: 31c2a195b82324fcc9612df75700c1f7,
+        type: 3}
+      propertyPath: m_Emitters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285423733258013300, guid: 31c2a195b82324fcc9612df75700c1f7,
+        type: 3}
+      propertyPath: m_Emitters.Array.data[0]
+      value: 
+      objectReference: {fileID: 8768529236382801508}
+    - target: {fileID: 7285423733258013300, guid: 31c2a195b82324fcc9612df75700c1f7,
+        type: 3}
+      propertyPath: m_Emitters.Array.data[1]
+      value: 
+      objectReference: {fileID: 203046482952059297}
+    - target: {fileID: 8783603046525579667, guid: 31c2a195b82324fcc9612df75700c1f7,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9018703978824222713, guid: 31c2a195b82324fcc9612df75700c1f7,
         type: 3}
       propertyPath: m_Name
@@ -5502,9 +5522,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c2a195b82324fcc9612df75700c1f7, type: 3}
+--- !u!1 &203046482952059297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 213195566063790975, guid: 31c2a195b82324fcc9612df75700c1f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 10187591824724702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5006756560797326285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4998893465564219667, guid: 31c2a195b82324fcc9612df75700c1f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 10187591824724702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8768529236382801508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8760666128598764730, guid: 31c2a195b82324fcc9612df75700c1f7,
     type: 3}
   m_PrefabInstance: {fileID: 10187591824724702}
   m_PrefabAsset: {fileID: 0}
@@ -5659,6 +5691,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TV Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979354225031311952, guid: 33e22573c761c4e3bb7a4d4b4084d256,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e22573c761c4e3bb7a4d4b4084d256, type: 3}

@@ -10,7 +10,7 @@ public class ObjectActivator : MonoBehaviour, ICheckDependencies
     [SerializeField] private Transform m_target;
     [SerializeField] public LayerMask obstacleLayers;
     [SerializeField] private bool m_IsRayHitting;
-    [SerializeField] private GameObject m_Emitter;
+    [SerializeField] private GameObject[] m_Emitters;
     void Start()
     {
         CheckDependencies();
@@ -20,15 +20,19 @@ public class ObjectActivator : MonoBehaviour, ICheckDependencies
     { 
         if (other.CompareTag("Player"))
         {
-           m_Emitter.SetActive(true);
+            foreach (GameObject emitter in m_Emitters)
+            {
+                emitter.SetActive(true);
+            }
+           
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        foreach (GameObject emitter in m_Emitters)
         {
-           m_Emitter.SetActive(false);
+            emitter.SetActive(false);
         }
     }
 
