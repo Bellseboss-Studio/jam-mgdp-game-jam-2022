@@ -265,6 +265,7 @@ Transform:
   - {fileID: 2694927445879476898}
   - {fileID: 3973395079782008202}
   - {fileID: 4964450438368698803}
+  - {fileID: 454442196721378397}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1413,3 +1414,78 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1708427202708506534
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1208814798514157775}
+    m_Modifications:
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.606
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.263
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -183.674
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923280121242384705, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+        type: 3}
+      propertyPath: m_Name
+      value: VentanaVIDRIO
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 755e2fe73985d3544a0bd21afb92a6b3, type: 3}
+--- !u!4 &454442196721378397 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1295644402068792315, guid: 755e2fe73985d3544a0bd21afb92a6b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1708427202708506534}
+  m_PrefabAsset: {fileID: 0}
