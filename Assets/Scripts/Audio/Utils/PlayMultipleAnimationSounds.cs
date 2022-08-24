@@ -15,7 +15,15 @@ namespace GameAudio
         }
         public void PlaySound(string go)
         {
-            StartCoroutine(PlaySoundCorroutine(go));
+            if (m_AudioObjectsDictionary.ContainsKey(go))
+            {
+                StartCoroutine(PlaySoundCorroutine(go));
+            }
+            else
+            {
+                Debug.Log($"{go} could not be found fo {this.gameObject.name}");
+            }
+            
         }
         public void CheckDependencies()
         {
