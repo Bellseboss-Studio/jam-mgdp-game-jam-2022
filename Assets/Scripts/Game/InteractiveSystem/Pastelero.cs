@@ -6,6 +6,7 @@ public class Pastelero : InteractiveObject
     
     [SerializeField] private Dialog misionCompletada;
     [SerializeField] private Item mineral;
+    [SerializeField] private string azucarId;
     public override void OnMouseDown()
     {
         if (CambioDialogo)
@@ -14,6 +15,7 @@ public class Pastelero : InteractiveObject
             {
                 SetDialogo(misionCompletada);
                 ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(mineral.Id);
+                ServiceLocator.Instance.GetService<IIngredientsInventory>().CrossOutIngredient(azucarId);
             }
         }
 

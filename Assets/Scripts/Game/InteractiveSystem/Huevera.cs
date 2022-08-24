@@ -5,6 +5,8 @@ public class Huevera : InteractiveObject
 {
     [SerializeField] private Dialog inventoryFull, misionCompletada;
     [SerializeField] private Item billete, mercancia;
+    [SerializeField] private string ingredient;
+
     public override void OnMouseDown()
     {
         if (!CambioDialogo)
@@ -26,6 +28,7 @@ public class Huevera : InteractiveObject
                 SetDialogo(misionCompletada);
                 ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(billete.Id);
                 ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(mercancia.Id);
+                ServiceLocator.Instance.GetService<IIngredientsInventory>().CrossOutIngredient(ingredient);
             }
         }
         base.OnMouseDown();

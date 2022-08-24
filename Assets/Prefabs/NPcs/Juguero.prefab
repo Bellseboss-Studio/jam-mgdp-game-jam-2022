@@ -15,37 +15,37 @@ PrefabInstance:
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -54.284
+      value: -255.061
       objectReference: {fileID: 0}
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.77
+      value: 117.340034
       objectReference: {fileID: 0}
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.747
+      value: -32.7152
       objectReference: {fileID: 0}
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4997852404716808698, guid: 218badd174b842345ac0aec15ee6c3bf,
         type: 3}
@@ -108,7 +108,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &594016243
+--- !u!114 &1607820211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 3184866761970884140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141d0001084b10a41aee7be311c3b9d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7669d522acab438b8b6dc59bd033969b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   idDialog: {fileID: 11400000, guid: 8163aaaa6fd9b1d4fb52e19d44750aa9, type: 2}
+  nocheEsMalo: {fileID: 11400000, guid: 476c70d93a4b6b047a52f0757ac266d0, type: 2}
+  nocheEsBuenoConBillete: {fileID: 11400000, guid: c86afc5f702dfc248bcd60a1a46d9ce3,
+    type: 2}
+  nocheEsBuenoSinBillete: {fileID: 11400000, guid: edf504ef316e63f4f8ba862e6bec1158,
+    type: 2}
+  billete: {fileID: 2745990476210067949, guid: aafa1253e90521f43a14a1934f1365b6, type: 3}
+--- !u!114 &1607820210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3184866761970884140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d21d5b659d450c9640471d464e7dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 11400000, guid: ef55d6302f4210e489c7e910929b15ab, type: 2}
+  billete: {fileID: 2745990476210067949, guid: aafa1253e90521f43a14a1934f1365b6, type: 3}
+  nectarId: "N\xE9ctar de los Dioses"
+--- !u!114 &1607820209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3184866761970884140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b086a0dc2694e628859c7870e01c9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 11400000, guid: 476c70d93a4b6b047a52f0757ac266d0, type: 2}
