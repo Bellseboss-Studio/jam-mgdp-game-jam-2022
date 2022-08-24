@@ -1,4 +1,5 @@
 using System;
+using SystemOfExtras;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -17,9 +18,10 @@ namespace GameAudio
         
         public virtual void OnButtonTappedSound()
         {
-            if(UISounds.Instance.isActiveAndEnabled)
+            if(ServiceLocator.Instance.GetService<UISounds>().isActiveAndEnabled)
             {
-                UISounds.Instance.OnButtonTappedSound(m_TypeOfButton.ToString(), m_ButtonSoundVolume);
+               // UISounds.Instance.OnButtonTappedSound();
+                ServiceLocator.Instance.GetService<UISounds>().OnButtonTappedSound(m_TypeOfButton.ToString(), m_ButtonSoundVolume);
             }
             else
             {
@@ -30,7 +32,7 @@ namespace GameAudio
         
         public void OnPointerEnter(PointerEventData eventData)
         {
-            UISounds.Instance.OnButtonTappedSound(m_WhooshSound.ToString(), m_WhooshVolume);
+            ServiceLocator.Instance.GetService<UISounds>().OnButtonTappedSound(m_WhooshSound.ToString(), m_WhooshVolume);
         }
 
         public void OnPointerExit(PointerEventData eventData)
