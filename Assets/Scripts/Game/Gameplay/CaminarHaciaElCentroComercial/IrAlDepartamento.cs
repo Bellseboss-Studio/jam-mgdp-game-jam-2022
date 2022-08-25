@@ -9,7 +9,7 @@ public class IrAlDepartamento : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         ServiceLocator.Instance.GetService<ILoadScream>().Open(() =>
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         });
     }
 }
