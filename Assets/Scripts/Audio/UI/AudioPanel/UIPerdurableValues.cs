@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using SystemOfExtras;
 using UnityEngine;
 
-public class UIPerdurableValues : Singleton<UIPerdurableValues>
+namespace GameAudio
 {
- 
-    private static float m_MasterFaderValue = 1;
+    public class UIPerdurableValues : Singleton<UIPerdurableValues>
+    {
+
+        private static float m_MasterFaderValue = 1;
+
         public static float MasterFaderValue
         {
             get { return m_MasterFaderValue; }
@@ -15,6 +18,7 @@ public class UIPerdurableValues : Singleton<UIPerdurableValues>
         }
 
         private static float m_MxFaderValue = 1;
+
         public static float MxFaderValue
         {
             get { return m_MxFaderValue; }
@@ -22,6 +26,7 @@ public class UIPerdurableValues : Singleton<UIPerdurableValues>
         }
 
         private static float m_SfxFaderValue = 1;
+
         public static float SfxFaderValue
         {
             get { return m_SfxFaderValue; }
@@ -29,9 +34,12 @@ public class UIPerdurableValues : Singleton<UIPerdurableValues>
         }
 
         private static float m_DxFaderValue = 1;
+
         public static float DxFaderValue
         {
             get { return m_DxFaderValue; }
             set { m_DxFaderValue = value; }
         }
+    }
+
 }

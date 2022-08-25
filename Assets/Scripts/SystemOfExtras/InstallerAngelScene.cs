@@ -36,6 +36,8 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<IMoralService>(moralService);
             ServiceLocator.Instance.RegisterService<ILoadScream>(loadScream);
             ServiceLocator.Instance.RegisterService<ITimeService>(timeService);
+            StatesOfStatesMissions missions = new StatesOfStatesMissions();
+            ServiceLocator.Instance.RegisterService<IStatesMissions>(missions);
             DontDestroyOnLoad(gameObject);
         }
     }

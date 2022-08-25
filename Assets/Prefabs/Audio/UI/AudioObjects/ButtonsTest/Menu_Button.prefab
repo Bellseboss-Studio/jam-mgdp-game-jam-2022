@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8477395051614930560}
   - component: {fileID: 3462176396180229467}
   - component: {fileID: 628737972773151154}
-  - component: {fileID: 2597857103969130675}
   - component: {fileID: 3551724617438905803}
   m_Layer: 5
   m_Name: Menu_Button
@@ -136,20 +135,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &2597857103969130675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3661229859683906691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7732a8a6882f348799872e1da66275ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ButtonName: Credits
-  m_ButtonText: {fileID: 0}
 --- !u!114 &3551724617438905803
 MonoBehaviour:
   m_ObjectHideFlags: 0
