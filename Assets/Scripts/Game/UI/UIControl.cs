@@ -23,11 +23,7 @@ namespace GameAudio
                 m_UiElementsDictionary.Add(t.gameObject.name, t);
             }
         }
-
-        private void Update()
-        {
-            //ActivateUIPannel("Pause");
-        }
+        
 
         public void ActivateUIPannel(string panelOb)
         {

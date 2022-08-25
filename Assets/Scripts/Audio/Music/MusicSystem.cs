@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using SystemOfExtras;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -11,14 +14,19 @@ public class MusicSystem : Singleton<MusicSystem>
    
     [SerializeField] private float m_CrossfadeTime;
     private int m_CurrentScene = 0;
+    private float m_TransitionTimeToPause = 1f;
     private int m_Buffer;
+
+    public override void Awake()
+    {
+      ServiceLocator.Instance.RegisterService(this);
+      DontDestroyOnLoad(this);
+    }
+
     void Start()
     {
         PlayMusicObject(m_CurrentScene);
-       // StartCoroutine(SwitchMusicTrack(m_CurrentScene));
     }
-
-    
     void Update()
     {
         if (m_CurrentScene != SceneManager.GetActiveScene().buildIndex)
@@ -27,8 +35,7 @@ public class MusicSystem : Singleton<MusicSystem>
             StartCoroutine(SwitchMusicTrack(m_CurrentScene));
         }
     }
-
-    void PlayMusicObject(int scene)
+    public void PlayMusicObject(int scene)
     {
         foreach (var gameObject in m_MxTracks)
         {
@@ -45,6 +52,18 @@ public class MusicSystem : Singleton<MusicSystem>
         yield return new WaitForSeconds(m_CrossfadeTime);
         m_MxTracks[m_Buffer].SetActive(false);
        m_Buffer = m_CurrentScene;
+    }
+
+    public void SetPauseMixer()
+    {
+        m_MixerSnapshots[3].TransitionTo(m_TransitionTimeToPause);
+       
+    }
+    
+    public void UnpauseMixer()
+    {
+        m_MixerSnapshots[1].TransitionTo(m_TransitionTimeToPause);
+     
     }
     
 }
