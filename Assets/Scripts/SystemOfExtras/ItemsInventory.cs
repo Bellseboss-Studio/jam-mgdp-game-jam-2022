@@ -25,6 +25,7 @@ namespace SystemOfExtras
         private bool _movingBackpack;
         [SerializeField] private float moveInY, animationDuration;
         private int _itemsSaved;
+        private Transform referenceOfPlayer;
 
         private void Awake()
         {
@@ -123,6 +124,11 @@ namespace SystemOfExtras
             }
         }
 
+        public Transform GetTransformPlayer()
+        {
+            return referenceOfPlayer;
+        }
+
         public void ThrowItem(int itemPosition)
         {
             if (spacesToItems[itemPosition].CurrentItem == null)
@@ -193,6 +199,7 @@ namespace SystemOfExtras
             _player = playerExtended;
             _playerReferences = playerReferences;
             _mainCamera = mainCamera;
+            referenceOfPlayer = playerCapsule;
             ConfigurePlayer(playerCapsule);
         }
     }
