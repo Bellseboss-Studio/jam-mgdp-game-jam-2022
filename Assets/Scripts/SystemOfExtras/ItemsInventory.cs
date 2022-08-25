@@ -111,17 +111,20 @@ namespace SystemOfExtras
             return _itemsSaved < 2;
         }
 
-        public void RemoveItemById(string itemId)
+        public int RemoveItemById(string itemId)
         {
+            int countItemsRemove = 0;
             foreach (var spaceToItem in spacesToItems)
             {
                 if (spaceToItem.CurrentItem!= null && spaceToItem.CurrentItem.Id == itemId)
                 {
                     _items.Remove(spaceToItem.CurrentItem.InteractiveObject);
                     Destroy(spaceToItem.CurrentItem.gameObject);
+                    countItemsRemove++;
                     RestoreItemsDialog();
                 }
             }
+            return countItemsRemove;
         }
 
         public Transform GetTransformPlayer()
