@@ -275,6 +275,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 082fef84-6f60-42fd-8871-015bab61c312
     m_ActionName: Player/NumKeys[/Keyboard/1,/Keyboard/2,/Keyboard/3,/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2067237299}
+        m_TargetAssemblyTypeName: Game.Player.PlayerExtended, Assembly-CSharp
+        m_MethodName: ActivateUI
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c67f0864-ebd5-484f-87d8-3b0f35967a21
+    m_ActionName: Player/Pause[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1525,6 +1541,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: FootStepsSelector
       objectReference: {fileID: 0}
+    - target: {fileID: 5725953851919160256, guid: 645dc75b977e7431fb3f08681bbcf077,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870006058820887245, guid: 645dc75b977e7431fb3f08681bbcf077,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027961282908104605, guid: 645dc75b977e7431fb3f08681bbcf077,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912488621623334547, guid: 645dc75b977e7431fb3f08681bbcf077,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 8185668329732903597, guid: 645dc75b977e7431fb3f08681bbcf077,
         type: 3}
       propertyPath: m_Name
@@ -1534,6 +1570,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FloorHerr
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097576499534853885, guid: 645dc75b977e7431fb3f08681bbcf077,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159339807142010040, guid: 645dc75b977e7431fb3f08681bbcf077,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 645dc75b977e7431fb3f08681bbcf077, type: 3}
