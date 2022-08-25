@@ -3671,6 +3671,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 140.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4167022181407850329, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4167022183043786018, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: m_Name
@@ -3729,6 +3734,11 @@ PrefabInstance:
     - target: {fileID: 4167022183043786046, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677800080115573501, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4975195644133572101, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
@@ -6033,19 +6043,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 2, z: 0.5}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1284813065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284813063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141d0001084b10a41aee7be311c3b9d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idDialog: {fileID: 11400000, guid: e788447bcb039a04faf572ec8b7f46ce, type: 2}
 --- !u!114 &1284813066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6059,7 +6056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogToAction: {fileID: 11400000, guid: fc9319d4b786e114591f401b45ad32c3, type: 2}
-  interactiveTarger: {fileID: 1284813065}
+  interactiveTarger: {fileID: 0}
   dialogToChange: {fileID: 11400000, guid: df17890523e0ca64c81264962a04cc44, type: 2}
 --- !u!114 &1284813067
 MonoBehaviour:
@@ -6078,6 +6075,19 @@ MonoBehaviour:
   - {fileID: 903788759}
   - {fileID: 735111361}
   - {fileID: 21524673}
+--- !u!114 &1284813068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284813063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1624d34ceb82a4caa6c7d9a95170a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idDialog: {fileID: 11400000, guid: e788447bcb039a04faf572ec8b7f46ce, type: 2}
 --- !u!1 &1294884237
 GameObject:
   m_ObjectHideFlags: 0
