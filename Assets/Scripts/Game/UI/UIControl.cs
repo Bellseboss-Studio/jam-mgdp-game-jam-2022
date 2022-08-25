@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Unity.UI;
 using SystemOfExtras;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace GameAudio
 {
@@ -12,19 +10,23 @@ namespace GameAudio
         [SerializeField] private GameObject[] m_UIElements;
         private Dictionary<string, GameObject> m_UiElementsDictionary = new Dictionary<string, GameObject>();
         private bool m_IsGamePaused;
-        private void Start()
+
+        private void Awake()
         {
             ServiceLocator.Instance.RegisterService(this);
+        }
+
+        private void Start()
+        {
             foreach (GameObject t in m_UIElements)
             {
-                
                 m_UiElementsDictionary.Add(t.gameObject.name, t);
             }
         }
 
         private void Update()
         {
-            ActivateUIPannel("Pause");
+            //ActivateUIPannel("Pause");
         }
 
         public void ActivateUIPannel(string panelOb)
@@ -32,7 +34,6 @@ namespace GameAudio
             if (m_UiElementsDictionary.ContainsKey(panelOb))
             {
                 m_UiElementsDictionary[panelOb].SetActive(true);
-                Debug.Log("Changosssss");
             }
 
         }
@@ -41,7 +42,6 @@ namespace GameAudio
             foreach (GameObject panel in m_UIElements)
             {
                 panel.gameObject.SetActive(false);
-                Debug.Log("Paneles: " + panel.gameObject.name);
             }
         }
     }
