@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
+using SystemOfExtras;
 
 namespace GameAudio
 {
     [RequireComponent(typeof(AudioSource))]
-    public class UISounds : Singleton<UISounds>, ICheckDependencies
+    public class UISounds : MonoBehaviour, ICheckDependencies
 
     {
         [SerializeField] private AudioSource m_AudioSource = null;
@@ -46,6 +47,8 @@ namespace GameAudio
             {
                 m_AudioSource = GetComponent<AudioSource>();
             }
+            
+            ServiceLocator.Instance.RegisterService(this);
         }
     }
 }

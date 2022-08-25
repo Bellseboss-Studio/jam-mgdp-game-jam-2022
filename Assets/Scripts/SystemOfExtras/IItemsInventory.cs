@@ -1,4 +1,6 @@
-﻿namespace SystemOfExtras
+﻿using UnityEngine;
+
+namespace SystemOfExtras
 {
     public interface IItemsInventory
     {
@@ -7,5 +9,6 @@
         bool SearchItemForId(string id);
         bool HasSpace();
         void RemoveItemById(string itemId);
+        Transform GetTransformPlayer();
     }
 }
