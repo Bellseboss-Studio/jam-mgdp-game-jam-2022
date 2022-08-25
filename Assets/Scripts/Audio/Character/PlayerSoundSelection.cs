@@ -30,7 +30,6 @@ namespace GameAudio
       {
         if (m_CurrentMaterial != hit.transform.gameObject.GetComponent<MeshRenderer>().material.name)
         {
-          //Debug.Log(hit.transform.gameObject.GetComponent<MeshRenderer>().material.name);
           m_CurrentMaterial = hit.transform.gameObject.GetComponent<MeshRenderer>().material.name;
         }
                   
