@@ -9,3 +9,4 @@
         string GetIcon();
     }
 }
+
