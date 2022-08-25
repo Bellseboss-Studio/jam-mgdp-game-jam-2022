@@ -8,7 +8,7 @@ namespace SystemOfExtras
         void ThrowItem(int itemPosition);
         bool SearchItemForId(string id);
         bool HasSpace();
-        void RemoveItemById(string itemId);
+        int RemoveItemById(string itemId);
         Transform GetTransformPlayer();
     }
 }
