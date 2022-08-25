@@ -33,6 +33,23 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &-8530028238816692808
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pause
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: de9d67c332ad44496b79cdfed9097efc
+  m_FloatValues:
+    0f5c5440d02c84b86a8fe7d6a065d277: 0.13552584
+    abe33d926992e4cb2872eecd7ac7c125: -80
+    1e0579e2e5c174df494215c9782f6fc0: -80
+    ecfcdee507b8b4086b99049aa52e932e: -80
+    1f0282fb991cf43bba6bb59afaf07f84: -6.664154
+    f9ca1c8f068a2464aa06abee0f8fdaaa: -16.035946
+  m_TransitionOverrides: {}
 --- !u!243 &-7798711974143257418
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -80,8 +97,7 @@ AudioMixerGroupController:
   m_Name: Gameplay
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 51a0a22fb651240e59bdc40d101550cf
-  m_Children:
-  - {fileID: 4702616116410300463}
+  m_Children: []
   m_Volume: abe33d926992e4cb2872eecd7ac7c125
   m_Pitch: 2f2890d6b757441858822eb559d55fb3
   m_Send: 00000000000000000000000000000000
@@ -101,6 +117,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: baa17d2b76b484c06a60460e7cf3bebc
   m_FloatValues:
+    0f5c5440d02c84b86a8fe7d6a065d277: -80
     abe33d926992e4cb2872eecd7ac7c125: -11.944499
     ecfcdee507b8b4086b99049aa52e932e: -80
     1f0282fb991cf43bba6bb59afaf07f84: -9.332112
@@ -165,6 +182,7 @@ AudioMixerController:
   - {fileID: 24500006}
   - {fileID: -3619860968189648244}
   - {fileID: -1831355931712574599}
+  - {fileID: -8530028238816692808}
   m_StartSnapshot: {fileID: -3619860968189648244}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -204,7 +222,7 @@ AudioMixerController:
     - abc72844160c54f3196eb391360d40cd
     name: View - Copy
   m_CurrentViewIndex: 1
-  m_TargetSnapshot: {fileID: -3619860968189648244}
+  m_TargetSnapshot: {fileID: -8530028238816692808}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -281,6 +299,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 5154050466026184307}
   - {fileID: -3664713970537249876}
+  - {fileID: 4702616116410300463}
   m_Volume: 1f0282fb991cf43bba6bb59afaf07f84
   m_Pitch: 314f433cea57340978cc7ae81dc7ab25
   m_Send: 00000000000000000000000000000000
