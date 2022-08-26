@@ -23,6 +23,7 @@ public class AmbienceSelector : MonoBehaviour
     private void Start()
     {
         ServiceLocator.Instance.RegisterService(this);
+        
         foreach (Transform t in m_AmbienceSounds)
         {
             m_AmbienceObjectDictionary.Add(t.name, t.gameObject);
