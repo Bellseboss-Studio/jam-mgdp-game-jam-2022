@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4582461728231938371
+--- !u!1 &7419160231995530084
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4582461728231938370}
-  - component: {fileID: 4582461728231938397}
+  - component: {fileID: 7419160231995530085}
+  - component: {fileID: 7419160231995530106}
   m_Layer: 0
-  m_Name: 001_NotaDangerSi
+  m_Name: 000_Gemelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &4582461728231938370
+--- !u!4 &7419160231995530085
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4582461728231938371}
+  m_GameObject: {fileID: 7419160231995530084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,18 +32,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &4582461728231938397
+--- !u!82 &7419160231995530106
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4582461728231938371}
+  m_GameObject: {fileID: 7419160231995530084}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4692533816456605377, guid: 852029c2e2c6d40cea587a7b15b6e3ed,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 1c10ecf324264421f86b9addebfcc19e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6320962968dcb458e99d222115c880a5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -89,7 +89,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.489
       inSlope: 0
       outSlope: 0
       tangentMode: 0
