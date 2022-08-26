@@ -21,30 +21,18 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 
-		public void OnMove(InputValue value)
+		public void OnMove(InputAction.CallbackContext value)
 		{
-			MoveInput(value.Get<Vector2>());
+			MoveInput(value.ReadValue<Vector2>());
 		}
 
-		public void OnLook(InputValue value)
+		public void OnLook(InputAction.CallbackContext value)
 		{
 			if(cursorInputForLook)
 			{
-				LookInput(value.Get<Vector2>());
+				LookInput(value.ReadValue<Vector2>());
 			}
 		}
-
-		public void OnJump(InputValue value)
-		{
-			JumpInput(value.isPressed);
-		}
-
-		public void OnSprint(InputValue value)
-		{
-			SprintInput(value.isPressed);
-		}
-
-
 
 		public void MoveInput(Vector2 newMoveDirection)
 		{
