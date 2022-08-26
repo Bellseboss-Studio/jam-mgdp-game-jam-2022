@@ -21,6 +21,6 @@ public abstract class FacadeInputSystem : MonoBehaviour
 
     public void FirePlayer(InputAction.CallbackContext value)
     {
-        Debug.Log(value.started);
+        //Debug.Log(value.started);
     }
 }

@@ -11,7 +11,7 @@ public class LogicBellsebossFps
 
     public void Move(Vector2 direction)
     {
-        Debug.Log($"X: {direction.x} - Y: {direction.y}");
+        //Debug.Log($"X: {direction.x} - Y: {direction.y}");
         _mediator.MoveDirection(direction.normalized);
     }
 

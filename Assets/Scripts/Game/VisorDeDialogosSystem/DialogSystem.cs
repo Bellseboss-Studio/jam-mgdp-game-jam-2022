@@ -16,7 +16,7 @@ namespace Game.VisorDeDialogosSystem
         [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private float secondsDelay;
         [SerializeField] private StatesOfDialogs _statesOfDialogs;
-        [SerializeField] private FirstPersonController firstPersonController;
+        [SerializeField] private GameObject firstPersonController;
         public StatesOfDialogs StatesOfDialogs => _statesOfDialogs;
         private DialogsFactory _factory;
         private Dialog _dialog;
@@ -39,7 +39,7 @@ namespace Game.VisorDeDialogosSystem
 
         public void OpenDialog(string idDialog)
         {
-            firstPersonController.enabled = false;
+            firstPersonController.SetActive(false);
             //Debug.Log($"is null {_dialog == null}");
             if (_textIsFinishedOfShow)
             {
@@ -120,7 +120,7 @@ namespace Game.VisorDeDialogosSystem
 
         public void CloseDialog()
         {
-            firstPersonController.enabled = true;
+            firstPersonController.SetActive(true);
             _dialog = null;
             _textIsFinishedOfShow = false;
             _isInUpdateFulledText = false;
