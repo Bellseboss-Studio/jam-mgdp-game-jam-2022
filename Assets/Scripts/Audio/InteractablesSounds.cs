@@ -31,6 +31,10 @@ namespace GameAudio
                 yield return new WaitForSeconds(go.GetComponent<AudioSource>().clip.length);
                 go.SetActive(false);   
             }
+            else
+            {
+                Debug.Log($"Se acciono: {name}");
+            }
         }
         
         private void AddItemsToDictionary()
