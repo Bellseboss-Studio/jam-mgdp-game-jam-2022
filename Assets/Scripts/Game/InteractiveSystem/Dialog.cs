@@ -52,5 +52,9 @@ public class Dialog : ScriptableObject
     {
         return listOfConcat[keyPress - 1].id;
     }
-    
+
+    public void Concat(Dialog dialog)
+    {
+        listOfConcat.Add(dialog);
+    }
 }

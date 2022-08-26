@@ -11,12 +11,9 @@ public class InitializationInScene2 : MonoBehaviour
     {
         ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
         {
-            ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
-            {
-                var transformPlayer = ServiceLocator.Instance.GetService<IItemsInventory>().GetTransformPlayer();
-                transformPlayer.position = pointToSpawn.transform.position;
-                transformPlayer.rotation = pointToSpawn.transform.rotation;
-            });
+            var transformPlayer = ServiceLocator.Instance.GetService<IItemsInventory>().GetTransformPlayer();
+            transformPlayer.position = pointToSpawn.transform.position;
+            transformPlayer.rotation = pointToSpawn.transform.rotation;
         });
     }
 }

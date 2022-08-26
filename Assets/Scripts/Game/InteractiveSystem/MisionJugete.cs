@@ -12,10 +12,8 @@ public class MisionJugete : InteractiveObject
     public Item Toy => jugete;
     public override void OnMouseDown()
     {
-        
         if (ServiceLocator.Instance.GetService<IStatesMissions>().IsActiveMission(IdMissions.JUGETE))
         {
-              
             if (ServiceLocator.Instance.GetService<IItemsInventory>().SearchItemForId(jugete.Id))
             {
                 SetDialogo(dialogoConUnJugete);
@@ -37,6 +35,11 @@ public class MisionJugete : InteractiveObject
     public bool HasCompletedMission()
     {
         return countItemSaved >= 3;
+    }
+
+    public void ConcatDialog(Dialog dialogoAgradecimiento)
+    {
+        ServiceLocator.Instance.GetService<IDialogSystem>().GetCurrentDialog().Concat(dialogoAgradecimiento);
     }
 }
 
