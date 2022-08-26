@@ -29,4 +29,12 @@ public class StatesOfStatesMissions : IStatesMissions
         }
         listOfMissions.Add(idMissions, true);
     }
+
+    public void MissionCompleted(IdMissions idMissions)
+    {
+        if (listOfMissions.TryGetValue(idMissions, out var value))
+        {
+            listOfMissions[idMissions] = false;
+        }
+    }
 }

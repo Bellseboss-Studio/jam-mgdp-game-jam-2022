@@ -4,5 +4,6 @@ namespace SystemOfExtras
     {
         bool IsActiveMission(IdMissions idMissions);
         void AddMission(IdMissions idMissions);
+        void MissionCompleted(IdMissions idMissions);
     }
 }

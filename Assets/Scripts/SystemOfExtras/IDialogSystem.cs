@@ -10,5 +10,6 @@ namespace SystemOfExtras
         void OnDialogAction(Action<string> action);
         void OnDialogFinish(Action<string> action);
         void SetDialogToNotSpaceToItems();
+        Dialog GetCurrentDialog();
     }
 }

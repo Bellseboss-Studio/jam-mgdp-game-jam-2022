@@ -141,5 +141,10 @@ namespace Game.VisorDeDialogosSystem
         {
             throw new NotImplementedException();
         }
+
+        public Dialog GetCurrentDialog()
+        {
+            return _dialog;
+        }
     }
 }
