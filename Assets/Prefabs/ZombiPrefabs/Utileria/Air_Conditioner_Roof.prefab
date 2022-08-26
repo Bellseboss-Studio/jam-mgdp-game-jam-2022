@@ -51,7 +51,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   m_IsRayHitting: 0
-  m_Emitter: {fileID: 7380759660466880311}
+  m_Emitters:
+  - {fileID: 7380759660466880311}
 --- !u!65 &5486644785399754404
 BoxCollider:
   m_ObjectHideFlags: 0
