@@ -9,11 +9,9 @@ public class InitializationInScene2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
-        {
-            var transformPlayer = ServiceLocator.Instance.GetService<IItemsInventory>().GetTransformPlayer();
-            transformPlayer.position = pointToSpawn.transform.position;
-            transformPlayer.rotation = pointToSpawn.transform.rotation;
-        });
+        var transformPlayer = ServiceLocator.Instance.GetService<IItemsInventory>().GetTransformPlayer();
+        transformPlayer.position = pointToSpawn.transform.position;
+        transformPlayer.rotation = pointToSpawn.transform.rotation;
+        ServiceLocator.Instance.GetService<ILoadScream>().Open(() => { });
     }
 }

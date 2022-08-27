@@ -8,7 +8,7 @@ public class IrAlCentroComercialBicicleta : InteractiveObjectFather
     protected override void ActionEventCustom()
     {
         ServiceLocator.Instance.GetService<ITimeService>().AddMinutes(minutos);
-        ServiceLocator.Instance.GetService<ILoadScream>().Open(() =>
+        ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
         {
             SceneManager.LoadScene(2);
         });

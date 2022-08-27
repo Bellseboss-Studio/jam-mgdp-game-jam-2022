@@ -10,7 +10,7 @@ public class TaxistaGoMall : InteractiveObjectFather
     {
         ServiceLocator.Instance.GetService<ITimeService>().AddMinutes(minutos);
         ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(billete.Id);
-        ServiceLocator.Instance.GetService<ILoadScream>().Open(() =>
+        ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
         {
             SceneManager.LoadScene(2);
         });
