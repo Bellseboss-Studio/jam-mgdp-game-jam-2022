@@ -9,7 +9,7 @@ public class EnviarElPlayerDeEscena1Escena2 : InteractiveObjectFather
     [SerializeField] private int sceneToLoad;
     protected override void ActionEventCustom()
     {
-        ServiceLocator.Instance.GetService<ILoadScream>().Open(() =>
+        ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
         {
             SceneManager.LoadScene(sceneToLoad);
         });
