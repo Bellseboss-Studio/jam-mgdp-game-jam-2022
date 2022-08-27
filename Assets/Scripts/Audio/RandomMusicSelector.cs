@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace GameAudio
 {
@@ -14,9 +16,13 @@ namespace GameAudio
         void Start()
         {
             CheckDependencies();
+        }
+
+        private void OnEnable()
+        {
             StartCoroutine(nameof(SelectRandomAudioClip));
         }
-        
+
         private void CheckDependencies()
         {
             if (m_AudioSource == null)
