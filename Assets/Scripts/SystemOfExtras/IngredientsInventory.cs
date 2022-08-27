@@ -28,9 +28,9 @@ namespace SystemOfExtras
         {
             var rotation = playerCapsule.rotation;
             playerCapsule.rotation = new Quaternion(0,0,0,0);
-            ingredientsHoja.transform.SetParent(_playerReferences.PlayerCameraRoot);
-            ingredientsHoja.transform.position = _playerReferences.HojaPosition.position;
-            Destroy(_playerReferences.HojaPosition.gameObject);
+            //ingredientsHoja.transform.SetParent(_playerReferences.PlayerCameraRoot);
+            //ingredientsHoja.transform.position = _playerReferences.HojaPosition.position;
+            //Destroy(_playerReferences.HojaPosition.gameObject);
             playerCapsule.rotation = rotation;
             _player.OnItemPressed += OnClickFromPlayer;
         }

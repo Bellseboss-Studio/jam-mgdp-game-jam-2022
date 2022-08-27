@@ -41,9 +41,9 @@ namespace SystemOfExtras
         {
             var rotation = playerCapsule.rotation;
             playerCapsule.rotation = new Quaternion(0,0,0,0);
-            backpack.transform.SetParent(_playerReferences.PlayerCameraRoot);
-            backpack.transform.position = _playerReferences.ItemsContainerPosition.position;
-            Destroy(_playerReferences.ItemsContainerPosition.gameObject);
+            //backpack.transform.SetParent(_playerReferences.PlayerCameraRoot);
+            //backpack.transform.position = _playerReferences.ItemsContainerPosition.position;
+            //Destroy(_playerReferences.ItemsContainerPosition.gameObject);
             playerCapsule.rotation = rotation;
             _player.OnItemPressed += OnClickFromPlayer;
         }

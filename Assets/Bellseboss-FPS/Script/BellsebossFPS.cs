@@ -26,6 +26,12 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
     private Vector2 _direction;
     private float _xRotationCamera;
 
+    public bool CanMove
+    {
+        get => canMove;
+        set => canMove = value;
+    }
+
     private void Start()
     {
         logic = new LogicBellsebossFps(this);
@@ -40,11 +46,13 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
 
     private void OnLook(Vector2 rotation)
     {
+        if (!canMove) return;
         logic.Look(rotation);
     }
 
     public void OnMove(Vector2 direction)
     {
+        if (!canMove) return;
         logic.Move(direction);
     }
 
@@ -80,5 +88,10 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
     private void OnApplicationFocus(bool hasFocus)
     {
         Cursor.lockState = hasFocus ? CursorLockMode.Locked : CursorLockMode.None;
+    }
+
+    public GameObject GetFatherOfCamera()
+    {
+        return fatherOfCamera;
     }
 }
