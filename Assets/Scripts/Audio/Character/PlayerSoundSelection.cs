@@ -9,6 +9,11 @@ namespace GameAudio
   {
     [SerializeField] private CapsuleCollider m_PlayerCollider;
     [SerializeField] private string m_CurrentMaterial = null;
+
+    private bool _isGrounded;
+    [SerializeField] private float maxDistance;
+
+    public bool IsGrounded => _isGrounded;
     
     public void PlayFootstepSound()
     {
@@ -26,13 +31,17 @@ namespace GameAudio
     {
       Ray ray = new Ray(this.transform.position,Vector3.down);
       RaycastHit hit;
-      if (Physics.Raycast(ray,out hit, 10f ))
+      if (Physics.Raycast(ray,out hit, maxDistance ))
       {
         if (m_CurrentMaterial != hit.transform.gameObject.GetComponent<MeshRenderer>().material.name)
         {
           m_CurrentMaterial = hit.transform.gameObject.GetComponent<MeshRenderer>().material.name;
         }
-                  
+        _isGrounded = true;
+      }
+      else
+      {
+        _isGrounded = false;
       }
     }
   }
