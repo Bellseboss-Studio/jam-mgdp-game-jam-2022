@@ -9,7 +9,8 @@ namespace GameAudio
     public class UIPerdurableValues : Singleton<UIPerdurableValues>
     {
 
-        private static float m_MasterFaderValue = 1;
+        private static float m_MasterFaderValue;
+        
 
         public static float MasterFaderValue
         {

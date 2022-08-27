@@ -42,11 +42,13 @@ namespace Game.Player
                 if (m_IsPaused)
                 {
                     ServiceLocator.Instance.GetService<UIControl>().ActivateUIPannel("Pause");
+                    Cursor.lockState = CursorLockMode.None;
                     ServiceLocator.Instance.GetService<MusicSystem>().SetPauseMixer();
                 }
                 else
                 {
                     ServiceLocator.Instance.GetService<UIControl>().HideUI();
+                    Cursor.lockState = CursorLockMode.Locked;
                     ServiceLocator.Instance.GetService<MusicSystem>().UnpauseMixer();
                 }
             }
