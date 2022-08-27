@@ -13,7 +13,7 @@ public class IrCaminandoAlCentroComercial : MonoBehaviour
     {
         ServiceLocator.Instance.GetService<ITimeService>().AddMinutes(minutos);
         ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound("000_Caminando");
-        ServiceLocator.Instance.GetService<ILoadScream>().Open(() =>
+        ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
         {
             SceneManager.LoadScene(2);
         });
