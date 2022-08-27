@@ -43,7 +43,7 @@ namespace SystemOfExtras
             playerCapsule.rotation = new Quaternion(0,0,0,0);
             //backpack.transform.SetParent(_playerReferences.PlayerCameraRoot);
             //backpack.transform.position = _playerReferences.ItemsContainerPosition.position;
-            Destroy(_playerReferences.ItemsContainerPosition.gameObject);
+            //Destroy(_playerReferences.ItemsContainerPosition.gameObject);
             playerCapsule.rotation = rotation;
             _player.OnItemPressed += OnClickFromPlayer;
         }
