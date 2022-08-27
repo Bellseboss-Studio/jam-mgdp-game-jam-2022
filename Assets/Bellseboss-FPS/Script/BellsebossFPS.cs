@@ -42,6 +42,7 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
         camera.transform.SetParent(fatherOfCamera.transform);
         camera.transform.localPosition = Vector3.zero;
         camera.transform.rotation = Quaternion.Euler(0, 0, 0);
+        CanMove = true;
     }
 
     private void OnLook(Vector2 rotation)
