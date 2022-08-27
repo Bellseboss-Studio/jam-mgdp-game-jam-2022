@@ -73,4 +73,9 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
         Debug.Log($"transformDirection {transformDirection}");
         rb.velocity = transformDirection;
     }
+    
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        Cursor.lockState = hasFocus ? CursorLockMode.Locked : CursorLockMode.None;
+    }
 }
