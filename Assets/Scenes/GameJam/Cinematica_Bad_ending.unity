@@ -15389,7 +15389,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8732783, y: 1}
+    m_SensorSize: {x: 1.7768762, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19156,6 +19156,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: add5ef7c11e75c04c809d46d295b9509, type: 3}
+--- !u!1001 &708030628
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6058328104040277904, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioCinematic1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -52.305004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.43517
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -26.524616
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058328104040277905, guid: 904aafea77d884d9c834cb74a506fa17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 904aafea77d884d9c834cb74a506fa17, type: 3}
+--- !u!82 &708030629 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6058328103122729407, guid: 904aafea77d884d9c834cb74a506fa17,
+    type: 3}
+  m_PrefabInstance: {fileID: 708030628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &709304417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22507,7 +22582,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8732783, y: 1}
+    m_SensorSize: {x: 1.7768762, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -30844,6 +30919,8 @@ PlayableDirector:
     value: {fileID: 1123701540}
   - key: {fileID: 2892095505143483915, guid: 91ad1f0e767536846b30221f36d20d39, type: 2}
     value: {fileID: 567282968}
+  - key: {fileID: 2325644175886761087, guid: 91ad1f0e767536846b30221f36d20d39, type: 2}
+    value: {fileID: 708030629}
   m_ExposedReferences:
     m_References:
     - 532aa39d7d3d1ad46bc51350bfb3e97f: {fileID: 847650288}
@@ -34599,31 +34676,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 57.766327
+      value: 3.2303238
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.761748
+      value: 0.37748325
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.702705
+      value: 4.263869
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.87549716
+      value: 0.7061538
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.40806547
+      value: -0.00012294503
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.23455064
+      value: 0.70805854
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.10942247
+      value: -0.00012327665
       objectReference: {fileID: 0}
     - target: {fileID: 2110381274, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: field of view
@@ -34640,6 +34717,10 @@ PrefabInstance:
     - target: {fileID: 2110381274, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: orthographic size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110381276, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1771687493026472138, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
