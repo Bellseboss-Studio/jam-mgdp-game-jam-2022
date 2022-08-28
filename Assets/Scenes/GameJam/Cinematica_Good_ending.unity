@@ -30067,7 +30067,7 @@ PlayableDirector:
   - key: {fileID: -1410427483666592419, guid: 1edcfd80d39e45946a209041457c2389, type: 2}
     value: {fileID: 209231367}
   - key: {fileID: -2883754227076008426, guid: 1edcfd80d39e45946a209041457c2389, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1289503444}
   - key: {fileID: 2892095505143483915, guid: 1edcfd80d39e45946a209041457c2389, type: 2}
     value: {fileID: 567282968}
   m_ExposedReferences:
@@ -34588,35 +34588,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8534546
+      value: 2.9153252
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2448089
+      value: 0.40592882
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.4285771
+      value: 2.6708584
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.042005315
+      value: 0.015672557
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.015451477
+      value: -0.0043201535
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9939085
+      value: -0.9988209
       objectReference: {fileID: 0}
     - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.10071098
+      value: 0.045745302
       objectReference: {fileID: 0}
     - target: {fileID: 2110381274, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: field of view
-      value: 41.75
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2110381274, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
       propertyPath: far clip plane
@@ -34932,6 +34932,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
+--- !u!1 &1289503444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4167022180959100094, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1289503443}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1289566134
 PrefabInstance:
   m_ObjectHideFlags: 0
