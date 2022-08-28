@@ -22,7 +22,7 @@ namespace SystemOfExtras
         {
             if (itemsInventory) itemsInventory.Configure(player, playerReferences, mainCamera, playerCapsule);
             if (ingredientsInventory) ingredientsInventory.Configure(player, playerReferences, mainCamera, playerCapsule);
-            if (FindObjectsOfType<Installer>().Length > 1)
+            if (FindObjectsOfType<Installer>().Length >= 1)
             {
                 Destroy(gameObject);
                 return;

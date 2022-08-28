@@ -23,7 +23,7 @@ namespace GameAudio
 
         IEnumerator LoadGame()
         {
-            SceneManager.LoadScene("02_Game");
+            SceneManager.LoadScene(1);
             yield return new WaitForSeconds(m_WaitingTimeToLoad);
             ExitUi();
             
