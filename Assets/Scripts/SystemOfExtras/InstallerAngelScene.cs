@@ -34,7 +34,7 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<IDecisionService>(decisionService);
             var moralService = new MoralService();
             ServiceLocator.Instance.RegisterService<IMoralService>(moralService);
-            ServiceLocator.Instance.RegisterService<ILoadScream>(loadScream);
+            //ServiceLocator.Instance.RegisterService<ILoadScream>(loadScream);
             ServiceLocator.Instance.RegisterService<ITimeService>(timeService);
             StatesOfStatesMissions missions = new StatesOfStatesMissions();
             ServiceLocator.Instance.RegisterService<IStatesMissions>(missions);
