@@ -15,7 +15,7 @@ public class IrCaminandoAlCentroComercial : MonoBehaviour
         ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound("000_Caminando");
         ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         });
     }
 }
