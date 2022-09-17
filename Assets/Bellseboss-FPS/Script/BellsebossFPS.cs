@@ -79,10 +79,9 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
 
     private void Update()
     {
-        var gravity = Vector3.down;
-        gravity = isGroundedChecked.IsGrounded ? Vector3.down/8 : Vector3.down/2;
-        var transformDirection = transform.TransformDirection(new Vector3(_direction.x, 0, _direction.y) + gravity) * (Time.deltaTime * speed);
-        //Debug.Log($"transformDirection {transformDirection}");
+        var gravity = isGroundedChecked.IsGrounded ? Vector3.down * 8 : Vector3.down / 8;
+        var transformDirection = transform.TransformDirection(new Vector3(_direction.x, 0, _direction.y)) * (Time.deltaTime * speed);
+        transformDirection += gravity;
         rb.velocity = transformDirection;
     }
     
