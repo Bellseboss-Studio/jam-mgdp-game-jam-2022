@@ -13,6 +13,8 @@ namespace GameAudio
 
         private void Awake()
         {
+            Application.targetFrameRate = 30;
+            Debug.Log(">>>>>>>limit fps");
             ServiceLocator.Instance.RegisterService(this);
         }
 
