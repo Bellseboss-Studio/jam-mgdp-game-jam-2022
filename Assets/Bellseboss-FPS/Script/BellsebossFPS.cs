@@ -66,6 +66,7 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
     public void RotationBody(float rotationX)
     {
         transform.Rotate(0, rotationX * speedRotation * Time.deltaTime, 0, Space.Self);
+        
     }
 
     public void RotationCamera(float rotationY)
