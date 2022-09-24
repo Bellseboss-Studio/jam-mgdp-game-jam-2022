@@ -16048,7 +16048,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783712, y: 1}
+    m_SensorSize: {x: 1.7770449, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -36740,50 +36740,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 57.766327
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.761748
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 23.702705
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.87549716
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.40806547
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.23455064
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.10942247
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381274, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: field of view
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381274, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: far clip plane
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381274, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381274, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: orthographic size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4167022183043786018, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: m_Name
@@ -36843,11 +36799,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5639300216010689611, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
