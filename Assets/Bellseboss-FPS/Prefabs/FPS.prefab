@@ -251,6 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407209145}
   - component: {fileID: 407209144}
+  - component: {fileID: 5879487374960492062}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -303,7 +304,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7770449, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -312,6 +313,19 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 932819711}
+--- !u!135 &5879487374960492062
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407209143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.38
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &671037702
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1031016446}
+  - component: {fileID: 5786349194119202374}
   m_Layer: 2
   m_Name: PlayerAudio
   m_TagString: Untagged
@@ -523,6 +538,22 @@ Transform:
   m_Father: {fileID: 1771687493424574789}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5786349194119202374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031016445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200eea0b2f1014bf1a4090fe94672749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerCollider: {fileID: 1771687492742877471}
+  m_CurrentMaterial: 
+  _isGrounded: 0
+  maxDistance: 1
 --- !u!1 &1434668369
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434668369}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.50000006, z: -0.00000053645635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -702,7 +733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736208275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7, z: -1.13}
+  m_LocalPosition: {x: 0, y: 1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1066,6 +1097,8 @@ GameObject:
   - component: {fileID: 1771687493424574788}
   - component: {fileID: 1771687493424574906}
   - component: {fileID: 1126048234}
+  - component: {fileID: 4793064028729963102}
+  - component: {fileID: 6670044836918943001}
   m_Layer: 0
   m_Name: FPS
   m_TagString: Player
@@ -1124,14 +1157,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2031974354973ed4bb9bc9575101e42c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
-  speedRotation: 15
+  speed: 1500
+  speedRotation: 10
   newInput: {fileID: 1771687492929310966}
   rb: {fileID: 1771687493424574788}
   fatherOfCamera: {fileID: 927249473484536522}
   camera: {fileID: 407209143}
-  isGroundedChecked: {fileID: 1126048234}
-  _animator: {fileID: 5639300216417115588}
+  isGroundedChecked: {fileID: 6439591751118307068, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+    type: 3}
+  _animator: {fileID: 0}
+  _gravityMultiplier: 8
 --- !u!114 &1126048234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,7 +1181,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerCollider: {fileID: 1771687492742877471}
   m_CurrentMaterial: 
+  _isGrounded: 0
   maxDistance: 1.5
+--- !u!114 &4793064028729963102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771687493424574790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95eb367b4cc6c40e0ba5077bf9750a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAnimationEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5786349194119202374}
+        m_TargetAssemblyTypeName: GameAudio.PlayerSoundSelection, Assembly-CSharp
+        m_MethodName: PlayFootstepSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &6670044836918943001
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771687493424574790}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 505719829885c430dada9abee3dc6dd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3822995900645145271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,9 +1348,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8451672097644087411}
-  - component: {fileID: 5639300216417115588}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: PlayerAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1289,26 +1371,6 @@ Transform:
   m_Father: {fileID: 1771687493424574789}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5639300216417115588
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8250395473364649760}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9128015e524fc4c51833109b9d525b9d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &137832008
 PrefabInstance:
   m_ObjectHideFlags: 0

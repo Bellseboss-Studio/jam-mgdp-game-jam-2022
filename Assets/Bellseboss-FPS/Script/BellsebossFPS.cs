@@ -20,6 +20,7 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
     
     [Header("OtherConfigs")]
     [SerializeField] Animator _animator;
+    [SerializeField] private int _gravityMultiplier = 8;
     
     private LogicBellsebossFps logic;
     private bool canMove;
@@ -66,6 +67,7 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
     public void RotationBody(float rotationX)
     {
         transform.Rotate(0, rotationX * speedRotation * Time.deltaTime, 0, Space.Self);
+        
     }
 
     public void RotationCamera(float rotationY)
@@ -79,7 +81,8 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
 
     private void Update()
     {
-        var gravity = isGroundedChecked.IsGrounded ? Vector3.down * 8 : Vector3.down / 8;
+        
+        var gravity = isGroundedChecked.IsGrounded ? Vector3.down * _gravityMultiplier : Vector3.down / _gravityMultiplier;
         var transformDirection = transform.TransformDirection(new Vector3(_direction.x, 0, _direction.y)) * (Time.deltaTime * speed);
         transformDirection += gravity;
         rb.velocity = transformDirection;
