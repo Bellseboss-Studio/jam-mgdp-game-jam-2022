@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.ComponentModel.Design;
 using Cinemachine;
@@ -79,10 +80,11 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
         fatherOfCamera.transform.localRotation = Quaternion.Euler(_xRotationCamera, 0f, 0f);
     }
 
-    private void Update()
+    
+    private void FixedUpdate()
     {
         
-        var gravity = isGroundedChecked.IsGrounded ? Vector3.down * _gravityMultiplier : Vector3.down / _gravityMultiplier;
+        var gravity = isGroundedChecked.IsGrounded ? Vector3.down / _gravityMultiplier : Vector3.down * _gravityMultiplier;
         var transformDirection = transform.TransformDirection(new Vector3(_direction.x, 0, _direction.y)) * (Time.deltaTime * speed);
         transformDirection += gravity;
         rb.velocity = transformDirection;

@@ -14,7 +14,7 @@ namespace GameAudio
     [SerializeField] private float maxDistance;
 
     public bool IsGrounded => _isGrounded;
-    private bool _CurrentStatus;
+    
     public void PlayFootstepSound()
     {
       ServiceLocator.Instance.GetService<FootstepSoundSelection>().OnFootstep(m_CurrentMaterial.Replace("(Instance)", "").Trim());
@@ -38,14 +38,7 @@ namespace GameAudio
         {
           m_CurrentMaterial = hit.transform.gameObject.GetComponent<MeshRenderer>().material.name;
         }
-
-        if (_CurrentStatus = !_isGrounded)
-        {
-          _isGrounded = true;
-          _CurrentStatus = _isGrounded;
-          Debug.Log("TestGrounded XXXXXXXX");
-        }
-        
+        _isGrounded = true;
       }
       else
       {
