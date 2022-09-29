@@ -13,6 +13,8 @@ public class Rules_Cinematic : MonoBehaviour
     private void Start()
     {
         StartCoroutine(LoadGame());
+        Cursor.lockState = CursorLockMode.Locked;
+        Debug.Log("Cursor Loked");
     }
 
     private IEnumerator LoadGame()

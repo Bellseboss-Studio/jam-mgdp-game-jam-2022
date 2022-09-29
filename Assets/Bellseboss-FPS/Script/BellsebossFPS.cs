@@ -92,7 +92,7 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
     
     private void OnApplicationFocus(bool hasFocus)
     {
-        Cursor.lockState = hasFocus ? CursorLockMode.Locked : CursorLockMode.None;
+        //Cursor.lockState = hasFocus ? CursorLockMode.Locked : CursorLockMode.None;
     }
 
     public GameObject GetFatherOfCamera()
