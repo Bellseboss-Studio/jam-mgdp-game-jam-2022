@@ -51,7 +51,7 @@ public class MusicSystem : Singleton<MusicSystem>
         m_MixerSnapshots[scene].TransitionTo(m_CrossfadeTime);
         yield return new WaitForSeconds(m_CrossfadeTime);
         m_MxTracks[m_Buffer].SetActive(false);
-       m_Buffer = m_CurrentScene;
+        m_Buffer = m_CurrentScene;
     }
 
     public void SetPauseMixer()
