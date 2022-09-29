@@ -4,6 +4,7 @@ using PlayFab.ClientModels;
 using PlayFab.Internal;
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SystemOfExtras
@@ -12,9 +13,10 @@ namespace SystemOfExtras
     {
         [SerializeField] private float timeVelocity, fadeDuration;
         [SerializeField] private int horaAnochecer, minutoAnochecer, horaInicio, minutoInicio;
-        [SerializeField] private FirstPersonController firstPersonController;
+        [SerializeField] private BellsebossFPS firstPersonController;
         [SerializeField] private Image fadeImage;
         [SerializeField] private Transform mallGatewayTransform;
+        [SerializeField] private Dialog dialogForSayTheCCIsClose;
         private Tiempo _currentTime;
         private bool _contarElTiempo;
 
@@ -27,11 +29,22 @@ namespace SystemOfExtras
         {
             if (!_contarElTiempo) return;
             _currentTime.AddTime(Time.deltaTime * timeVelocity);
+            Debug.Log($"Time: {GetTime()}");
         }
 
         public void Anochecio()
         {
             Debug.Log("anochecio");
+            ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog(dialogForSayTheCCIsClose.Id);
+            ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogAction( isDialog =>
+            {
+                
+            });
+            ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(idDialog =>
+            {
+                SitUntilNight();
+                //ServiceLocator.Instance.GetService<IDialogSystem>().clos
+            });
         }
 
         public string GetTime()
@@ -41,10 +54,14 @@ namespace SystemOfExtras
 
         public void SitUntilNight()
         {
-            firstPersonController.enabled = false;
-            var sequence = DOTween.Sequence();
+            ServiceLocator.Instance.GetService<ILoadScream>().Close((() =>
+            {
+                //cambiamos de escena
+                SceneManager.LoadScene(4);
+            }));
+            /*var sequence = DOTween.Sequence();
             sequence.Insert(0, fadeImage.DOFade(1, fadeDuration));
-            sequence.onComplete = ONComplete;
+            sequence.onComplete = ONComplete;*/
         }
 
         public bool IsNigth()

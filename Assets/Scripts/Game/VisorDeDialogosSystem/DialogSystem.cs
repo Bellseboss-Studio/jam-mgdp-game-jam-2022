@@ -66,7 +66,6 @@ namespace Game.VisorDeDialogosSystem
                 text.text = _dialog.DialogText;
                 _isInUpdateFulledText = false;
                 _textIsFinishedOfShow = true;
-                ApplyItemAction(_dialog.Id);
                 return;
             }
             fullTextInTextBox = FullTextInTextBox(_dialog.DialogText);
@@ -81,6 +80,7 @@ namespace Game.VisorDeDialogosSystem
 
         private IEnumerator FullTextInTextBox(string dialogDialogText)
         {
+            ApplyItemAction(_dialog.Id);
             _textIsFinishedOfShow = false;
             _isInUpdateFulledText = true;
             for (int i = 0; i < dialogDialogText.Length; i++)
@@ -90,7 +90,7 @@ namespace Game.VisorDeDialogosSystem
             }
             _isInUpdateFulledText = false;
             _textIsFinishedOfShow = true;
-            ApplyItemAction(_dialog.Id);
+            //ApplyItemAction(_dialog.Id);
         }
 
         public void SelectOption(int keyPress)
@@ -134,7 +134,7 @@ namespace Game.VisorDeDialogosSystem
 
         public void OnDialogFinish(Action<string> action)
         {
-            dialogFinish += action;
+            dialogFinish = action;
         }
 
         public void SetDialogToNotSpaceToItems()
