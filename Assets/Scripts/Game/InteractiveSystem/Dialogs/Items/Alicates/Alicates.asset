@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
   m_Name: Alicates
   m_EditorClassIdentifier: 
-  id: 
+  id: Alicates
   option: 
-  dialogText: 
-  listOfConcat: []
+  dialogText: 'Oh! some pliers, they coul''d be '
+  listOfConcat:
+  - {fileID: 11400000, guid: d6be46397e8e3d94daa58439fa34b338, type: 2}
+  - {fileID: 11400000, guid: 9724a0c8713e5a446ac07e363008c3d7, type: 2}

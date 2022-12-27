@@ -10,7 +10,7 @@ public class IrAlCentroComercialBicicleta : InteractiveObjectFather
         ServiceLocator.Instance.GetService<ITimeService>().AddMinutes(minutos);
         ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         });
     }
 }
