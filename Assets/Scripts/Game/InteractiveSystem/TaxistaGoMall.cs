@@ -12,7 +12,7 @@ public class TaxistaGoMall : InteractiveObjectFather
         ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(billete.Id);
         ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         });
     }
 }

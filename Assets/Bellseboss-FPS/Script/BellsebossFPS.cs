@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.ComponentModel.Design;
-using Cinemachine;
 using GameAudio;
-using SystemOfExtras;
 using UnityEngine;
 
 public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
@@ -22,6 +17,7 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
     [Header("OtherConfigs")]
     [SerializeField] Animator _animator;
     [SerializeField] private int _gravityMultiplier = 8;
+    [SerializeField] private bool lookCursor = true;
     
     private LogicBellsebossFps logic;
     private bool canMove;
@@ -45,6 +41,11 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
         camera.transform.localPosition = Vector3.zero;
         camera.transform.rotation = Quaternion.Euler(0, 0, 0);
         CanMove = true;
+
+        if (lookCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     private void OnLook(Vector2 rotation)
