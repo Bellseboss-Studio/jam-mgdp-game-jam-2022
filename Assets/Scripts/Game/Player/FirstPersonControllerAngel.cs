@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using SystemOfExtras;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Game.Player
 {
-    public class FirstPersonControllerAngel : MonoBehaviour
+    public class FirstPersonControllerAngel : MonoBehaviour, IInputBellseboss
     {
+        [SerializeField] private bool isInventoryKeyPressed;
         CharacterController characterController;
         [Header("Opciones de personaje")]
         public float walkSpeed = 6.0f;
@@ -26,6 +28,7 @@ namespace Game.Player
 
         private Vector3 move = Vector3.zero;
         private Vector2 _inputMovement, _cameraMovement;
+        private IMediatorPlayer _mediator;
 
         void Start()
         {
@@ -83,6 +86,22 @@ namespace Game.Player
             
             cam.transform.localEulerAngles = new Vector3(v_mouse, 0, 0);
             transform.Rotate(0, h_mouse, 0);*/
+        }
+
+        public void ConfigurePlayer(IMediatorPlayer mediator)
+        {
+            _mediator = mediator;
+        }
+        
+        public void OnLookInventory(InputAction.CallbackContext value)
+        {
+            isInventoryKeyPressed = value.ReadValueAsButton();
+        }
+
+
+        public bool PressInventoryButton()
+        {
+            return isInventoryKeyPressed;
         }
     }
 }

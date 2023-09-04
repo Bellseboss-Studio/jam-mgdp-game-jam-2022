@@ -21,11 +21,14 @@ namespace SystemOfExtras
         [SerializeField] private List<SpaceToItem> spacesToItems;
         [SerializeField] private Dialog dialogForNotItemSpace;
         [SerializeField] private GameObject backpack;
+        [SerializeField] private GameObject pointToStart, pointToEnd;
         private bool _backpackShowed;
         private bool _movingBackpack;
         [SerializeField] private float moveInY, animationDuration;
         private int _itemsSaved;
         private Transform referenceOfPlayer;
+        private IMediatorPlayer _mediator;
+        private float _timeToWait = 0.5f;
 
         private void Awake()
         {
@@ -46,6 +49,7 @@ namespace SystemOfExtras
             //Destroy(_playerReferences.ItemsContainerPosition.gameObject);
             playerCapsule.rotation = rotation;
             _player.OnItemPressed += OnClickFromPlayer;
+            ShowAndHideBackpack();
         }
 
         private void OnClickFromPlayer()
@@ -159,9 +163,16 @@ namespace SystemOfExtras
 
         private void Update()
         {
-            if (Keyboard.current.tabKey.wasPressedThisFrame)
+            //Adding a bit cool down to the inventory
+            if (_timeToWait > 0)
+            {
+                _timeToWait -= Time.deltaTime;
+                return;
+            }
+            if (_mediator.GetInput().PressInventoryButton())
             {
                 ShowAndHideBackpack();
+                _timeToWait = 0.5f;
             }
         }
 
@@ -172,10 +183,9 @@ namespace SystemOfExtras
             {
                 _movingBackpack = true;
                 var sequence = DOTween.Sequence();
-                var localPosition = backpack.transform.localPosition;
                 sequence.Insert(0,
                     backpack.transform.DOLocalMove(
-                        new Vector3(localPosition.x, localPosition.y - moveInY, localPosition.z), animationDuration).SetEase(Ease.InBack));
+                        pointToEnd.transform.localPosition, animationDuration).SetEase(Ease.InBack));
                 sequence.onComplete = () =>
                 {
                     _movingBackpack = false;
@@ -185,10 +195,9 @@ namespace SystemOfExtras
             {
                 _movingBackpack = true;
                 var sequence = DOTween.Sequence();
-                var localPosition = backpack.transform.localPosition;
                 sequence.Insert(0,
                     backpack.transform.DOLocalMove(
-                        new Vector3(localPosition.x, localPosition.y + moveInY, localPosition.z), animationDuration).SetEase(Ease.OutBack));
+                        pointToStart.transform.localPosition, animationDuration).SetEase(Ease.OutBack));
                 sequence.onComplete = () =>
                 {
                     _movingBackpack = false;
@@ -197,13 +206,15 @@ namespace SystemOfExtras
             _backpackShowed = !_backpackShowed;
         }
 
-        public void Configure(PlayerExtended playerExtended, PlayerReferences playerReferences, GameObject mainCamera, Transform playerCapsule)
+        public void Configure(PlayerExtended playerExtended, PlayerReferences playerReferences, GameObject mainCamera,
+            Transform playerCapsule, IMediatorPlayer mediator)
         {
             _player = playerExtended;
             _playerReferences = playerReferences;
             _mainCamera = mainCamera;
             referenceOfPlayer = playerCapsule;
             ConfigurePlayer(playerCapsule);
+            _mediator = mediator;
         }
     }
 }
