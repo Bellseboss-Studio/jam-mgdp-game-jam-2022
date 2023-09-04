@@ -7,7 +7,7 @@ namespace SystemOfExtras
 {
     [RequireComponent(typeof(ItemsInventory),typeof(IngredientsInventory), typeof(DialogSystem))]
     [RequireComponent(typeof(TimeService))]
-    public class InstallerAngelScene : MonoBehaviour
+    public class InstallerAngelScene : MonoBehaviour, IMediatorPlayer
     {
         [SerializeField] private ItemsInventory itemsInventory;
         [SerializeField] private TimeService timeService;
@@ -18,10 +18,12 @@ namespace SystemOfExtras
         [SerializeField] private PlayerReferences playerReferences;
         [SerializeField] private GameObject mainCamera;
         [SerializeField] private LoadScreamService loadScream;
+        [SerializeField] private FirstPersonControllerAngel firstPersonControllerAngel;
         private void Awake()
         {
-            if (itemsInventory) itemsInventory.Configure(player, playerReferences, mainCamera, playerCapsule);
-            if (ingredientsInventory) ingredientsInventory.Configure(player, playerReferences, mainCamera, playerCapsule);
+            if (itemsInventory) itemsInventory.Configure(player, playerReferences, mainCamera, playerCapsule, this);
+            if (ingredientsInventory) ingredientsInventory.Configure(player, playerReferences, mainCamera, playerCapsule, this);
+            if(firstPersonControllerAngel) firstPersonControllerAngel.ConfigurePlayer(this);
             if (FindObjectsOfType<Installer>().Length >= 1)
             {
                 Destroy(gameObject);
@@ -39,6 +41,11 @@ namespace SystemOfExtras
             StatesOfStatesMissions missions = new StatesOfStatesMissions();
             ServiceLocator.Instance.RegisterService<IStatesMissions>(missions);
             DontDestroyOnLoad(gameObject);
+        }
+
+        public IInputBellseboss GetInput()
+        {
+            return firstPersonControllerAngel;
         }
     }
 }
