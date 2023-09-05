@@ -3,7 +3,7 @@ on: [push, workflow_dispatch, pull_request]
 jobs:
   build:
     name: Build Project
-    runs-on: windows-2021.3.30f1-windows-il2cpp-2.0.0
+    runs-on: editor-2021.3.30f1-2.0.0
     steps:
       # Checkout
       - name: Checkout repository
