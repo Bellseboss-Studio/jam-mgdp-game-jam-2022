@@ -44,8 +44,7 @@ namespace Game.Player
             v_mouse += mouseVertical * _cameraMovement.y;
 
             v_mouse = Mathf.Clamp(v_mouse, minRotation, maxRotation);
-        
-
+            
             cam.transform.localEulerAngles = new Vector3(v_mouse, 0, 0);
 
             transform.Rotate(0, h_mouse, 0);

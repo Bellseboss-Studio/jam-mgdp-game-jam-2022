@@ -25,19 +25,19 @@ public class InteractiveObject : MonoBehaviour
     public virtual void OnMouseDown()
     {
         /*Debug.Log("Click en el objeto");*/
-        ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog(idDialog.Id);
-        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogAction( isDialog =>
-        {
-            foreach (var component in gameObject.GetComponents<IInteractiveObject>())
+        ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog(idDialog.Id, isDialog =>
             {
-                component.OnAction(isDialog);
-            }
-            ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(isDialog);
-        });
-        ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(idDialog =>
-        {
-            InteractionFinished(idDialog);
-        });
+                foreach (var component in GetComponents<IInteractiveObject>())
+                {
+                    component.OnAction(isDialog);
+                }
+
+                ServiceLocator.Instance.GetService<InteractablesSounds>().PlaySound(isDialog);
+            },
+            idDialog =>
+            {
+                InteractionFinished(idDialog);
+            });
     }
 
     private void InteractionFinished(string idDialog)

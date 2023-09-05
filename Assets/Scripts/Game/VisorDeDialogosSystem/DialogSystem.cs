@@ -146,5 +146,12 @@ namespace Game.VisorDeDialogosSystem
         {
             return _dialog;
         }
+
+        public void OpenDialog(string idDialogId, Action<string> action, Action<string> finisherAction)
+        {
+            OpenDialog(idDialogId);
+            OnDialogAction(action);
+            OnDialogFinish(finisherAction);
+        }
     }
 }
