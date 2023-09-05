@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12411,6 +12411,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa12baa10244cb9429605103cebcc240, type: 3}
+--- !u!1 &468873842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5577598815115142915, guid: a0a8ad3171773c64ab2372c981d9f3f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 564375763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &468873848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468873842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cafab083da4c7bacb2711b028f31e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 0}
 --- !u!1001 &469433373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15974,7 +15993,7 @@ MonoBehaviour:
   billete: {fileID: 2745990476210067949, guid: aafa1253e90521f43a14a1934f1365b6, type: 3}
 --- !u!95 &564375766
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -15991,7 +16010,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &564375767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16166,7 +16186,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7801048, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -24157,6 +24177,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 844319951}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &851343065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9066081288236842529, guid: a0a8ad3171773c64ab2372c981d9f3f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 564375763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &851343071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851343065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cafab083da4c7bacb2711b028f31e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 11400000, guid: ee97a16365823cf4896aa1c681357b97, type: 2}
 --- !u!1001 &855491967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34215,6 +34254,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa12baa10244cb9429605103cebcc240, type: 3}
+--- !u!1 &1213098873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 215216614986272093, guid: a0a8ad3171773c64ab2372c981d9f3f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 564375763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1213098879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213098873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cafab083da4c7bacb2711b028f31e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 0}
 --- !u!1001 &1213159990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53587,7 +53645,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1853755295
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -53604,7 +53662,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1855503310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54496,6 +54555,7 @@ MonoBehaviour:
     type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!114 &1878112968
 MonoBehaviour:
   m_ObjectHideFlags: 0
