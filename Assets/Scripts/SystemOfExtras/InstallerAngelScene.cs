@@ -21,14 +21,14 @@ namespace SystemOfExtras
         [SerializeField] private FirstPersonControllerAngel firstPersonControllerAngel;
         private void Awake()
         {
-            if (itemsInventory) itemsInventory.Configure(player, playerReferences, mainCamera, playerCapsule, this);
-            if (ingredientsInventory) ingredientsInventory.Configure(player, playerReferences, mainCamera, playerCapsule, this);
-            if(firstPersonControllerAngel) firstPersonControllerAngel.ConfigurePlayer(this);
-            if (FindObjectsOfType<Installer>().Length >= 1)
+            if (FindObjectsOfType<InstallerAngelScene>().Length > 1)
             {
                 Destroy(gameObject);
                 return;
             }
+            if (itemsInventory) itemsInventory.Configure(player, playerReferences, mainCamera, playerCapsule, this);
+            if (ingredientsInventory) ingredientsInventory.Configure(player, playerReferences, mainCamera, playerCapsule, this);
+            if(firstPersonControllerAngel) firstPersonControllerAngel.ConfigurePlayer(this);
             ServiceLocator.Instance.RegisterService<IIngredientsInventory>(ingredientsInventory);
             ServiceLocator.Instance.RegisterService<IItemsInventory>(itemsInventory);
             ServiceLocator.Instance.RegisterService<IDialogSystem>(dialogSystem);
