@@ -1,41 +1,72 @@
 name: Actions Web 😎
 on:  [push, workflow_dispatch, pull_request]
 jobs:
-  build:
-    name: Build Project
+  buildAndTestForLinuxBasedPlatforms:
+    name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - ./
+        unityVersion:
+          - 2021.3.6f1
+        targetPlatform:
+          - WebGL # WebGL.
     steps:
-      # Checkout
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           lfs: true
-      # Cache
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
-          path: Library
-          key: Library
-      # Build
-      - name: Build project
-        uses: game-ci/unity-builder@v2
+          path: ${{ matrix.projectPath }}/Library
+          key:
+            Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}-${{
+            hashFiles(matrix.projectPath) }}
+          restore-keys: |
+            Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}-
+            Library-${{ matrix.projectPath }}-
+            Library-
+      - uses: game-ci/unity-test-runner@v2
+        id: testRunner
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          targetPlatform: WebGL
-      - uses: actions/upload-artifact@v2
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v3
+        if: always()
         with:
-          name: build-WebGL
-          path: build/WebGL
+          name: Test results (all modes)
+          path: ${{ steps.testRunner.outputs.artifactsPath }}
+      - if: matrix.targetPlatform == 'Android'
+        uses: jlumbroso/free-disk-space@v1.2.0
+      - uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+          customParameters: '-myParameter myValue -myBoolean -ThirdParameter andItsValue'
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Build
+          path: build
       
   deploy:
     name: Butler Push to Itch
     runs-on: ubuntu-latest
-    needs: build
+    needs: buildAndTestForLinuxBasedPlatforms
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: build-WebGL
-          path: build/WebGL
+          name: Build
+          path: build
       # Upload to Itch
       - name: Butler Push
         uses: josephbmanley/butler-publish-itchio-action@master
@@ -44,9 +75,9 @@ jobs:
           CHANNEL: html5
           ITCH_GAME: the-perfect-cake
           ITCH_USER: bellseboss
-          PACKAGE: build/WebGL
+          PACKAGE: build
       - name: Cleanup to avoid storage limit
         if: always()
         uses: geekyeggo/delete-artifact@v1
         with:
-            name: build-WebGL
+            name: Build
