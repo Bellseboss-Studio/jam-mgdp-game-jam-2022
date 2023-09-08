@@ -19,6 +19,10 @@ namespace SystemOfExtras
         public void RegisterService<T>(T service)
         {
             var type = typeof(T);
+            if (_services.ContainsKey(type))
+            {
+                RemoveService<T>();
+            }
             Assert.IsFalse(_services.ContainsKey(type), 
                 $"Service {type} already registered");
         
@@ -34,6 +38,17 @@ namespace SystemOfExtras
             }
 
             return (T) service;
+        }
+        
+        public void RemoveService<T>()
+        {
+            var type = typeof(T);
+            if (!_services.ContainsKey(type))
+            {
+                throw new Exception($"Service {type} not found");
+            }
+
+            _services.Remove(type);
         }
     }
 }

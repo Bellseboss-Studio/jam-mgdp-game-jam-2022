@@ -26,6 +26,8 @@ namespace GameAudio
         }
         public void PlaySound()
         {
+            if(m_Target == null){return;}
+            
             if (m_CheckForDistance)
             {
                 m_Magnitude = Vector3.Magnitude(m_Target.position - this.gameObject.transform.position);

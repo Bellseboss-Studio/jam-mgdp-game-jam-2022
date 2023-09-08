@@ -18,7 +18,6 @@ namespace Game.Player
         public GameObject cam;
         public float mouseHorizontal = 3.0f;
         public float mouseVertical = 2.0f;
-
     
 
         public float minRotation = -65.0f;
@@ -40,13 +39,16 @@ namespace Game.Player
 
         void Update()
         {
-            h_mouse = mouseHorizontal * _cameraMovement.x;
-            v_mouse += mouseVertical * _cameraMovement.y;
+            h_mouse = mouseHorizontal * _cameraMovement.x * Time.deltaTime;
+            v_mouse += mouseVertical * _cameraMovement.y * Time.deltaTime;
 
             v_mouse = Mathf.Clamp(v_mouse, minRotation, maxRotation);
             
+            //want change rotation with lerp function
             cam.transform.localEulerAngles = new Vector3(v_mouse, 0, 0);
+            
 
+            //rotate with from mouse h_mouse using lerp function
             transform.Rotate(0, h_mouse, 0);
 
 
