@@ -7,7 +7,7 @@ using UnityEngine;
 public class InteractiveObject : MonoBehaviour
 {
     private bool hasEnableShader;
-    private Renderer _renderer = null;
+    [SerializeField] private Renderer _renderer;
     [SerializeField] protected Dialog idDialog;
     public Action OnInteractionFinished;
     protected Dialog OriginalDialog;
@@ -15,9 +15,12 @@ public class InteractiveObject : MonoBehaviour
 
     private void Start()
     {
-        if (TryGetComponent<Renderer>(out var render))
+        if(_renderer == null)
         {
-            _renderer = render;
+            if (TryGetComponent<Renderer>(out var render))
+            {
+                _renderer = render;
+            }
         }
         OriginalDialog = idDialog;
     }
