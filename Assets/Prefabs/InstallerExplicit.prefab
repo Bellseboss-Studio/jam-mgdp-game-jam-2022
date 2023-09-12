@@ -1061,15 +1061,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionId
       value: 559ef1cf-dbbb-4ae8-aa34-8d09c4674235
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: c2ca21d3-a335-4982-a559-2de200b8fb07
+      objectReference: {fileID: 0}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionName
       value: Player/Inventory[/Keyboard/tab]
+      objectReference: {fileID: 0}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: Player/Run[/Keyboard/leftShift]
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
@@ -1084,6 +1092,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1289503450}
@@ -1093,6 +1105,10 @@ PrefabInstance:
       objectReference: {fileID: 1289503450}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1289503450}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1289503450}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
@@ -1112,12 +1128,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnLook
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnLookInventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IsRunning
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1132,6 +1156,10 @@ PrefabInstance:
       value: Game.Player.FirstPersonControllerAngel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Game.Player.FirstPersonControllerAngel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1141,6 +1169,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 407209144, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
@@ -1232,6 +1264,12 @@ PrefabInstance:
       propertyPath: m_Height
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1771687492742877471, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f16c2f029006df24682c8c1917a3f066,
+        type: 2}
     - target: {fileID: 1771687492929310965, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182,
         type: 3}
       propertyPath: m_Enabled
@@ -1410,13 +1448,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInventoryKeyPressed: 0
-  walkSpeed: 3
+  walkSpeed: 5
   runSpeed: 10
   jumpSpeed: 8
   gravity: 20
   cam: {fileID: 806294840}
-  mouseHorizontal: 5
-  mouseVertical: 5
+  mouseHorizontal: 10
+  mouseVertical: 10
   minRotation: -65
   maxRotation: 60
 --- !u!4 &1771687493026472138 stripped

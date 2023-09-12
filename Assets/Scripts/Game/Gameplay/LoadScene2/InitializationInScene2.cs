@@ -14,6 +14,6 @@ public class InitializationInScene2 : MonoBehaviour
         transformPlayer.position = pointToSpawn.transform.position;
         transformPlayer.rotation = pointToSpawn.transform.rotation;
         Debug.Log(">>>>>>>>>>>>>>>>>teleport to player");
-        ServiceLocator.Instance.GetService<ILoadScream>().Open(() => { });
+        ServiceLocator.Instance.GetService<ILoadScream>().Open(() => { Debug.Log(">>>>>>>>>>>>>>>>>load scene 2"); });
     }
 }
