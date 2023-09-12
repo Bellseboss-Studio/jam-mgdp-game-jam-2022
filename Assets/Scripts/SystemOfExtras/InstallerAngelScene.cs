@@ -2,6 +2,7 @@
 using Game.VisorDeDialogosSystem;
 using GameAudio;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace SystemOfExtras
 {
@@ -19,6 +20,8 @@ namespace SystemOfExtras
         [SerializeField] private GameObject mainCamera;
         [SerializeField] private LoadScreamService loadScream;
         [SerializeField] private FirstPersonControllerAngel firstPersonControllerAngel;
+        [SerializeField] private GameObject playerAnimation;
+        [SerializeField] private PlayerInput scriptToDisable;
         private void Awake()
         {
             if (FindObjectsOfType<InstallerAngelScene>().Length > 1)
@@ -40,12 +43,21 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<ITimeService>(timeService);
             StatesOfStatesMissions missions = new StatesOfStatesMissions();
             ServiceLocator.Instance.RegisterService<IStatesMissions>(missions);
+            ServiceLocator.Instance.RegisterService<IMediatorPlayer>(this);
             DontDestroyOnLoad(gameObject);
         }
 
         public IInputBellseboss GetInput()
         {
             return firstPersonControllerAngel;
+        }
+
+        public void HidePlayer()
+        {
+            Debug.Log("Hide player");
+            playerAnimation.SetActive(false);
+            scriptToDisable.enabled = false;
+            dialogSystem.CloseDialog();
         }
     }
 }

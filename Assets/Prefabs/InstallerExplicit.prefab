@@ -888,6 +888,8 @@ MonoBehaviour:
   mainCamera: {fileID: 806294840}
   loadScream: {fileID: 2903813873532407168}
   firstPersonControllerAngel: {fileID: 1289503450}
+  playerAnimation: {fileID: 8250395472958494383}
+  scriptToDisable: {fileID: 748627964}
 --- !u!114 &8478531857907230917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,7 +1063,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionId
@@ -1072,12 +1074,20 @@ PrefabInstance:
       value: c2ca21d3-a335-4982-a559-2de200b8fb07
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionId
+      value: 9ca0edea-d285-4a8a-bc2a-e024788358aa
+      objectReference: {fileID: 0}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionName
       value: Player/Inventory[/Keyboard/tab]
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[17].m_ActionName
       value: Player/Run[/Keyboard/leftShift]
+      objectReference: {fileID: 0}
+    - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionName
+      value: Player/CreditsClick[/Mouse/leftButton,/Mouse/rightButton,/Keyboard/space]
       objectReference: {fileID: 0}
     - target: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
@@ -1381,6 +1391,18 @@ PrefabInstance:
     - {fileID: 169155504720903266, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
     - {fileID: 1771687492929310965, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182, type: 3}
+--- !u!114 &748627964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 81114739, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182,
+    type: 3}
+  m_PrefabInstance: {fileID: 675975567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &748627966 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 81114737, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182,
@@ -1490,6 +1512,12 @@ MonoBehaviour:
 --- !u!95 &6670044837585210518 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6670044836918943001, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182,
+    type: 3}
+  m_PrefabInstance: {fileID: 675975567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8250395472958494383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8250395473364649760, guid: f5052f6aab4bbbb4ea1fc1abcd1e9182,
     type: 3}
   m_PrefabInstance: {fileID: 675975567}
   m_PrefabAsset: {fileID: 0}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using SystemOfExtras;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,10 @@ public class CreditsController : MonoBehaviour
     {
         corrutine = StartCoroutine(StartCredits());
         credits.anchoredPosition = Vector2.zero;
+        //habalible mouse
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        //ServiceLocator.Instance.GetService<Imusi>()
     }
 
     private IEnumerator StartCredits()
