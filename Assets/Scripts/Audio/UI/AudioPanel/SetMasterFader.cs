@@ -6,7 +6,7 @@ namespace GameAudio
     {
         private void Awake()
         {
-            m_StartingValue = m_Slider.value;
+            m_Slider.value = UIPerdurableValues.MasterFaderValue;
         }
         public override void SetVolume(float sliderValue)
         {
