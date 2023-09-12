@@ -28,6 +28,7 @@ namespace Game.Player
         private Vector3 move = Vector3.zero;
         private Vector2 _inputMovement, _cameraMovement;
         private IMediatorPlayer _mediator;
+        private bool _isRunning;
 
         void Start()
         {
@@ -56,11 +57,10 @@ namespace Game.Player
             {
                 move = new Vector3(_inputMovement.x, 0.0f, _inputMovement.y);
 
-                /*if (Input.GetKey(KeyCode.LeftShift))
+                if (_isRunning)
                     move = transform.TransformDirection(move) * runSpeed;
                 else
-                    */
-                move = transform.TransformDirection(move) * walkSpeed;
+                    move = transform.TransformDirection(move) * walkSpeed;
 
                 /*if (Input.GetKey(KeyCode.Space))
 
@@ -69,6 +69,12 @@ namespace Game.Player
             move.y -= gravity * Time.deltaTime;
 
             characterController.Move(move * Time.deltaTime);
+        }
+        
+        public void IsRunning(InputAction.CallbackContext value)
+        {
+            //is press or release
+            _isRunning = value.ReadValueAsButton();
         }
 
         public void OnMove(InputAction.CallbackContext value)
