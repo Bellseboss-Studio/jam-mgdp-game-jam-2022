@@ -58,7 +58,13 @@ public class InteractiveObject : MonoBehaviour
     public void EnableShader()
     {
         hasEnableShader = true;
-        _renderer?.material.SetFloat("_Fresnel",1);
+        try
+        {
+            _renderer?.material.SetFloat("_Fresnel", 1);
+        }catch(Exception e)
+        {
+            Debug.LogWarning(e);
+        }
         StartCoroutine(DisableShader());
 
     }
@@ -73,7 +79,13 @@ public class InteractiveObject : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         if (!hasEnableShader)
         {
-            _renderer?.material.SetFloat("_Fresnel",0);
+            try
+            {
+                _renderer?.material.SetFloat("_Fresnel",0);
+            }catch(Exception e)
+            {
+                Debug.LogWarning(e);
+            }
         }
     }
 

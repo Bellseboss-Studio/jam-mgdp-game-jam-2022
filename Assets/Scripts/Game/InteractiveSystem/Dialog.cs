@@ -21,7 +21,8 @@ public class Dialog : ScriptableObject
             {
                 for (int i = 0; i < listOfConcat.Count; i++)
                 {
-                    if (listOfConcat[i].option != "")
+                    //clean string to black spaces
+                    if (listOfConcat[i].option.Trim() != "")
                     {
                         result += $"\n -{i+1} {listOfConcat[i].option}";
                     }   
