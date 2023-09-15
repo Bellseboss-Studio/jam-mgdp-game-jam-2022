@@ -47,3 +47,8 @@ jobs:
           ITCH_GAME: the-perfect-cake
           ITCH_USER: bellseboss
           PACKAGE: build
+      - name: Cleanup to avoid storage limit
+        if: always()
+        uses: geekyeggo/delete-artifact@v1
+        with:
+            name: build-Mac
