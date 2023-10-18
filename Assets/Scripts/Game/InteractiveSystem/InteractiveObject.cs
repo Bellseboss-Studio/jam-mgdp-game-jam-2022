@@ -20,6 +20,12 @@ public class InteractiveObject : MonoBehaviour
             _renderer = render;
         }
         OriginalDialog = idDialog;
+        StartCustom();
+    }
+
+    protected virtual void StartCustom()
+    {
+        
     }
 
     public virtual void OnMouseDown()

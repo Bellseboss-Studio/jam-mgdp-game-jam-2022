@@ -15783,6 +15783,7 @@ MonoBehaviour:
   dialogToAction: {fileID: 11400000, guid: 96be74f58cd21684e88341cc48fc8c7e, type: 2}
   billete: {fileID: 2745990476210067949, guid: aafa1253e90521f43a14a1934f1365b6, type: 3}
   minutos: 10
+  nextScene: 4
 --- !u!65 &564375769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35802,10 +35803,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1289503450, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
+      propertyPath: walkSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4167022183043786018, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: m_Name
       value: InstallerExplicit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: ingredients.Array.data[3]
+      value: Azucar DulceRealidad
       objectReference: {fileID: 0}
     - target: {fileID: 4167022183043786046, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
@@ -54672,6 +54682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: minutos
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5264038649834871832, guid: 12b6a143c2e3d99448e2be8b71186858,
+        type: 3}
+      propertyPath: nextScene
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5264038650896083688, guid: 12b6a143c2e3d99448e2be8b71186858,
         type: 3}

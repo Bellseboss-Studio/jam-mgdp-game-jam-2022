@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
-  m_Name: 000_PasteleroPrimero
+  m_Name: 001_GoToRestroom
   m_EditorClassIdentifier: 
-  id: PasteleroPrimero
-  option: 
-  dialogText: Hi partner, What are you looking for?
+  id: restroomWithSteal
+  option: Go to Restroom
+  dialogText: "Hola, es que quiero ir al ba\xF1o... Por favor dejame pasar."
   listOfConcat:
-  - {fileID: 11400000, guid: b446a74943f6003418a899325bd66af0, type: 2}
-  - {fileID: 11400000, guid: c80fb6a4c4e9f474aa546ac396776d10, type: 2}
+  - {fileID: 11400000, guid: a80f5296b4e37c74e9a8b095d4ca899f, type: 2}
