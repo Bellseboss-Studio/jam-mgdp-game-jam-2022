@@ -175,7 +175,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!95 &4773412509064652400
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -192,8 +192,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &9028303693361884503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,8 +856,6 @@ MonoBehaviour:
   panelIngredients: {fileID: 5519841894239664279}
   ingredients:
   - Veneno de Unicornio
-  - Huevos de Dinosaurio
-  - "N\xE9ctar de los Dioses"
   - Harina del Comienzo
   - Azucar DulceRealidad
   ingredientImageTemplate: {fileID: 5690641598877970008, guid: 387e64956afd98a458e4fea7299e2e7a,
@@ -1416,8 +1413,8 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   cam: {fileID: 806294840}
-  mouseHorizontal: 1
-  mouseVertical: 1
+  mouseHorizontal: 5
+  mouseVertical: 5
   minRotation: -65
   maxRotation: 60
 --- !u!4 &1771687493026472138 stripped

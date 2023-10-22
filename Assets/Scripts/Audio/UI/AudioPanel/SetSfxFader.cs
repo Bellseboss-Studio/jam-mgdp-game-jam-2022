@@ -6,7 +6,7 @@ namespace GameAudio
     {
         private void Awake()
         {
-            m_StartingValue = m_Slider.value;
+            OnEnable();
         }
         public override void SetVolume(float sliderValue)
         {

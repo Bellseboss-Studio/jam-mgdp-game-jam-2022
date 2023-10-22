@@ -13,7 +13,10 @@ public class DialogsConfiguration : ScriptableObject
         idDialogs = new Dictionary<string, Dialog>(dialogs.Length);
         foreach (var dialog in dialogs)
         {
-            idDialogs.Add(dialog.Id, dialog);
+            if (!idDialogs.ContainsKey(dialog.Id))
+            {
+                idDialogs.Add(dialog.Id, dialog);   
+            }
         }
     }
 

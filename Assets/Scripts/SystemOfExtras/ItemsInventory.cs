@@ -100,14 +100,19 @@ namespace SystemOfExtras
 
         public bool SearchItemForId(string id)
         {
+            return SearchItemForIdAndCount(id, 1);
+        }
+        public bool SearchItemForIdAndCount(string id, int count)
+        {
+            int countItems = 0;
             foreach (var spaceToItem in spacesToItems)
             {
-                if (spaceToItem.CurrentItem!= null && spaceToItem.CurrentItem.Id == id)
+                if (spaceToItem.CurrentItem != null && spaceToItem.CurrentItem.Id == id)
                 {
-                    return true;
+                    countItems++;
                 }
             }
-            return false;
+            return countItems >= count;
         }
 
         public bool HasSpace()
@@ -117,10 +122,14 @@ namespace SystemOfExtras
 
         public int RemoveItemById(string itemId)
         {
+            return RemoveItemById(itemId, 1);
+        }
+        public int RemoveItemById(string itemId, int count)
+        {
             int countItemsRemove = 0;
             foreach (var spaceToItem in spacesToItems)
             {
-                if (spaceToItem.CurrentItem!= null && spaceToItem.CurrentItem.Id == itemId)
+                if (spaceToItem.CurrentItem != null && spaceToItem.CurrentItem.Id == itemId && countItemsRemove < count)
                 {
                     _items.Remove(spaceToItem.CurrentItem.InteractiveObject);
                     Destroy(spaceToItem.CurrentItem.gameObject);
