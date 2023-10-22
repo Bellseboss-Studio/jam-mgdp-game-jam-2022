@@ -32,6 +32,7 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<IIngredientsInventory>(ingredientsInventory);
             ServiceLocator.Instance.RegisterService<IItemsInventory>(itemsInventory);
             ServiceLocator.Instance.RegisterService<IDialogSystem>(dialogSystem);
+            ServiceLocator.Instance.RegisterService<IMediatorPlayer>(this);
             var decisionService = new DecisionService(player);
             ServiceLocator.Instance.RegisterService<IDecisionService>(decisionService);
             var moralService = new MoralService();
@@ -46,6 +47,11 @@ namespace SystemOfExtras
         public IInputBellseboss GetInput()
         {
             return firstPersonControllerAngel;
+        }
+
+        public Vector3 GetPlayerPosition()
+        {
+            return playerCapsule.position;
         }
     }
 }
