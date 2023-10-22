@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
-  m_Name: "Ni\xF1oConGolosinaDialog"
+  m_Name: NinoConGolosinaDialog_Estafar
   m_EditorClassIdentifier: 
-  id: "Ni\xF1oConGolosinaDialog"
-  option: 
-  dialogText: Though I didn't have any money, I got The Candy. Speaking is always
-    a choice!
-  listOfConcat: []
+  id: NinoConGolosinaDialog_estafar
+  option: Jugar al piedra, papel o tijera (hacer trampa)
+  dialogText: Ok jugemos...
+  listOfConcat:
+  - {fileID: 11400000, guid: 3b37afaca3dc40c43a5ff483d7810ff5, type: 2}

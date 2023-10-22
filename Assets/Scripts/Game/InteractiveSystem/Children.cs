@@ -1,7 +1,7 @@
 ﻿using SystemOfExtras;
 using UnityEngine;
 
-public class Traficante : InteractiveObject
+public class Children : InteractiveObject
 {
     [SerializeField] private Dialog youCantHaveTheMoney;
     [SerializeField] private Item billete;
@@ -9,7 +9,7 @@ public class Traficante : InteractiveObject
     {
         if (!CambioDialogo)
         {
-            idDialog = !ServiceLocator.Instance.GetService<IItemsInventory>().SearchItemForIdAndCount(billete.Id, 2) ? youCantHaveTheMoney : OriginalDialog;   
+            idDialog = !ServiceLocator.Instance.GetService<IItemsInventory>().SearchItemForIdAndCount(billete.Id, 1) ? youCantHaveTheMoney : OriginalDialog;   
         }
         base.OnMouseDown();
     }
