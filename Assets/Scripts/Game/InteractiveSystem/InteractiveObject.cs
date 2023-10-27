@@ -7,7 +7,7 @@ using UnityEngine;
 public class InteractiveObject : MonoBehaviour
 {
     private bool hasEnableShader;
-    private Renderer _renderer = null;
+    [SerializeField] private Renderer _renderer;
     [SerializeField] protected Dialog idDialog;
     public Action OnInteractionFinished;
     protected Dialog OriginalDialog;
@@ -15,9 +15,12 @@ public class InteractiveObject : MonoBehaviour
 
     private void Start()
     {
-        if (TryGetComponent<Renderer>(out var render))
+        if(_renderer == null)
         {
-            _renderer = render;
+            if (TryGetComponent<Renderer>(out var render))
+            {
+                _renderer = render;
+            }
         }
         OriginalDialog = idDialog;
         StartCustom();
@@ -61,7 +64,13 @@ public class InteractiveObject : MonoBehaviour
     public void EnableShader()
     {
         hasEnableShader = true;
-        _renderer?.material.SetFloat("_Fresnel",1);
+        try
+        {
+            _renderer?.material.SetFloat("_Fresnel", 1);
+        }catch(Exception e)
+        {
+            Debug.LogWarning(e);
+        }
         StartCoroutine(DisableShader());
 
     }
@@ -76,7 +85,13 @@ public class InteractiveObject : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         if (!hasEnableShader)
         {
-            _renderer?.material.SetFloat("_Fresnel",0);
+            try
+            {
+                _renderer?.material.SetFloat("_Fresnel",0);
+            }catch(Exception e)
+            {
+                Debug.LogWarning(e);
+            }
         }
     }
 
