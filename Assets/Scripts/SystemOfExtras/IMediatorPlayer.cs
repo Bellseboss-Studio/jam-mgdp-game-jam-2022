@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace SystemOfExtras
@@ -6,5 +7,6 @@ namespace SystemOfExtras
     {
         IInputBellseboss GetInput();
         Vector3 GetPlayerPosition();
+        void SetListOfMission(List<MissionDetail> ingredientsDetails);
     }
 }

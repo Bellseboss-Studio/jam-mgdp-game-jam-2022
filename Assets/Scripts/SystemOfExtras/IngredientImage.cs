@@ -17,9 +17,6 @@ namespace SystemOfExtras
         {
             tacha.DOSizeDelta(new Vector2(.22f, .03f), 1.5f);
         }
-        private void Update()
-        {
-        }
 
         public void Configure(string ingredient)
         {

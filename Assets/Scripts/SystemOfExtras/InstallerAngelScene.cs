@@ -1,4 +1,5 @@
-﻿using Game.Player;
+﻿using System.Collections.Generic;
+using Game.Player;
 using Game.VisorDeDialogosSystem;
 using GameAudio;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace SystemOfExtras
         [SerializeField] private GameObject mainCamera;
         [SerializeField] private LoadScreamService loadScream;
         [SerializeField] private FirstPersonControllerAngel firstPersonControllerAngel;
+        [SerializeField] private MissionControlUIView missionControlUIView;
         private void Awake()
         {
             if (FindObjectsOfType<InstallerAngelScene>().Length > 1)
@@ -39,8 +41,6 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<IMoralService>(moralService);
             //ServiceLocator.Instance.RegisterService<ILoadScream>(loadScream);
             ServiceLocator.Instance.RegisterService<ITimeService>(timeService);
-            StatesOfStatesMissions missions = new StatesOfStatesMissions();
-            ServiceLocator.Instance.RegisterService<IStatesMissions>(missions);
             DontDestroyOnLoad(gameObject);
         }
 
@@ -52,6 +52,13 @@ namespace SystemOfExtras
         public Vector3 GetPlayerPosition()
         {
             return playerCapsule.position;
+        }
+
+        public void SetListOfMission(List<MissionDetail> ingredientsDetails)
+        {
+            StatesOfStatesMissions missions = new StatesOfStatesMissions(ingredientsDetails);
+            ServiceLocator.Instance.RegisterService<IStatesMissions>(missions);
+            missionControlUIView.Config();
         }
     }
 }

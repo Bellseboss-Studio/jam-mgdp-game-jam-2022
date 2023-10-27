@@ -35807,6 +35807,10 @@ PrefabInstance:
       propertyPath: walkSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4167022183043786018, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: m_Name
@@ -35817,6 +35821,11 @@ PrefabInstance:
       propertyPath: ingredients.Array.data[3]
       value: Azucar DulceRealidad
       objectReference: {fileID: 0}
+    - target: {fileID: 4167022183043786045, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+        type: 3}
+      propertyPath: missionControlUIView
+      value: 
+      objectReference: {fileID: 1289503444}
     - target: {fileID: 4167022183043786046, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: m_RootOrder
@@ -35874,6 +35883,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
+--- !u!114 &1289503444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1454876449950300199, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1289503443}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffeba2dcce9498644baeb58163d050c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1289566134
 PrefabInstance:
   m_ObjectHideFlags: 0
