@@ -7,6 +7,7 @@ public class EndOfGame : MonoBehaviour
     private void Start()
     {
         ServiceLocator.Instance.GetService<IMediatorPlayer>().HidePlayer();
+        ServiceLocator.Instance.GetService<ILoadScream>().Open(() => { });
     }
 
     public void GoToCredits()

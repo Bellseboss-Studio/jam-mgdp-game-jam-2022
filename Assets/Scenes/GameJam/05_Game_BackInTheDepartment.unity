@@ -15166,6 +15166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2999c85e12744371b5a564d2abe9e2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
   idDialog: {fileID: 11400000, guid: 714255618f1dece4ea205b1e503e4dc7, type: 2}
   dialogConBillete: {fileID: 11400000, guid: db48718d75053b047bdb3731068dd2d7, type: 2}
   billete: {fileID: 2745990476210067949, guid: aafa1253e90521f43a14a1934f1365b6, type: 3}
@@ -15205,6 +15206,12 @@ MonoBehaviour:
   billete: {fileID: 2745990476210067949, guid: aafa1253e90521f43a14a1934f1365b6, type: 3}
   minutos: 10
   nextScene: 0
+--- !u!1 &564375768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5577598815115142915, guid: a0a8ad3171773c64ab2372c981d9f3f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 564375763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &564375769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15218,6 +15225,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 1.56, z: 0.64}
   m_Center: {x: 0, y: 0.94, z: 0}
+--- !u!114 &564375770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564375768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43270ab62cc33684ea44e1c44bdc67f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 11400000, guid: 3cdc43c755b32b84b9f5509493278929, type: 2}
+  sceneToLoad: 6
 --- !u!1 &567533650
 GameObject:
   m_ObjectHideFlags: 0
@@ -23044,6 +23065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39c59a064e51c94a91d36cc0c34145e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayInSeconds: 0
   pointToSpawn: {fileID: 1954763591}
 --- !u!4 &881610585
 Transform:
