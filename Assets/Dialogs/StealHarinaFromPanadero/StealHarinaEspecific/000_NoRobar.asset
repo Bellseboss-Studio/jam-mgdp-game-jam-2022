@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfcb0bf34e91da244a170853454e1b07, type: 3}
-  m_Name: TraficantePrimeroInventoryFull
+  m_Name: 000_NoRobar
   m_EditorClassIdentifier: 
-  id: TraficantePrimeroInventoryFull
-  option: 
-  dialogText: 'You don''t have room for the candy.  I can''t give it to you. '
-  listOfConcat:
-  - {fileID: 11400000, guid: 7e72fa0d416fe6e448c31989116ba759, type: 2}
-  - {fileID: 11400000, guid: 7ff3629f69ebee640aff4537f00076f6, type: 2}
+  id: NoRObarHarina
+  option: No robarla
+  dialogText: No deberia tomarla. Siempre puedo comprarla.
+  listOfConcat: []

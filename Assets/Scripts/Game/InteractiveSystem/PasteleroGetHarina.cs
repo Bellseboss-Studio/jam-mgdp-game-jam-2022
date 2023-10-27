@@ -7,7 +7,10 @@ public class PasteleroGetHarina : InteractiveObjectFather
     [SerializeField] private string harinaId;
     protected override void ActionEventCustom()
     {
-        ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(billete.Id);
-        ServiceLocator.Instance.GetService<IIngredientsInventory>().CrossOutIngredient(harinaId);
+        if (ServiceLocator.Instance.GetService<IItemsInventory>().SearchItemForId(billete.Id))
+        {
+            ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(billete.Id);
+            ServiceLocator.Instance.GetService<IIngredientsInventory>().CrossOutIngredient(harinaId);
+        }
     }
 }

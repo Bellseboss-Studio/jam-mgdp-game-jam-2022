@@ -181,6 +181,7 @@ AudioMixerController:
   m_Snapshots:
   - {fileID: 24500006}
   - {fileID: -3619860968189648244}
+  - {fileID: 2813439951606986416}
   - {fileID: -1831355931712574599}
   - {fileID: -8530028238816692808}
   m_StartSnapshot: {fileID: -3619860968189648244}
@@ -222,7 +223,7 @@ AudioMixerController:
     - abc72844160c54f3196eb391360d40cd
     name: View - Copy
   m_CurrentViewIndex: 1
-  m_TargetSnapshot: {fileID: -3619860968189648244}
+  m_TargetSnapshot: {fileID: 2813439951606986416}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -306,7 +307,7 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: -9078366291112902519}
   m_UserColorIndex: 0
-  m_Mute: 1
+  m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
 --- !u!244 &1481587515033975755
@@ -337,6 +338,21 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!245 &2813439951606986416
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Gameplay - CC
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 4ca1fdbf2d1744f7ca3f41fdf61d9f56
+  m_FloatValues:
+    0f5c5440d02c84b86a8fe7d6a065d277: -80
+    abe33d926992e4cb2872eecd7ac7c125: -11.944499
+    ecfcdee507b8b4086b99049aa52e932e: -80
+    1f0282fb991cf43bba6bb59afaf07f84: -9.332112
+  m_TransitionOverrides: {}
 --- !u!244 &3407955712714012888
 AudioMixerEffectController:
   m_ObjectHideFlags: 3

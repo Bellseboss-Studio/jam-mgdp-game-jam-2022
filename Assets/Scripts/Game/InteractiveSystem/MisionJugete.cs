@@ -45,5 +45,9 @@ public class MisionJugete : InteractiveObject
 
 public enum IdMissions
 {
-    JUGETE
+    JUGETE,
+    HARINA,
+    AZUCAR,
+    HUEVO,
+    VENENO,
 }

@@ -1,8 +1,8 @@
-﻿using Game.Player;
+﻿using System.Collections.Generic;
+using Game.Player;
 using Game.VisorDeDialogosSystem;
 using GameAudio;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace SystemOfExtras
 {
@@ -20,8 +20,7 @@ namespace SystemOfExtras
         [SerializeField] private GameObject mainCamera;
         [SerializeField] private LoadScreamService loadScream;
         [SerializeField] private FirstPersonControllerAngel firstPersonControllerAngel;
-        [SerializeField] private GameObject playerAnimation;
-        [SerializeField] private PlayerInput scriptToDisable;
+        [SerializeField] private MissionControlUIView missionControlUIView;
         private void Awake()
         {
             if (FindObjectsOfType<InstallerAngelScene>().Length > 1)
@@ -35,15 +34,13 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<IIngredientsInventory>(ingredientsInventory);
             ServiceLocator.Instance.RegisterService<IItemsInventory>(itemsInventory);
             ServiceLocator.Instance.RegisterService<IDialogSystem>(dialogSystem);
+            ServiceLocator.Instance.RegisterService<IMediatorPlayer>(this);
             var decisionService = new DecisionService(player);
             ServiceLocator.Instance.RegisterService<IDecisionService>(decisionService);
             var moralService = new MoralService();
             ServiceLocator.Instance.RegisterService<IMoralService>(moralService);
             //ServiceLocator.Instance.RegisterService<ILoadScream>(loadScream);
             ServiceLocator.Instance.RegisterService<ITimeService>(timeService);
-            StatesOfStatesMissions missions = new StatesOfStatesMissions();
-            ServiceLocator.Instance.RegisterService<IStatesMissions>(missions);
-            ServiceLocator.Instance.RegisterService<IMediatorPlayer>(this);
             DontDestroyOnLoad(gameObject);
         }
 
@@ -52,12 +49,16 @@ namespace SystemOfExtras
             return firstPersonControllerAngel;
         }
 
-        public void HidePlayer()
+        public Vector3 GetPlayerPosition()
         {
-            Debug.Log("Hide player");
-            playerAnimation.SetActive(false);
-            scriptToDisable.enabled = false;
-            dialogSystem.CloseDialog();
+            return playerCapsule.position;
+        }
+
+        public void SetListOfMission(List<MissionDetail> ingredientsDetails)
+        {
+            StatesOfStatesMissions missions = new StatesOfStatesMissions(ingredientsDetails);
+            ServiceLocator.Instance.RegisterService<IStatesMissions>(missions);
+            missionControlUIView.Config();
         }
     }
 }

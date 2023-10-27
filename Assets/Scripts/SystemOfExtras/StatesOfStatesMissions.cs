@@ -3,38 +3,57 @@ using SystemOfExtras;
 
 public class StatesOfStatesMissions : IStatesMissions
 {
-    private Dictionary<IdMissions, bool> listOfMissions;
+    private Dictionary<IdMissions, MissionDetail> listOfMissions;
 
     public StatesOfStatesMissions()
     {
-        listOfMissions = new Dictionary<IdMissions, bool>();
+        listOfMissions = new Dictionary<IdMissions, MissionDetail>();
+    }
+
+    public StatesOfStatesMissions(List<MissionDetail> ingredientsDetails)
+    {
+        listOfMissions = new Dictionary<IdMissions, MissionDetail>();
+        foreach (var missionDetail in ingredientsDetails)
+        {
+            listOfMissions.Add(missionDetail.idMissions, missionDetail);
+        }
     }
 
     public bool IsActiveMission(IdMissions idMissions)
     {
-        if (listOfMissions.TryGetValue(idMissions, out var value))
-        {
-            return value;
-        }
-
-        return false;
+        return listOfMissions.TryGetValue(idMissions, out var value) && value.IsCompleted;
     }
 
     public void AddMission(IdMissions idMissions)
     {
+        AddMission(idMissions, idMissions.ToString(), "");
+    }
+    public void AddMission(IdMissions idMissions, string name, string description)
+    {
         if (listOfMissions.TryGetValue(idMissions, out var value))
         {
-            listOfMissions[idMissions] = true;
+            listOfMissions[idMissions].IsCompleted = true;
             return;
         }
-        listOfMissions.Add(idMissions, true);
+        listOfMissions.Add(idMissions, new MissionDetail()
+        {
+            idMissions = idMissions,
+            IsCompleted = false,
+            nameOfMission = name,
+            descriptionOfMission = description
+        });
     }
 
     public void MissionCompleted(IdMissions idMissions)
     {
         if (listOfMissions.TryGetValue(idMissions, out var value))
         {
-            listOfMissions[idMissions] = false;
+            listOfMissions[idMissions].IsCompleted = false;
         }
+    }
+
+    public List<MissionDetail> GetMissionsActive()
+    {
+        return new List<MissionDetail>(listOfMissions.Values);
     }
 }

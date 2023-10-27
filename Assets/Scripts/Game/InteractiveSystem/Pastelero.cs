@@ -7,6 +7,7 @@ public class Pastelero : InteractiveObject
     [SerializeField] private Dialog misionCompletada;
     [SerializeField] private Item mineral;
     [SerializeField] private string azucarId;
+    
     public override void OnMouseDown()
     {
         if (CambioDialogo)
