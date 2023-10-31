@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogarConPersonaje : InteractiveObjectFather
@@ -16,18 +15,5 @@ public class DialogarConPersonaje : InteractiveObjectFather
     {
         yield return new WaitForSeconds(2);
         anim.SetBool("dialog",false);
-    }
-}
-
-public class GemelosCinematicaTrigger : MonoBehaviour
-{
-    [SerializeField] private Animator animator;
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            animator.SetTrigger("Egnter");
-        }
     }
 }
