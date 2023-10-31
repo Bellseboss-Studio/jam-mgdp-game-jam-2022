@@ -8,5 +8,6 @@ namespace SystemOfExtras
         IInputBellseboss GetInput();
         Vector3 GetPlayerPosition();
         void SetListOfMission(List<MissionDetail> ingredientsDetails);
+        void HidePlayer();
     }
 }

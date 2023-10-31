@@ -15,7 +15,8 @@ public class EntregarJugete : InteractiveObjectFather
             Debug.Log($"entrego el billete {billete.Id} {billete.name}");
             ServiceLocator.Instance.GetService<IItemsInventory>().SaveItem(billete);
             ServiceLocator.Instance.GetService<IStatesMissions>().MissionCompleted(IdMissions.JUGETE);
-            mision.ConcatDialog(dialogoAgradecimiento);
+            if(dialogoAgradecimiento != null)
+                mision.ConcatDialog(dialogoAgradecimiento);
         }
     }
 }

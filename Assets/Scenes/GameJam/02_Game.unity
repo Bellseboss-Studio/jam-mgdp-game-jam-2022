@@ -13275,6 +13275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39c59a064e51c94a91d36cc0c34145e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayInSeconds: 0
   pointToSpawn: {fileID: 1542213842}
 --- !u!1001 &509410049
 PrefabInstance:
@@ -15750,6 +15751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2999c85e12744371b5a564d2abe9e2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
   idDialog: {fileID: 11400000, guid: 714255618f1dece4ea205b1e503e4dc7, type: 2}
   dialogConBillete: {fileID: 11400000, guid: db48718d75053b047bdb3731068dd2d7, type: 2}
   billete: {fileID: 2745990476210067949, guid: aafa1253e90521f43a14a1934f1365b6, type: 3}
@@ -35903,89 +35905,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1289503450, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: walkSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2110381273, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4167022183043786018, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: m_Name
       value: InstallerExplicit
       objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredients.Array.data[3]
-      value: Azucar DulceRealidad
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[0].idMissions
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[1].idMissions
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[2].idMissions
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[0].nameOfMission
-      value: Endulza tu vida
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[1].nameOfMission
-      value: Busca el Veneno
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[2].nameOfMission
-      value: Sacude el polvo
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[0].ingredientName
-      value: Azucar DulceRealidad
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[1].ingredientName
-      value: Veneno de Unicornio
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[2].ingredientName
-      value: Harina del Comienzo
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[0].descriptionOfMission
-      value: Usualmente, los ninos lo tienen.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[1].descriptionOfMission
-      value: Este objeto lo optienes de personas raras
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786044, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: ingredientsDetails.Array.data[2].descriptionOfMission
-      value: La Harina es comun en las panaderias
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167022183043786045, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-        type: 3}
-      propertyPath: missionControlUIView
-      value: 
-      objectReference: {fileID: 1289503444}
     - target: {fileID: 4167022183043786046, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
         type: 3}
       propertyPath: m_RootOrder
@@ -36043,18 +35967,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3, type: 3}
---- !u!114 &1289503444 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1454876449950300199, guid: 7a6f69ce0b54add4d8043ec6ae74ecb3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1289503443}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffeba2dcce9498644baeb58163d050c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1289566134
 PrefabInstance:
   m_ObjectHideFlags: 0
