@@ -14,7 +14,7 @@ public class EndOfGame : MonoBehaviour
     {
         ServiceLocator.Instance.GetService<ILoadScream>().Close(() =>
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(7);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(8);
         });
     }
 }
