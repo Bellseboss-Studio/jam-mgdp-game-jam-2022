@@ -1,4 +1,3 @@
-using Cinemachine;
 using GameAudio;
 using UnityEngine;
 
@@ -17,11 +16,19 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
     
     [Header("OtherConfigs")]
     [SerializeField] Animator _animator;
+    [SerializeField] private int _gravityMultiplier = 8;
+    [SerializeField] private bool lookCursor = true;
     
     private LogicBellsebossFps logic;
     private bool canMove;
     private Vector2 _direction;
     private float _xRotationCamera;
+
+    public bool CanMove
+    {
+        get => canMove;
+        set => canMove = value;
+    }
 
     private void Start()
     {
@@ -33,15 +40,23 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
         camera.transform.SetParent(fatherOfCamera.transform);
         camera.transform.localPosition = Vector3.zero;
         camera.transform.rotation = Quaternion.Euler(0, 0, 0);
+        CanMove = true;
+
+        if (lookCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     private void OnLook(Vector2 rotation)
     {
+        if (!canMove) return;
         logic.Look(rotation);
     }
 
     public void OnMove(Vector2 direction)
     {
+        if (!canMove) return;
         logic.Move(direction);
     }
 
@@ -54,6 +69,7 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
     public void RotationBody(float rotationX)
     {
         transform.Rotate(0, rotationX * speedRotation * Time.deltaTime, 0, Space.Self);
+        
     }
 
     public void RotationCamera(float rotationY)
@@ -65,17 +81,23 @@ public class BellsebossFPS : MonoBehaviour, IBellsebossMediator
         fatherOfCamera.transform.localRotation = Quaternion.Euler(_xRotationCamera, 0f, 0f);
     }
 
-    private void Update()
+    
+    private void FixedUpdate()
     {
-        var gravity = Vector3.down;
-        gravity = isGroundedChecked.IsGrounded ? Vector3.down/8 : Vector3.down/2;
-        var transformDirection = transform.TransformDirection(new Vector3(_direction.x, 0, _direction.y) + gravity) * (Time.deltaTime * speed);
-        Debug.Log($"transformDirection {transformDirection}");
+        
+        var gravity = isGroundedChecked.IsGrounded ? Vector3.down / _gravityMultiplier : Vector3.down * _gravityMultiplier;
+        var transformDirection = transform.TransformDirection(new Vector3(_direction.x, 0, _direction.y)) * (Time.deltaTime * speed);
+        transformDirection += gravity;
         rb.velocity = transformDirection;
     }
     
     private void OnApplicationFocus(bool hasFocus)
     {
-        Cursor.lockState = hasFocus ? CursorLockMode.Locked : CursorLockMode.None;
+        //Cursor.lockState = hasFocus ? CursorLockMode.Locked : CursorLockMode.None;
+    }
+
+    public GameObject GetFatherOfCamera()
+    {
+        return fatherOfCamera;
     }
 }

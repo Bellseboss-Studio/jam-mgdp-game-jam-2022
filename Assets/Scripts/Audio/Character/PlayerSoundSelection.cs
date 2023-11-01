@@ -10,7 +10,7 @@ namespace GameAudio
     [SerializeField] private CapsuleCollider m_PlayerCollider;
     [SerializeField] private string m_CurrentMaterial = null;
 
-    private bool _isGrounded;
+    [SerializeField] private bool _isGrounded;
     [SerializeField] private float maxDistance;
 
     public bool IsGrounded => _isGrounded;
@@ -31,6 +31,7 @@ namespace GameAudio
     {
       Ray ray = new Ray(this.transform.position,Vector3.down);
       RaycastHit hit;
+      Debug.DrawRay(transform.position, Vector3.down, Color.green);
       if (Physics.Raycast(ray,out hit, maxDistance ))
       {
         if (m_CurrentMaterial != hit.transform.gameObject.GetComponent<MeshRenderer>().material.name)

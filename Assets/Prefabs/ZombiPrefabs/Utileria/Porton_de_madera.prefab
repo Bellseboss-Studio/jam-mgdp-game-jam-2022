@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4676535225438089828}
   - component: {fileID: 7422657088100648622}
   - component: {fileID: 4445253506987728285}
-  m_Layer: 0
+  - component: {fileID: 180089731202112362}
+  m_Layer: 2
   m_Name: Porton_de_madera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8935826911048361851}
-  m_LocalRotation: {x: -0.000000026692586, y: -0.7071058, z: -0.000000026692506, w: 0.7071078}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -72, y: 0.0000076293945, z: -64.111916}
-  m_LocalScale: {x: 23.865538, y: 23.865538, z: 23.865538}
+  m_LocalScale: {x: 2.8015084, y: 2.8015084, z: 2.8015084}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.098631635, y: 0.08732191, z: 0.006640138}
   m_Center: {x: -0.046467654, y: 0.0436591, z: -0.00010346656}
+--- !u!114 &180089731202112362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935826911048361851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abb4ebc51c27094ca34fe9b1b91db27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogToAction: {fileID: 11400000, guid: ca502027068e8f043be6f08619547314, type: 2}
+  canUseDoor: 0
+  closeDoor: 0
+  canUseAgain: 1

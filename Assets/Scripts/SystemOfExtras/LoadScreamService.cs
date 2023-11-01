@@ -9,7 +9,7 @@ public class LoadScreamService : MonoBehaviour, ILoadScream
     [SerializeField] private AnimatorControllerAnimations animationController;
     public void Open(Action action)
     {
-        ServiceLocator.Instance.GetService<ITimeService>().StartToCountTime();
+        //ServiceLocator.Instance.GetService<ITimeService>().StartToCountTime();//Esto debe ir a quien le interece mover el tiempo
         StartCoroutine(LoadScene(true, action));
     }
     

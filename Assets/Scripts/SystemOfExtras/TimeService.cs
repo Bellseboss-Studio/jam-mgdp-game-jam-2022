@@ -4,6 +4,7 @@ using PlayFab.ClientModels;
 using PlayFab.Internal;
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SystemOfExtras
@@ -12,9 +13,10 @@ namespace SystemOfExtras
     {
         [SerializeField] private float timeVelocity, fadeDuration;
         [SerializeField] private int horaAnochecer, minutoAnochecer, horaInicio, minutoInicio;
-        [SerializeField] private FirstPersonController firstPersonController;
+        [SerializeField] private BellsebossFPS firstPersonController;
         [SerializeField] private Image fadeImage;
         [SerializeField] private Transform mallGatewayTransform;
+        [SerializeField] private Dialog dialogForSayTheCCIsClose;
         private Tiempo _currentTime;
         private bool _contarElTiempo;
 
@@ -31,7 +33,15 @@ namespace SystemOfExtras
 
         public void Anochecio()
         {
-            Debug.Log("anochecio");
+            ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog(dialogForSayTheCCIsClose.Id);
+            ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogAction( isDialog =>
+            {
+                
+            });
+            ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(idDialog =>
+            {
+                SitUntilNight();
+            });
         }
 
         public string GetTime()
@@ -41,10 +51,10 @@ namespace SystemOfExtras
 
         public void SitUntilNight()
         {
-            firstPersonController.enabled = false;
-            var sequence = DOTween.Sequence();
-            sequence.Insert(0, fadeImage.DOFade(1, fadeDuration));
-            sequence.onComplete = ONComplete;
+            ServiceLocator.Instance.GetService<ILoadScream>().Close((() =>
+            {
+                SceneManager.LoadScene(4);
+            }));
         }
 
         public bool IsNigth()
@@ -54,9 +64,7 @@ namespace SystemOfExtras
 
         public void AddMinutes(int minutos)
         {
-            Debug.Log($"antes eran las {_currentTime.GetTime()}");
             _currentTime.AddTime(minutos*60);
-            Debug.Log($"ahora son las {_currentTime.GetTime()}");
         }
 
         public void StartToCountTime()

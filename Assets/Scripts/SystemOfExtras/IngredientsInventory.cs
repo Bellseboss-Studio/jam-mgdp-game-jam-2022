@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using Game.Player;
 using UnityEngine;
@@ -13,34 +14,41 @@ namespace SystemOfExtras
         private PlayerReferences _playerReferences;
         private GameObject _mainCamera;
         [SerializeField] private GameObject ingredientsHoja, panelIngredients;
-        [SerializeField] private List<string> ingredients;
+        [SerializeField] private List<MissionDetail> ingredientsDetails;
         [SerializeField] private IngredientImage ingredientImageTemplate;
         private List<IngredientImage> _ingredients;
         [SerializeField] private float moveInY, animationDuration;
         private bool _ingredientsShowed, _movingHojaIngredients;
+        private IMediatorPlayer _mediatorPlayer;
+        private float _timeToWait = 0.5f;
+        [SerializeField] private GameObject pointToStart, pointToEnd;
+        [SerializeField] private MissionControlUIView missionControlUIView;
 
         private void Awake()
         {
             _ingredients = new List<IngredientImage>();
         }
 
-        private void ConfigurePlayer(Transform playerCapsule)
+        private void ConfigurePlayer(Transform playerCapsule, IMediatorPlayer mediatorPlayer)
         {
             var rotation = playerCapsule.rotation;
             playerCapsule.rotation = new Quaternion(0,0,0,0);
-            ingredientsHoja.transform.SetParent(_playerReferences.PlayerCameraRoot);
-            ingredientsHoja.transform.position = _playerReferences.HojaPosition.position;
-            Destroy(_playerReferences.HojaPosition.gameObject);
+            //ingredientsHoja.transform.SetParent(_playerReferences.PlayerCameraRoot);
+            //ingredientsHoja.transform.position = _playerReferences.HojaPosition.position;
+            //Destroy(_playerReferences.HojaPosition.gameObject);
             playerCapsule.rotation = rotation;
             _player.OnItemPressed += OnClickFromPlayer;
+            _mediatorPlayer = mediatorPlayer;
+            ShowOrHideIngredients();
+            _mediatorPlayer.SetListOfMission(ingredientsDetails);
         }
 
         private void Start()
         {
-            foreach (var ingredient in ingredients)
+            foreach (var ingredient in ingredientsDetails)
             {
                 var ingredientInstance = Instantiate(ingredientImageTemplate, panelIngredients.transform);
-                ingredientInstance.Configure(ingredient);
+                ingredientInstance.Configure(ingredient.ingredientName);
                 _ingredients.Add(ingredientInstance);
             }
         }
@@ -53,18 +61,30 @@ namespace SystemOfExtras
 
         public void CrossOutIngredient(string id)
         {
-            foreach (var ingredient in _ingredients)
+            foreach (var ingredient in _ingredients.Where(ingredient => ingredient.ID == id))
             {
-                if (ingredient.ID == id)
-                {
-                    ingredient.CrossOut();
-                }
+                ingredient.CrossOut();
+            }
+
+            foreach (var missionDetail in ingredientsDetails.Where(missionDetail => missionDetail.ingredientName == id))
+            {
+                missionDetail.IsCompleted = true;
             }
         }
 
         private void Update()
         {
-            if (Keyboard.current.tabKey.wasPressedThisFrame) ShowOrHideIngredients();
+            //Adding a bit cool down to the inventory
+            if (_timeToWait > 0)
+            {
+                _timeToWait -= Time.deltaTime;
+                return;
+            }
+            if (_mediatorPlayer.GetInput().PressInventoryButton())
+            {
+                ShowOrHideIngredients();
+                _timeToWait = 0.5f;
+            }
         }
 
         private void ShowOrHideIngredients()
@@ -76,10 +96,9 @@ namespace SystemOfExtras
                     _ingredientsShowed = false;
                     _movingHojaIngredients = true;
                     var sequence = DOTween.Sequence();
-                    var localPosition = ingredientsHoja.transform.localPosition;
                     sequence.Insert(0,
                         ingredientsHoja.transform.DOLocalMove(
-                            new Vector3(localPosition.x, localPosition.y - moveInY, localPosition.z), animationDuration).SetEase(Ease.InBack));
+                            pointToEnd.transform.localPosition, animationDuration).SetEase(Ease.InBack));
                     sequence.onComplete = () =>
                     {
                         _movingHojaIngredients = false;
@@ -90,24 +109,24 @@ namespace SystemOfExtras
                     _ingredientsShowed = true;
                     _movingHojaIngredients = true;
                     var sequence = DOTween.Sequence();
-                    var localPosition = ingredientsHoja.transform.localPosition;
                     sequence.Insert(0,
                         ingredientsHoja.transform.DOLocalMove(
-                            new Vector3(localPosition.x, localPosition.y + moveInY, localPosition.z), animationDuration).SetEase(Ease.OutBack));
+                            pointToStart.transform.localPosition, animationDuration).SetEase(Ease.OutBack));
                     sequence.onComplete = () =>
                     {
                         _movingHojaIngredients = false;
                     };
                 }
+                missionControlUIView.OpenMissionsTab();
             }
         }
 
-        public void Configure(PlayerExtended playerExtended, PlayerReferences playerReferences, GameObject mainCamera, Transform playerCapsule)
+        public void Configure(PlayerExtended playerExtended, PlayerReferences playerReferences, GameObject mainCamera, Transform playerCapsule, IMediatorPlayer mediatorPlayer)
         {
             _player = playerExtended;
             _playerReferences = playerReferences;
             _mainCamera = mainCamera;
-            ConfigurePlayer(playerCapsule);
+            ConfigurePlayer(playerCapsule, mediatorPlayer);
         }
     }
 }

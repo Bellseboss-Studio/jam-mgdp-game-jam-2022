@@ -45,5 +45,14 @@ public class MisionJugete : InteractiveObject
 
 public enum IdMissions
 {
-    JUGETE
+    JUGETE,
+    HARINA,
+    AZUCAR,
+    HUEVO,
+    VENENO,
+    GO_OUT_TO_HOME,
+    GO_OUT_OF_BUILD,
+    GO_TO_THE_MALL,
+    GO_TO_HOME,
+    GO_TO_APARTMENT,
 }
