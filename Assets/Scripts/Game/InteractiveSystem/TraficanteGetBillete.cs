@@ -7,8 +7,8 @@ public class TraficanteGetBillete : InteractiveObjectFather
     [SerializeField] private string ingredientId;
     protected override void ActionEventCustom()
     {
-        ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(billete.Id);
-        ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(billete.Id);
+        ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(billete.Id, 2);
+        //ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(billete.Id);
         ServiceLocator.Instance.GetService<IIngredientsInventory>().CrossOutIngredient(ingredientId);
     }
 }
