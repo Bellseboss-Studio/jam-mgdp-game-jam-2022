@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using SystemOfExtras;
+using UnityEngine;
 
 public class SetDialogIfPlayerHaveItems : InteractiveObject
 {
@@ -20,7 +22,20 @@ public class SetDialogIfPlayerHaveItems : InteractiveObject
 
     private bool CheckIfPlayerHaveItems()
     {
-        return false;//refactor here to check if player have items
+        var countOfIngredients = ServiceLocator.Instance.GetService<IStatesMissions>().GetMissionsActive();
+        var count = 0;
+        var countOfIngredientsLength = 0;
+        foreach (var missionDetail in countOfIngredients.Where(missionDetail => !string.IsNullOrEmpty(missionDetail.ingredientName)))
+        {
+            countOfIngredientsLength++;
+            if (missionDetail.IsCompleted)
+            {
+                count++;
+            }
+        }
+        Debug.Log("count: " + count);
+        Debug.Log("countOfIngredientsLength: " + countOfIngredientsLength);
+        return countOfIngredientsLength == count;
     }
 
     private void ChangeAllComponentsToBadEnd()

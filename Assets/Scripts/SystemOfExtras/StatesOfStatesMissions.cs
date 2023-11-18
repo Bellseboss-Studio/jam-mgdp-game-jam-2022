@@ -33,7 +33,7 @@ public class StatesOfStatesMissions : IStatesMissions
     {
         if (listOfMissions.TryGetValue(idMissions, out var value))
         {
-            listOfMissions[idMissions].IsCompleted = true;
+            value.IsCompleted = true;
             return;
         }
 

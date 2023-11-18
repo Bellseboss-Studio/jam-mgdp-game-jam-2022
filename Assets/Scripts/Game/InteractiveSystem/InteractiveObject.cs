@@ -12,6 +12,7 @@ public class InteractiveObject : MonoBehaviour
     public Action OnInteractionFinished;
     protected Dialog OriginalDialog;
     protected bool CambioDialogo;
+    private bool clickIntoObject;
 
     private void Start()
     {
@@ -47,6 +48,7 @@ public class InteractiveObject : MonoBehaviour
             {
                 InteractionFinished(idDialog);
             });
+        clickIntoObject = true;
     }
 
     private void InteractionFinished(string idDialog)
@@ -78,6 +80,15 @@ public class InteractiveObject : MonoBehaviour
     private void LateUpdate()
     {
         hasEnableShader = false;
+        if (clickIntoObject)
+        {
+            if (Vector3.Distance(transform.position,
+                    ServiceLocator.Instance.GetService<IMediatorPlayer>().GetPlayerPosition()) > 5)
+            {
+                ServiceLocator.Instance.GetService<IDialogSystem>().CloseDialog();
+                clickIntoObject = false;
+            }
+        }
     }
 
     private IEnumerator DisableShader()
