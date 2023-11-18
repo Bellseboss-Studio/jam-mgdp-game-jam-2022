@@ -24,6 +24,7 @@ namespace SystemOfExtras
         [SerializeField] private MissionControlUIView missionControlUIView;
         [SerializeField] private GameObject playerAnimation;
         [SerializeField] private PlayerInput scriptToDisable;
+        [SerializeField] private MonoBehaviour scriptToMovePlayer;
         private void Awake()
         {
             if (FindObjectsOfType<InstallerAngelScene>().Length > 1)
@@ -37,7 +38,6 @@ namespace SystemOfExtras
             ServiceLocator.Instance.RegisterService<IIngredientsInventory>(ingredientsInventory);
             ServiceLocator.Instance.RegisterService<IItemsInventory>(itemsInventory);
             ServiceLocator.Instance.RegisterService<IDialogSystem>(dialogSystem);
-            ServiceLocator.Instance.RegisterService<IMediatorPlayer>(this);
             var decisionService = new DecisionService(player);
             ServiceLocator.Instance.RegisterService<IDecisionService>(decisionService);
             var moralService = new MoralService();
@@ -55,7 +55,12 @@ namespace SystemOfExtras
             scriptToDisable.enabled = false;
             dialogSystem.CloseDialog();
         }
-        
+
+        public void LockPlayer(bool lockPlayer)
+        {
+            scriptToMovePlayer.enabled = !lockPlayer;
+        }
+
         public IInputBellseboss GetInput()
         {
             return firstPersonControllerAngel;

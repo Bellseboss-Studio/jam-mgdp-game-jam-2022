@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9046159222660433682, guid: bf489e6063836b644b9ee803a1596574,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 79a577b24a613c645bd534dff4aa20a2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf489e6063836b644b9ee803a1596574, type: 3}
 --- !u!4 &72701505 stripped
@@ -246,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1624d34ceb82a4caa6c7d9a95170a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 1898915175}
   idDialog: {fileID: 11400000, guid: e788447bcb039a04faf572ec8b7f46ce, type: 2}
   jugete: {fileID: 1335419863}
   dialogoConUnJugete: {fileID: 11400000, guid: e497c1b40e0cdbf4fa4b833fe7026a66, type: 2}
@@ -1895,6 +1901,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4526215814202294073, guid: b9b4a9eb575e9fb46a8bae6fb5605e35,
         type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 151790545}
+    - target: {fileID: 4526215814202294073, guid: b9b4a9eb575e9fb46a8bae6fb5605e35,
+        type: 3}
       propertyPath: youCantHaveTheMoney
       value: 
       objectReference: {fileID: 11400000, guid: 7ebd4735d92b3ad4590a5074f869bdc3,
@@ -1926,6 +1937,12 @@ PrefabInstance:
     - {fileID: 4526215814202294079, guid: b9b4a9eb575e9fb46a8bae6fb5605e35, type: 3}
     - {fileID: 4526215814202294080, guid: b9b4a9eb575e9fb46a8bae6fb5605e35, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b9b4a9eb575e9fb46a8bae6fb5605e35, type: 3}
+--- !u!137 &151790545 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6925644208174498832, guid: b9b4a9eb575e9fb46a8bae6fb5605e35,
+    type: 3}
+  m_PrefabInstance: {fileID: 151790544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &201885143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,6 +2585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f06d7f69efc584aa666021a212c6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
   idDialog: {fileID: 11400000, guid: b0f62950fbc9744469bd7630e1ad4864, type: 2}
 --- !u!114 &596162151
 MonoBehaviour:
@@ -3794,6 +3812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141d0001084b10a41aee7be311c3b9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
   idDialog: {fileID: 11400000, guid: 13b8300e19a9dae458f7f8e412aaa9ab, type: 2}
 --- !u!65 &1216622459
 BoxCollider:
@@ -4005,6 +4024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141d0001084b10a41aee7be311c3b9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
   idDialog: {fileID: 11400000, guid: 13b8300e19a9dae458f7f8e412aaa9ab, type: 2}
 --- !u!65 &1335419865
 BoxCollider:
@@ -4918,6 +4938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141d0001084b10a41aee7be311c3b9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
   idDialog: {fileID: 11400000, guid: 5f62410977da25849a1b605fc38adbb6, type: 2}
 --- !u!65 &1722468245
 BoxCollider:
@@ -5094,6 +5115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141d0001084b10a41aee7be311c3b9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
   idDialog: {fileID: 11400000, guid: 13b8300e19a9dae458f7f8e412aaa9ab, type: 2}
 --- !u!65 &1724748476
 BoxCollider:
@@ -5510,6 +5532,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1760847944170646867, guid: 6797030f6598e1541ac6ed2f13b49ec9,
     type: 3}
   m_PrefabInstance: {fileID: 1795463472}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1898915175 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 9046159222660433682, guid: bf489e6063836b644b9ee803a1596574,
+    type: 3}
+  m_PrefabInstance: {fileID: 72701504}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1917222997
 GameObject:
@@ -6220,6 +6248,12 @@ MonoBehaviour:
   dialogToAction: {fileID: 11400000, guid: 821bbff0826af3f4baba46cc4b8826de, type: 2}
   interactiveTarger: {fileID: 2123967982}
   dialogToChange: {fileID: 11400000, guid: b040bb62aa76f7f4e880baa3488625bc, type: 2}
+--- !u!137 &2123967980 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4722671003584327583, guid: 3262514143d51114c812dea28bbf33a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2123967977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2123967981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6247,6 +6281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd4be25d47db4f338d22ac54f49a798d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 2123967980}
   idDialog: {fileID: 11400000, guid: 29242c1e979083d4eb54859ec9a5148f, type: 2}
   youCantHaveTheMoney: {fileID: 11400000, guid: 4d5e18ba9bcb9944a8fde68f4b07d43f,
     type: 2}

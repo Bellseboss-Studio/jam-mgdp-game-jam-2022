@@ -9,5 +9,7 @@ namespace SystemOfExtras
         Vector3 GetPlayerPosition();
         void SetListOfMission(List<MissionDetail> ingredientsDetails);
         void HidePlayer();
+        
+        void LockPlayer(bool lockPlayer);
     }
 }

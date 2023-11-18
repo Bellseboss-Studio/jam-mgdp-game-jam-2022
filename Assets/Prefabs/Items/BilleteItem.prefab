@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141d0001084b10a41aee7be311c3b9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
   idDialog: {fileID: 11400000, guid: 50b4d7ecf52219e4ebe265d0ff1d2c57, type: 2}
 --- !u!65 &3348164309867018472
 BoxCollider:
@@ -192,6 +193,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4829820755674245126}
     m_Modifications:
+    - target: {fileID: 6992672200253316574, guid: aa971f50bb458294982e1f58939bca4b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73d0b17b99eae224b9b30495a9ba3be5, type: 2}
     - target: {fileID: 8161044301359802033, guid: aa971f50bb458294982e1f58939bca4b,
         type: 3}
       propertyPath: m_RootOrder
