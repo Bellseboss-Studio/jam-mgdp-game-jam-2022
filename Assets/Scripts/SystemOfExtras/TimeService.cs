@@ -29,12 +29,10 @@ namespace SystemOfExtras
         {
             if (!_contarElTiempo) return;
             _currentTime.AddTime(Time.deltaTime * timeVelocity);
-            Debug.Log($"Time: {GetTime()}");
         }
 
         public void Anochecio()
         {
-            Debug.Log("anochecio");
             ServiceLocator.Instance.GetService<IDialogSystem>().OpenDialog(dialogForSayTheCCIsClose.Id);
             ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogAction( isDialog =>
             {
@@ -43,7 +41,6 @@ namespace SystemOfExtras
             ServiceLocator.Instance.GetService<IDialogSystem>().OnDialogFinish(idDialog =>
             {
                 SitUntilNight();
-                //ServiceLocator.Instance.GetService<IDialogSystem>().clos
             });
         }
 
@@ -56,12 +53,8 @@ namespace SystemOfExtras
         {
             ServiceLocator.Instance.GetService<ILoadScream>().Close((() =>
             {
-                //cambiamos de escena
                 SceneManager.LoadScene(4);
             }));
-            /*var sequence = DOTween.Sequence();
-            sequence.Insert(0, fadeImage.DOFade(1, fadeDuration));
-            sequence.onComplete = ONComplete;*/
         }
 
         public bool IsNigth()
@@ -71,9 +64,7 @@ namespace SystemOfExtras
 
         public void AddMinutes(int minutos)
         {
-            Debug.Log($"antes eran las {_currentTime.GetTime()}");
             _currentTime.AddTime(minutos*60);
-            Debug.Log($"ahora son las {_currentTime.GetTime()}");
         }
 
         public void StartToCountTime()

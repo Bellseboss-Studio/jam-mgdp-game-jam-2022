@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using SystemOfExtras;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Game.Player
 {
-    public class FirstPersonControllerAngel : MonoBehaviour
+    public class FirstPersonControllerAngel : MonoBehaviour, IInputBellseboss
     {
+        [SerializeField] private bool isInventoryKeyPressed;
         CharacterController characterController;
         [Header("Opciones de personaje")]
         public float walkSpeed = 6.0f;
@@ -16,7 +18,6 @@ namespace Game.Player
         public GameObject cam;
         public float mouseHorizontal = 3.0f;
         public float mouseVertical = 2.0f;
-
     
 
         public float minRotation = -65.0f;
@@ -26,6 +27,8 @@ namespace Game.Player
 
         private Vector3 move = Vector3.zero;
         private Vector2 _inputMovement, _cameraMovement;
+        private IMediatorPlayer _mediator;
+        private bool _isRunning;
 
         void Start()
         {
@@ -37,14 +40,16 @@ namespace Game.Player
 
         void Update()
         {
-            h_mouse = mouseHorizontal * _cameraMovement.x;
-            v_mouse += mouseVertical * _cameraMovement.y;
+            h_mouse = mouseHorizontal * _cameraMovement.x * Time.deltaTime;
+            v_mouse += mouseVertical * _cameraMovement.y * Time.deltaTime;
 
             v_mouse = Mathf.Clamp(v_mouse, minRotation, maxRotation);
-        
-
+            
+            //want change rotation with lerp function
             cam.transform.localEulerAngles = new Vector3(v_mouse, 0, 0);
+            
 
+            //rotate with from mouse h_mouse using lerp function
             transform.Rotate(0, h_mouse, 0);
 
 
@@ -52,11 +57,10 @@ namespace Game.Player
             {
                 move = new Vector3(_inputMovement.x, 0.0f, _inputMovement.y);
 
-                /*if (Input.GetKey(KeyCode.LeftShift))
+                if (_isRunning)
                     move = transform.TransformDirection(move) * runSpeed;
                 else
-                    */
-                move = transform.TransformDirection(move) * walkSpeed;
+                    move = transform.TransformDirection(move) * walkSpeed;
 
                 /*if (Input.GetKey(KeyCode.Space))
 
@@ -65,6 +69,12 @@ namespace Game.Player
             move.y -= gravity * Time.deltaTime;
 
             characterController.Move(move * Time.deltaTime);
+        }
+        
+        public void IsRunning(InputAction.CallbackContext value)
+        {
+            //is press or release
+            _isRunning = value.ReadValueAsButton();
         }
 
         public void OnMove(InputAction.CallbackContext value)
@@ -83,6 +93,22 @@ namespace Game.Player
             
             cam.transform.localEulerAngles = new Vector3(v_mouse, 0, 0);
             transform.Rotate(0, h_mouse, 0);*/
+        }
+
+        public void ConfigurePlayer(IMediatorPlayer mediator)
+        {
+            _mediator = mediator;
+        }
+        
+        public void OnLookInventory(InputAction.CallbackContext value)
+        {
+            isInventoryKeyPressed = value.ReadValueAsButton();
+        }
+
+
+        public bool PressInventoryButton()
+        {
+            return isInventoryKeyPressed;
         }
     }
 }

@@ -3,28 +3,13 @@ using UnityEngine;
 
 public class Traficante : InteractiveObject
 {
-    [SerializeField] private Dialog inventoryFull, misionCompletada;
-    [SerializeField] private Item collar;
+    [SerializeField] private Dialog youCantHaveTheMoney;
+    [SerializeField] private Item billete;
     public override void OnMouseDown()
     {
         if (!CambioDialogo)
         {
-            if (!ServiceLocator.Instance.GetService<IItemsInventory>().HasSpace())
-            {
-                idDialog = inventoryFull;
-            }
-            else
-            {
-                idDialog = OriginalDialog;
-            }
-        }
-        else
-        {
-            if (ServiceLocator.Instance.GetService<IItemsInventory>().SearchItemForId(collar.Id))
-            {
-                SetDialogo(misionCompletada);
-                ServiceLocator.Instance.GetService<IItemsInventory>().RemoveItemById(collar.Id);
-            }
+            idDialog = !ServiceLocator.Instance.GetService<IItemsInventory>().SearchItemForIdAndCount(billete.Id, 2) ? youCantHaveTheMoney : OriginalDialog;   
         }
         base.OnMouseDown();
     }

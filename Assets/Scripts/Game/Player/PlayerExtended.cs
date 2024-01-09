@@ -43,11 +43,13 @@ namespace Game.Player
                 {
                     ServiceLocator.Instance.GetService<UIControl>().ActivateUIPannel("Pause");
                     ServiceLocator.Instance.GetService<MusicSystem>().SetPauseMixer();
+                    ServiceLocator.Instance.GetService<IMediatorPlayer>().LockPlayer(true);
                 }
                 else
                 {
                     ServiceLocator.Instance.GetService<UIControl>().HideUI();
                     ServiceLocator.Instance.GetService<MusicSystem>().UnpauseMixer();
+                    ServiceLocator.Instance.GetService<IMediatorPlayer>().LockPlayer(false);
                 }
             }
             

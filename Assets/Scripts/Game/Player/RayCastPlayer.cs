@@ -8,6 +8,7 @@ namespace Game.Player
     {
         [SerializeField] private PlayerExtended player;
         [SerializeField] private GameObject camera;
+        [SerializeField] private float distanceRayCast = 3f;
         private InteractiveObject objetoInteractuable;
         private InteractiveObject objetoInteractuableACambiarShader;
         private Reloj _reloj;
@@ -26,26 +27,30 @@ namespace Game.Player
 
         private void OnClickFromPlayer()
         {
-            RaycastHit hit;
-            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit))
+            RaycastHit[] hit;
+            //shot raycast to all objects
+            hit = Physics.RaycastAll(camera.transform.position, camera.transform.TransformDirection(Vector3.forward));
+            Debug.Log($"Hit length {hit.Length}");
+            foreach (var raycastHit in hit)
             {
-                Debug.Log(hit.collider.gameObject);
-                //Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                if (hit.collider.gameObject.TryGetComponent<InteractiveObject>(out var interactiveObject))
+                Debug.Log($"Hit {raycastHit.collider.gameObject.name}");
+                if (raycastHit.collider.gameObject.TryGetComponent<InteractiveObject>(out var interactiveObject))
                 {
                     objetoInteractuable = interactiveObject;
                     objetoInteractuable.OnInteractionFinished += () =>
                     {
                         objetoInteractuable = null; 
                     };
+                    break;
                 }
-                if (hit.collider.gameObject.TryGetComponent<Reloj>(out var reloj))
+                if (raycastHit.collider.gameObject.TryGetComponent<Reloj>(out var reloj))
                 {
                     _reloj = reloj;
                     _reloj.OnInteractionFinished += idDialog =>
                     {
                         _reloj = null; 
                     };
+                    break;
                 }
             }
             objetoInteractuable?.OnMouseDown();
@@ -54,21 +59,20 @@ namespace Game.Player
 
         private void Update()
         {
-            RaycastHit hit;
-            // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), out hit))
+            RaycastHit[] hit;
+            //shot raycast to all objects
+            hit = Physics.RaycastAll(camera.transform.position, camera.transform.TransformDirection(Vector3.forward), distanceRayCast);
+            Debug.Log($"Hit length {hit.Length}");
+            Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * distanceRayCast, Color.white);
+            foreach (var raycastHit in hit)
             {
-                Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * raycastHit.distance, Color.yellow);
                 //Debug.Log($"Did Hit is, {hit.collider.gameObject.name}");
-                if (hit.collider.gameObject.TryGetComponent<InteractiveObject>(out objetoInteractuableACambiarShader))
+                if (raycastHit.collider.gameObject.TryGetComponent(out objetoInteractuableACambiarShader))
                 {
                     objetoInteractuableACambiarShader.EnableShader();
+                    break;
                 }
-            }
-            else
-            {
-                Debug.DrawRay(camera.transform.position, camera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                //Debug.Log("Did not Hit");
             }
         }
     }
