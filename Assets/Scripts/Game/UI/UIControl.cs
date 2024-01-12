@@ -10,6 +10,7 @@ namespace GameAudio
         [SerializeField] private GameObject[] m_UIElements;
         private Dictionary<string, GameObject> m_UiElementsDictionary = new Dictionary<string, GameObject>();
         private bool m_IsGamePaused;
+        private Action _activatePauseUIAction;
 
         private void Awake()
         {
@@ -41,6 +42,16 @@ namespace GameAudio
             {
                 panel.gameObject.SetActive(false);
             }
+        }
+
+        public void SetBackPausePanelCallback(Action activatePauseUIAction)
+        {
+            _activatePauseUIAction = activatePauseUIAction;
+        }
+
+        public void OnBackPauseButtonPressed()
+        {
+            _activatePauseUIAction?.Invoke();
         }
     }
 }
