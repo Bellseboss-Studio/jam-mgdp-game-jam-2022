@@ -12,9 +12,13 @@ namespace SystemOfExtras
         public InteractiveObject InteractiveObject => interactiveObject;
 
         private Dialog _dialog;
+        private bool _isItemSaved;
+
         protected override void ActionEventCustom()
         {
+            if (_isItemSaved) return;
             ServiceLocator.Instance.GetService<IItemsInventory>().SaveItem(this);
+            _isItemSaved = true;
         }
 
         public void PutInTheBackpack()
