@@ -15365,6 +15365,11 @@ PrefabInstance:
       propertyPath: _renderer
       value: 
       objectReference: {fileID: 333670908}
+    - target: {fileID: 5254920658652007933, guid: a0a8ad3171773c64ab2372c981d9f3f8,
+        type: 3}
+      propertyPath: checkForPlayerInCollider
+      value: 
+      objectReference: {fileID: 1560400621}
     - target: {fileID: 5254920658663757285, guid: a0a8ad3171773c64ab2372c981d9f3f8,
         type: 3}
       propertyPath: m_IsActive
@@ -15510,6 +15515,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.0096
       objectReference: {fileID: 0}
+    - target: {fileID: 5745319449721844162, guid: a0a8ad3171773c64ab2372c981d9f3f8,
+        type: 3}
+      propertyPath: dontPassCollider
+      value: 
+      objectReference: {fileID: 762634635}
     - target: {fileID: 5745319449721844162, guid: a0a8ad3171773c64ab2372c981d9f3f8,
         type: 3}
       propertyPath: addMissionInQuest
@@ -21758,6 +21768,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 756260522}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &762634635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762634636}
+  - component: {fileID: 762634637}
+  m_Layer: 0
+  m_Name: PuertaInteractuableTrigger (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &762634636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762634635}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -55.105, y: 10.762, z: -27.506}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1620003526}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &762634637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762634635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 2.4, z: 0.17457885}
+  m_Center: {x: 0, y: 0, z: 0.23771057}
 --- !u!1001 &767835925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44297,6 +44352,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1553697574}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1560400617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1560400618}
+  - component: {fileID: 1560400620}
+  - component: {fileID: 1560400621}
+  m_Layer: 0
+  m_Name: PuertaInteractuableTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1560400618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560400617}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -55.105, y: 10.762, z: -26.737}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1620003526}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1560400620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560400617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 2.4, z: 0.65}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1560400621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560400617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e830ad6d2c04db0a8acf2bb3ffe5a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1560975343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45278,6 +45391,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f71dcc089f2e114d8cf2b6376a2a6df, type: 3}
+--- !u!4 &1620003526 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5254920658663757284, guid: a0a8ad3171773c64ab2372c981d9f3f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 564375763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1628242214
 PrefabInstance:
   m_ObjectHideFlags: 0

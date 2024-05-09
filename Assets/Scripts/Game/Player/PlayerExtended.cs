@@ -8,7 +8,6 @@ namespace Game.Player
 {
     public class PlayerExtended : MonoBehaviour
     {
-        
         public Action OnClickFromPlayer;
         public Action OnItemPressed;
         public Action<int> OnKeyOptionPress;
@@ -23,8 +22,12 @@ namespace Game.Player
                 OnItemPressed?.Invoke();
             }
         }
-    
-    
+
+        public void Start()
+        {
+            ServiceLocator.Instance.GetService<UIControl>().SetBackPausePanelCallback(ActivateUIBool);
+        }
+
         public void OnNumberKeys(InputAction.CallbackContext value)
         {
             if (value.canceled)
@@ -33,6 +36,14 @@ namespace Game.Player
             }
         }
 
+        public void ActivateUIBool()
+        {
+            m_IsPaused = false;
+            ServiceLocator.Instance.GetService<UIControl>().HideUI();
+            ServiceLocator.Instance.GetService<MusicSystem>().UnpauseMixer();
+            ServiceLocator.Instance.GetService<IMediatorPlayer>().LockPlayer(false);
+
+        }
 
         public void ActivateUI(InputAction.CallbackContext value)
         {

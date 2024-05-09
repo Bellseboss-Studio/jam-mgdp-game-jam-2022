@@ -1,4 +1,4 @@
-using System;
+ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +6,7 @@ using UnityEngine;
 public class CerrarLaPuertaCuandoPlayerPase : MonoBehaviour
 {
     [SerializeField] private PuertaInteractuable puerta;
+    [SerializeField] private CheckForPlayerInCollider checkForPlayerInCollider;
 
     private void OnTriggerExit(Collider other)
     {
@@ -13,7 +14,7 @@ public class CerrarLaPuertaCuandoPlayerPase : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //Debug.Log("Exit del player");
-            puerta.CloseDoor();
+            if (!checkForPlayerInCollider.IsPlayerIn) puerta.CloseDoor();
         }
     }
 }

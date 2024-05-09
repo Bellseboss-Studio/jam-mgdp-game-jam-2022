@@ -12,6 +12,7 @@ public class PuertaInteractuable : InteractiveObjectFather
     [SerializeField] private bool closeDoor;
     [SerializeField] private bool canUseAgain = true;
     [SerializeField] private AddMissionCustom addMissionInQuest;
+    [SerializeField] private GameObject dontPassCollider;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class PuertaInteractuable : InteractiveObjectFather
         if (closeDoor)
         {
             transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(rotationInicial), Time.deltaTime);
+            dontPassCollider.SetActive(true);
             //Debug.Log($"transform.localRotation {transform.localRotation.eulerAngles.y}");
             if ((transform.localRotation.eulerAngles.y - 0) < 1)
             {

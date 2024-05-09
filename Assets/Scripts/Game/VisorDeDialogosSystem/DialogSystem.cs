@@ -41,7 +41,7 @@ namespace Game.VisorDeDialogosSystem
         {
             firstPersonController.SetActive(false);
             //Debug.Log($"is null {_dialog == null}");
-            if (_textIsFinishedOfShow)
+            if (_textIsFinishedOfShow && _dialog != null)
             {
                 if (!_dialog.HasNextDialog)
                 {
@@ -120,6 +120,7 @@ namespace Game.VisorDeDialogosSystem
 
         public void CloseDialog()
         {
+            StopCoroutine(fullTextInTextBox);
             firstPersonController.SetActive(true);
             _dialog = null;
             _textIsFinishedOfShow = false;
